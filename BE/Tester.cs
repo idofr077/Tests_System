@@ -19,8 +19,14 @@ namespace BE
         int _max_testPerWeek;
         vehicle _tester_expertise;
         bool[,] _work_time;
-        int max_way;
-        public bool[,] work_time {
+        int _max_way;
+        public int max_way
+        {
+            get { return _max_way; }
+            set { _max_way = value; }
+        }
+        public bool[,] work_time
+        {
             get { return work_time; }
             set {   work_time=value;}
         }

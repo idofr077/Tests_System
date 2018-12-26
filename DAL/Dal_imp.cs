@@ -30,6 +30,8 @@ namespace DAL
             DataSource.Tests.Add(Temp);
             Trainee temp = DataSource.Trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
             temp.LastTest = _date;
+            Tester temp1 = DataSource.testers.Find(x => x.id.CompareTo(_id_tester) == 0);
+            temp1.work_time[(int)_date.DayOfWeek - 1, _date.Hour-9]=false;
         }
         
         public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,int _max_way)

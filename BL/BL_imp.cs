@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class BL_imp
+    class BL_imp : IBL
     {
 
+      
     }
 }

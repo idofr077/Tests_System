@@ -20,7 +20,7 @@ namespace BE
         string _school;
         string _teacher_name;
         DateTime lastTest;
-        vehicle [] license;
+        vehicle [] _license;
 
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, int phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
         {
@@ -120,6 +120,11 @@ namespace BE
         }
         public int numOfLessons { set; get; }
         public DateTime LastTest { get => lastTest; set => lastTest = value; }
+        public vehicle[] license
+        {
+            get { return _license; }
+            set { _license = value; }
+        }
         // ToString
         public override string ToString()
         {

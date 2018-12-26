@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BE
-{//אתה מפגר
+{
     public class Trainee
     {
         int _id;

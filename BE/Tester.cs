@@ -81,7 +81,7 @@ namespace BE
             set { _tester_expertise = value; }
         }
         //construction
-        public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,]_worktime )
+        public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,]_worktime,int _max_way )
         {
             id = _id;
             last_name = _lastname;
@@ -93,7 +93,7 @@ namespace BE
             expirence = _expirence;
             max_testPerWeek = _max_testPerWeek;
             tester_expertice = _tester_expertise;
-            max_way = 100;
+            max_way = _max_way;
             work_time =_worktime;
         }
         public Tester()
@@ -110,7 +110,7 @@ namespace BE
             expirence = tester.expirence;
             max_testPerWeek = tester.max_testPerWeek;
             tester_expertice = tester.tester_expertice;
-            max_way = 100;
+            max_way = tester.max_way;
             
             work_time = tester.work_time;
         }

@@ -21,7 +21,7 @@ namespace BE
         string _teacher_name;
         DateTime lastTest;
         vehicle [] _license;
-
+        bool _waiting_for_test;
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, int phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
         {
             this.id = id;
@@ -50,6 +50,11 @@ namespace BE
             _school = Temp.school;
             _teacher_name = Temp.teacher_name;
             numOfLessons = Temp.numOfLessons;
+        }
+        public bool waiting_for_test
+        {
+            get {return _waiting_for_test; }
+            set {_waiting_for_test=value; }
         }
         //פרופרטים
         public int id

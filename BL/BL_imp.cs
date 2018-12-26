@@ -56,7 +56,11 @@ namespace BL
             if ((DateTime.Now - trainee.LastTest).Days < 7)
                 throw new Exception("must pass 7 days after the previous test");
             if (_dateAndHour.Hour < 9|| _dateAndHour.Hour > 15)
-                throw new Exception("the official time of the test is only from 9 am to 3 pm");
+                throw new Exception("the official time of the test is only from 9 am to 3 pm.");
+            if (trainee.waiting_for_test)
+                throw new Exception("you already Registered for a test.");
+            if(trainee.learn_vehicle!=tester.tester_expertice)
+                throw new Exception("you didn't chose a tester with the right expertice.");
             if (false == tester.work_time[(int)_dateAndHour.DayOfWeek, _dateAndHour.Hour])
             {
                 int available_day=0;

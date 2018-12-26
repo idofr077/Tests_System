@@ -8,7 +8,7 @@ using BE;
 
 namespace DAL
 {
-    interface Idal
+    public interface Idal
     {
         void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,int _max_way);// add teste
         void remove_tester(int _id);

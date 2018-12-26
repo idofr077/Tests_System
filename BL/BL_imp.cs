@@ -10,7 +10,7 @@ namespace BL
 {
     class BL_imp : IBL
     {
-        Dal_imp effector=new Dal_imp();
+        Idal effector=new Dal_imp();
         void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,int _max_way)
             {
                 TimeSpan Temp;
@@ -80,8 +80,8 @@ namespace BL
             }
             effector.add_test(_id_tester,_id_trainee, _dateAndHour, _address);
         }
-     
-        void update_test(int id, int id_tester, int id_trainee, DateTime date, Address address, bool distance, bool reverse, bool mirrors, bool signals, bool crosswalk,  bool grade, string mention)
+
+        void update_test(int id, int id_tester, int id_trainee, DateTime date, Address address, bool distance, bool reverse, bool mirrors, bool signals, bool crosswalk, bool grade, string mention)
         {
             Trainee trainee = DataSource.Trainees.Find(x => x.id.CompareTo(id_trainee) == 0);
             Tester tester = DataSource.testers.Find(x => x.id.CompareTo(id_tester) == 0);
@@ -115,7 +115,7 @@ namespace BL
             else if (true == grade) { }
             else
                 throw new Exception("tester must put value to grade");
-            if(string.IsNullOrEmpty(mention))
+            if (string.IsNullOrEmpty(mention))
                 throw new Exception("tester must put mention");
 
             for (int i = 0; i < 4; i++)
@@ -126,13 +126,13 @@ namespace BL
 
 
             effector.update_test(id, id_tester, id_trainee, date, address, distance, reverse, mirrors, signals, crosswalk, grade, mention);
+                
         }
    
         List<Tester> all_tester()
         {
            return effector.all_tester();
         }
-     
         List<Trainee> all_trainee()
         {
             return effector.all_trainee();

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    //fisdlfkds
     public class Trainee
     {
         int _id;

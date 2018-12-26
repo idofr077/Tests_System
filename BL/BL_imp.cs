@@ -50,13 +50,37 @@ namespace BL
         void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address)
         {
             Trainee trainee = DataSource.Trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
+            Tester tester = DataSource.testers.Find(x => x.id.CompareTo(_id_tester) == 0);
             if (trainee.numOfLessons <= 20)
                 throw new Exception("Trainee must do at least 20 lessons");
+            if ((DateTime.Now - trainee.LastTest).Days < 7)
+                throw new Exception("must pass 7 days after the previous test");
+            if (_dateAndHour.Hour < 9|| _dateAndHour.Hour > 15)
+                throw new Exception("the official time of the test is only from 9 am to 3 pm");
+            if (false == tester.work_time[(int)_dateAndHour.DayOfWeek, _dateAndHour.Hour])
+            {
+                int available_day=0;
+                int available_hour=0;
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                        if (tester.work_time[i, j])
+                        {
+                            available_day = i;
+                            available_hour = j;
+                        }
+                    }
+                }
+                throw new Exception("the time of the test is unavailable ,but we can offer you a test at"+ (DayOfWeek)available_day+" " +available_hour+":00"+" /n to add a new test you need to set new date and time ");
+            }
             effector.add_test(_id_tester,_id_trainee, _dateAndHour, _address);
         }
      
         void update_test(int id, int id_tester, int id_trainee, DateTime date, Address address, bool distance, bool reverse, bool mirrors, bool signals, bool grade, string mention)
-        { }
+        {
+
+        }
    
         List<Tester> all_tester()
         {

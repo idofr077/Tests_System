@@ -18,9 +18,9 @@ namespace BE
         float _expirence;
         int _max_testPerWeek;
         vehicle _tester_expertise;
-        bool[,] work_time;
+        bool[,] _work_time;
         int max_way;
-        public bool[,] MyProperty {
+        public bool[,] work_time {
             get { return work_time; }
             set {   work_time=value;}
         }

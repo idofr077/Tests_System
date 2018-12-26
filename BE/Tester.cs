@@ -19,10 +19,11 @@ namespace BE
         int _max_testPerWeek;
         vehicle _tester_expertise;
         bool[,] work_time;
-        private Tester tester;
-
-        // מרחק מקסימלי
-
+        int max_way;
+        public bool[,] MyProperty {
+            get { return work_time; }
+            set {   work_time=value;}
+        }
         //ToString
         public override string ToString()
         {
@@ -80,7 +81,7 @@ namespace BE
             set { _tester_expertise = value; }
         }
         //construction
-        public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise)
+        public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,]_worktime )
         {
             id = _id;
             last_name = _lastname;
@@ -92,12 +93,26 @@ namespace BE
             expirence = _expirence;
             max_testPerWeek = _max_testPerWeek;
             tester_expertice = _tester_expertise;
+            max_way = 100;
+            work_time =_worktime;
         }
         public Tester()
         { }
         public Tester(Tester tester)
         {
-            this.tester = tester;
+            id = tester.id;
+            last_name = tester.last_name;
+            first_name = tester.first_name;
+            date_of_birth = tester.date_of_birth;
+            Gender = tester.Gender;
+            phone = tester.phone;
+            address = tester.address;
+            expirence = tester.expirence;
+            max_testPerWeek = tester.max_testPerWeek;
+            tester_expertice = tester.tester_expertice;
+            max_way = 100;
+            
+            work_time = tester.work_time;
         }
     }
 

@@ -12,7 +12,6 @@ namespace BE
         int _id_tester;
         int _id_trainee;
         DateTime _date;
-
         Address _address;
         bool _distance;
         bool _reverse;
@@ -20,11 +19,11 @@ namespace BE
         bool _signals;
         bool _grade;
         string _mention;
-        private Test test;
+        int 
 
         public Test(Test test)
         {
-            this.test = test;
+            
         }
 
         public Test(int id, int id_tester, int id_trainee, DateTime date, DateTime date_and_hour, Address address)

@@ -78,6 +78,7 @@ namespace BL
                 }
                 throw new Exception("the time of the test is unavailable ,but we can offer you a test at"+ (DayOfWeek)(available_day+1)+" " +(9+available_hour)+":00"+" /n to add a new test you need to set new date and time ");
             }
+            
             effector.add_test(_id_tester,_id_trainee, _dateAndHour, _address);
         }
 

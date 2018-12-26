@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    //fisdlfkd
     public class Trainee
     {
         int _id;
@@ -21,6 +20,7 @@ namespace BE
         string _school;
         string _teacher_name;
         int _numOfLessons;
+        //knlknlk
 
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, int phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
         {

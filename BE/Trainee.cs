@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BE
-{
+{//push
     public class Trainee
     {
         int _id;

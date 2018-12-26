@@ -161,7 +161,7 @@ namespace DAL
         }
 
         //done
-        void Idal.update_test(int _id, int _id_tester, int _id_trainee, DateTime _date, Address _address, bool _distance, bool _reverse, bool _mirrors, bool _signals, bool _grade, string _mention)
+        void Idal.update_test(int _id, int _id_tester, int _id_trainee, DateTime _date, Address _address, bool _distance, bool _reverse, bool _mirrors, bool _signals,bool _crosswalk, bool _grade, string _mention)
         {
             if (!DataSource.Tests.Exists(x => x.id.CompareTo(_id) == 0))
             {
@@ -177,6 +177,7 @@ namespace DAL
             temp.reverse = _reverse;
             temp.mirrors = _mirrors;
             temp.signals = _signals;
+            temp.crosswalk = _crosswalk;
             temp.grade = _grade;
             temp.mention = _mention;
         }

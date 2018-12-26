@@ -13,6 +13,7 @@ namespace DAL
         //done
         public void add_test( int _id_tester, int _id_trainee, DateTime _date, Address _address)
         {
+            if ()
             if (DataSource.Tests.Exists(x => x.id.CompareTo(Configuration.id_test) == 0))
             {
                 throw new Exception("the id is already in use");

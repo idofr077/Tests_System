@@ -12,9 +12,9 @@ namespace BL
         Dal_imp effector=new Dal_imp();
         void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,int _max_way)
             {
-                DateTime Temp;
+                TimeSpan Temp;
                 Temp=DateTime.Now-_date_of_birth;
-                if (Temp.Year<=40)
+                if (Temp.Days/365<=40)
                  {
                      throw new Exception("Tetser must be  at least 40 years old.");
                  }
@@ -30,9 +30,9 @@ namespace BL
        
         void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
             {
-                DateTime Temp;
+                TimeSpan Temp;
                 Temp=DateTime.Now-_date_of_birth;
-                if (Temp.Year<=40)
+                if (Temp.Days/365<=18)
                  {
                      throw new Exception("Trainee must be  at least 18 years old.");
                  }
@@ -53,12 +53,19 @@ namespace BL
         { }
    
         List<Tester> all_tester()
-        { }
+        {
+           return effector.all_tester();
+        }
      
         List<Trainee> all_trainee()
-        { }
+        {
+            return effector.all_trainee();
+        }
+
      
         List<Test> all_test()
-        { }
+        {
+            return effector.all_test();
+        }
     }
 }

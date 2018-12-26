@@ -8,7 +8,7 @@ using DS;
 
 namespace DAL
 {
-    class Dal_imp : Idal
+  public  class Dal_imp : Idal
     {
         //done
         public void add_test( int _id_tester, int _id_trainee, DateTime _date, Address _address)

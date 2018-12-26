@@ -17,6 +17,7 @@ namespace BE
         bool _reverse;
         bool _mirrors;
         bool _signals;
+        bool _crosswalk;
         bool _grade;
         string _mention;
          
@@ -51,6 +52,7 @@ namespace BE
             this.reverse = reverse;
             this.mirrors = mirrors;
             this.signals = signals;
+            this.crosswalk= crosswalk;
             this.grade = grade;
             this.mention = mention;
         }    
@@ -104,6 +106,11 @@ namespace BE
         {
             get { return _signals; }
             set { _signals = value; }
+        }
+        public bool crosswalk
+        {
+            get { return _crosswalk; }
+            set { _crosswalk = value; }
         }
         public bool grade
         {

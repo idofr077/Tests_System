@@ -20,6 +20,7 @@ namespace BE
         string _school;
         string _teacher_name;
         DateTime lastTest;
+        vehicle [] _license;
 
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, int phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
         {
@@ -45,7 +46,7 @@ namespace BE
             _Gender = Temp.Gender;
             _phone = Temp.phone;
             _address = Temp.address;
-             _gearbox = Temp.gearbox;
+            _gearbox = Temp.gearbox;
             _school = Temp.school;
             _teacher_name = Temp.teacher_name;
             numOfLessons = Temp.numOfLessons;
@@ -55,7 +56,7 @@ namespace BE
         {
             get { return _id; }
             set
-            { 
+            {
                 _id = value;
             }
         }
@@ -119,7 +120,11 @@ namespace BE
         }
         public int numOfLessons { set; get; }
         public DateTime LastTest { get => lastTest; set => lastTest = value; }
-
+        public vehicle[] license
+        {
+            get { return _license; }
+            set { _license = value; }
+        }
         // ToString
         public override string ToString()
         {

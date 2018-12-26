@@ -77,9 +77,51 @@ namespace BL
             effector.add_test(_id_tester,_id_trainee, _dateAndHour, _address);
         }
      
-        void update_test(int id, int id_tester, int id_trainee, DateTime date, Address address, bool distance, bool reverse, bool mirrors, bool signals, bool grade, string mention)
+        void update_test(int id, int id_tester, int id_trainee, DateTime date, Address address, bool distance, bool reverse, bool mirrors, bool signals, bool crosswalk,  bool grade, string mention)
         {
+            Trainee trainee = DataSource.Trainees.Find(x => x.id.CompareTo(id_trainee) == 0);
+            Tester tester = DataSource.testers.Find(x => x.id.CompareTo(id_tester) == 0);
 
+            if (false == distance) { }
+            else if (true == distance) { }
+            else
+                throw new Exception("tester must put value to distance");
+
+            if (false == reverse) { }
+            else if (true == reverse) { }
+            else
+                throw new Exception("tester must put value to reverse");
+
+            if (false == mirrors) { }
+            else if (true == mirrors) { }
+            else
+                throw new Exception("tester must put value to mirrors");
+
+            if (false == signals) { }
+            else if (true == signals) { }
+            else
+                throw new Exception("tester must put value to signals");
+
+            if (false == crosswalk) { }
+            else if (true == crosswalk) { }
+            else
+                throw new Exception("tester must put value to crosswalk");
+
+            if (false == grade) { }
+            else if (true == grade) { }
+            else
+                throw new Exception("tester must put value to grade");
+            if(string.IsNullOrEmpty(mention))
+                throw new Exception("tester must put mention");
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (trainee.license[i] == tester.tester_expertice)
+                    throw new Exception("alredy have license to this vehicle");
+            }
+
+
+            effector.update_test(id, id_tester, id_trainee, date, address, distance, reverse, mirrors, signals, crosswalk, grade, mention);
         }
    
         List<Tester> all_tester()

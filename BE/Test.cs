@@ -19,7 +19,7 @@ namespace BE
         bool _signals;
         bool _grade;
         string _mention;
-        int 
+         
 
         public Test(Test test)
         {

@@ -13,7 +13,14 @@ namespace DAL
         //done
         public void add_test( int _id_tester, int _id_trainee, DateTime _date, Address _address)
         {
-            if ()
+            if (DataSource.Trainees.Exists(x => x.id.CompareTo(_id_trainee) == 0))
+            {
+                throw new Exception("the id of the trainee already in use");
+            }
+            if (DataSource.testers.Exists(x => x.id.CompareTo(_id_tester) == 0))
+            {
+                throw new Exception("the id of the tester already in use");
+            }
             if (DataSource.Tests.Exists(x => x.id.CompareTo(Configuration.id_test) == 0))
             {
                 throw new Exception("the id is already in use");
@@ -21,11 +28,14 @@ namespace DAL
             Test Temp = new Test(Configuration.id_test, _id_tester, _id_trainee, _date.Date, _date, _address);
             Configuration.id_test++;
             DataSource.Tests.Add(Temp);
+            Trainee temp = DataSource.Trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
+            temp.LastTest = _date;
         }
         
         public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,int _max_way)
         {
-           if ( DataSource.testers.Exists(x => x.id.CompareTo(_id) == 0))
+           
+            if ( DataSource.testers.Exists(x => x.id.CompareTo(_id) == 0))
                 {
                     throw new Exception("the id is already in use");
                 }
@@ -45,6 +55,7 @@ namespace DAL
 
         public void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
         {
+          
             if (DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
             {
                 throw new Exception("the id is already in use");
@@ -98,10 +109,13 @@ namespace DAL
 
         public void remove_trainee(int _id)
         {
+         
             if (!DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
             {
                 throw new Exception("the id is not exsits");
             }
+            
+           
             Trainee temp = DataSource.Trainees.Find(x => x.id.CompareTo(_id) == 0);
             DataSource.Trainees.Remove(temp);
         }

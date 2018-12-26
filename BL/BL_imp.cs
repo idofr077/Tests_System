@@ -29,7 +29,7 @@ namespace BL
         void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
             {
                 DateTime Temp;
-                Temp=DateTime.now-_date_of_birth;
+                Temp=DateTime.Now-_date_of_birth;
                 if (Temp.Year<=40)
                  {
                      throw new Exception("Trainee must be  at least 18 years old.");

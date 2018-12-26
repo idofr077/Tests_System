@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using BE;
+using DS;
 namespace BL
 {
     class BL_imp : IBL
@@ -47,7 +48,12 @@ namespace BL
         { }
      
         void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address)
-        { }
+        {
+            Trainee trainee = DataSource.Trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
+            if (trainee.numOfLessons <= 20)
+                throw new Exception("Trainee must do at least 20 lessons");
+            effector.add_test(_id_tester,_id_trainee, _dateAndHour, _address);
+        }
      
         void update_test(int id, int id_tester, int id_trainee, DateTime date, Address address, bool distance, bool reverse, bool mirrors, bool signals, bool grade, string mention)
         { }

@@ -12,14 +12,18 @@ namespace DAL
     {
         //done
         public void add_test( int _id_tester, int _id_trainee, DateTime _date, Address _address)
-        {
+        {     
             Test Temp = new Test(Configuration.id_test, _id_tester, _id_trainee, _date.Date, _date, _address);
             Configuration.id_test++;
             DataSource.Tests.Add(Temp);
         }
         
-        public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise)
-        {
+        public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,int _max_way)
+        {  
+           if ( ()
+                {
+                    throw new my_exception("the id is already been use");
+                }
             Tester temp = new Tester();
             temp.id = _id;
             temp.last_name = _lastname;

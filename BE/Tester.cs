@@ -110,8 +110,7 @@ namespace BE
             expirence = tester.expirence;
             max_testPerWeek = tester.max_testPerWeek;
             tester_expertice = tester.tester_expertice;
-            max_way = tester.max_way;
-            
+            max_way = tester.max_way;        
             work_time = tester.work_time;
         }
     }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DAL;
+using BE;
 namespace BL
 {
     class BL_imp : IBL
@@ -12,10 +13,10 @@ namespace BL
         void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,int _max_way)
             {
                 DateTime Temp;
-                Temp=DateTime.now-_date_of_birth;
+                Temp=DateTime.Now-_date_of_birth;
                 if (Temp.Year<=40)
                  {
-                     throw new my_exception("Tetser must be  at least 40 years old.");
+                     throw new Exception("Tetser must be  at least 40 years old.");
                  }
                 effector.add_tester( _id,  _lastname,  _firstname,  _date_of_birth,  _Gender,  _phone,  _address,  _expirence,  _max_testPerWeek,  _tester_expertise,_max_way);
 
@@ -31,7 +32,7 @@ namespace BL
                 Temp=DateTime.now-_date_of_birth;
                 if (Temp.Year<=40)
                  {
-                     throw new my_exception("Trainee must be  at least 18 years old.");
+                     throw new Exception("Trainee must be  at least 18 years old.");
                  }
                 effector.add_trainee( _id,  _lastname,  _firstname,  _date_of_birth,  _Gender,  _phone,  _address,  _expirence,  _max_testPerWeek,  _tester_expertise,_max_way);
             }

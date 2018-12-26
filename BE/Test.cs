@@ -20,7 +20,6 @@ namespace BE
         bool _grade;
         string _mention;
          
-            
         public Test(Test test)
         {
             

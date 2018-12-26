@@ -22,7 +22,12 @@ namespace BE
          
         public Test(Test test)
         {
-            
+            id= test.id;
+            id_tester=test.id_tester;
+            id_trainee=test.id_trainee;
+            date=test.date;
+            date_and_hour=test.date_and_hour;
+            address=test.address;
         }
 
         public Test(int id, int id_tester, int id_trainee, DateTime date, DateTime date_and_hour, Address address)

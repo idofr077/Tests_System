@@ -110,7 +110,7 @@ namespace BL
             else if (true == crosswalk) { }
             else
                 throw new Exception("tester must put value to crosswalk");
-
+            //
             if (false == grade) { }
             else if (true == grade) { }
             else

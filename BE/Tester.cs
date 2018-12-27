@@ -20,16 +20,14 @@ namespace BE
         vehicle _tester_expertise;
         bool[,] _work_time;
         int _max_way;
+        List<DateTime> _Tests_Determined;
         public int max_way
         {
             get { return _max_way; }
             set { _max_way = value; }
         }
-        public bool[,] work_time
-        {
-            get { return work_time; }
-            set {   work_time=value;}
-        }
+    
+        
         //ToString
         public override string ToString()
         {
@@ -86,6 +84,10 @@ namespace BE
             get { return _tester_expertise; }
             set { _tester_expertise = value; }
         }
+
+        public bool[,] work_time { get => _work_time; set => _work_time = value; }
+        public List<DateTime> Tests_Determined { get => _Tests_Determined; set => _Tests_Determined = value; }
+
         //construction
         public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,]_worktime,int _max_way )
         {

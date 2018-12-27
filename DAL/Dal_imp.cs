@@ -184,6 +184,8 @@ namespace DAL
             temp.mention = _mention;
             Tester temp1 = DataSource.testers.Find(x => x.id.CompareTo(_id_tester) == 0);
             temp1.work_time[(int)_date.DayOfWeek - 1, _date.Hour - 9] = true;
+            Trainee temp2 = DataSource.Trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
+            temp2.waiting_for_test = true;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace BL
    public class BL_imp : IBL
     {
         Idal effector = new Dal_imp();
-      public  void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time ,int _max_way)
+      public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time ,int _max_way)
         {
             TimeSpan Temp;
             Temp = DateTime.Now - _date_of_birth;
@@ -23,7 +23,7 @@ namespace BL
 
         }
 
-       public  void remove_tester(int _id)
+       public void remove_tester(int _id)
         {
             if (!effector.id_alredy_exsits(_id))
             {
@@ -151,17 +151,17 @@ namespace BL
             trainee.waiting_for_test = false;
         }
 
-      public  List<Tester> all_tester()
+      public List<Tester> all_tester()
         {
             return effector.all_tester();
         }
 
-     public   List<Trainee> all_trainee()
+     public List<Trainee> all_trainee()
         {
             return effector.all_trainee();
         }
 
-      public  List<Test> all_test()
+      public List<Test> all_test()
       { return effector.all_test();}
        public List<Tester> testers_area(Address address)
         {return null; }
@@ -171,7 +171,7 @@ namespace BL
         { return null; }
        public int? trainee_tests(Trainee trainee)
         { return null; }
-      public  bool? pass(Trainee trainee)
+      public bool? pass(Trainee trainee)
         { return null ; }
       public List<Test> test_on_date(DateTime date)
         { return null; }

@@ -91,7 +91,7 @@ namespace BL
                                where ((DateTime.Now - item).Days < 7)
                                select item;
             if (test_on_week.Count() >= tester.max_testPerWeek)
-                throw new Exception("the tester fiil his tests for week amount");
+                throw new Exception("the tester fill his tests for week amount");
 
 
             trainee.waiting_for_test = true;

@@ -131,7 +131,7 @@ namespace BE
                 temp = "pass";
             else
                 temp = "fail";
-            return (id + "\n" + "id tester: " + id_tester + "\n" + "id trainee: " + id_trainee + "\n" + temp + "\n" + mention + "\n");
+            return ("id test :"+id + "\n" + "id tester: " + id_tester + "\n" + "id trainee: " + id_trainee + "\n" + temp + "\n" + mention + "\n");
         }
     }
 }

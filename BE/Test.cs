@@ -13,12 +13,12 @@ namespace BE
         int _id_trainee;
         DateTime _date;
         Address _address;
-        bool _distance;
-        bool _reverse;
-        bool _mirrors;
-        bool _signals;
-        bool _crosswalk;
-        bool _grade;
+        bool? _distance;
+        bool? _reverse;
+        bool? _mirrors;
+        bool? _signals;
+        bool? _crosswalk;
+        bool? _grade;
         string _mention;
          
         //C_Tors:
@@ -30,6 +30,12 @@ namespace BE
             date=test.date;
             date_and_hour=test.date_and_hour;
             address=test.address;
+            distance = null;
+            reverse = null;
+            mirrors = null;
+            signals = null;
+            crosswalk = null;
+            mention= null;
         }
 
         public Test(int id, int id_tester, int id_trainee, DateTime date, DateTime date_and_hour, Address address)
@@ -88,32 +94,32 @@ namespace BE
             get { return _address; }
             set { _address = value; }
         }
-        public bool distance
+        public bool? distance
         {
             get { return _distance; }
             set { _distance = value; }
         }
-        public bool reverse
+        public bool? reverse
         {
             get { return _reverse; }
             set { _reverse = value; }
         }
-        public bool mirrors
+        public bool? mirrors
         {
             get { return _mirrors; }
             set { _mirrors = value; }
         }
-        public bool signals
+        public bool? signals
         {
             get { return _signals; }
             set { _signals = value; }
         }
-        public bool crosswalk
+        public bool? crosswalk
         {
             get { return _crosswalk; }
             set { _crosswalk = value; }
         }
-        public bool grade
+        public bool? grade
         {
             get { return _grade; }
             set { _grade = value; }
@@ -127,11 +133,13 @@ namespace BE
         public override string ToString()
         {
             string temp = null;
-            if (grade)
+            if (grade == true)
                 temp = "pass";
-            else
+            else if (grade == false)
                 temp = "fail";
+            else temp = "didn't happened yet";
             return (id + "\n" + "id tester: " + id_tester + "\n" + "id trainee: " + id_trainee + "\n" + temp + "\n" + mention + "\n");
+           
         }
     }
 }

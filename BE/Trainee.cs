@@ -13,7 +13,7 @@ namespace BE
         string _first_name;
         DateTime _date_of_birth;
         gender _Gender;
-        int _phone;
+        long _phone;
         Address _address;
         vehicle _learn_vehicle;
         kind_of_gearbox _gearbox;
@@ -22,7 +22,7 @@ namespace BE
         DateTime lastTest;
         vehicle [] _license;
         bool _waiting_for_test=false;
-        public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, int phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
+        public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, long phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
         {
             this.id = id;
             this.last_name = last_name;
@@ -85,7 +85,7 @@ namespace BE
             get { return _Gender; }
             set { _Gender = value; }
         }
-        public int phone
+        public long phone
         {
             get { return _phone; }
             set { _phone = value; }

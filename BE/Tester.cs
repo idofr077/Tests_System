@@ -13,21 +13,21 @@ namespace BE
         string _first_name;
         DateTime _date_of_birth;
         gender _Gender;
-        int _phone;
+        long _phone;
         Address _address;
         float _expirence;
         int _max_testPerWeek;
         vehicle _tester_expertise;
         bool[,] _work_time;
-        int _max_way;
         List<DateTime> _Tests_Determined;
+        int _max_way;
         public int max_way
         {
             get { return _max_way; }
             set { _max_way = value; }
         }
-    
-        
+
+
         //ToString
         public override string ToString()
         {
@@ -59,7 +59,7 @@ namespace BE
             get { return _Gender; }
             set { _Gender = value; }
         }
-        public int phone
+        public long phone
         {
             get { return _phone; }
             set { _phone = value; }
@@ -89,7 +89,7 @@ namespace BE
         public List<DateTime> Tests_Determined { get => _Tests_Determined; set => _Tests_Determined = value; }
 
         //construction
-        public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, int _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,]_worktime,int _max_way )
+        public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender,long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _worktime, int _max_way)
         {
             id = _id;
             last_name = _lastname;
@@ -102,7 +102,8 @@ namespace BE
             max_testPerWeek = _max_testPerWeek;
             tester_expertice = _tester_expertise;
             max_way = _max_way;
-            work_time =_worktime;
+            work_time = _worktime;
+            Tests_Determined = new List<DateTime>();
         }
         public Tester()
         { }
@@ -118,8 +119,14 @@ namespace BE
             expirence = tester.expirence;
             max_testPerWeek = tester.max_testPerWeek;
             tester_expertice = tester.tester_expertice;
-            max_way = tester.max_way;        
+            max_way = tester.max_way;
             work_time = tester.work_time;
+            Tests_Determined = new List<DateTime>();
+            for (int i = 0; i < tester.Tests_Determined.Count; i++)
+            {
+                Tests_Determined.Add(tester.Tests_Determined[i]);
+            }
+
         }
     }
 

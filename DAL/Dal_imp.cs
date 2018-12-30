@@ -17,6 +17,11 @@ namespace DAL
             Tester tester = new Tester(DataSource.testers.Find(x => x.id.CompareTo(_id) == 0));
             return tester;
         }
+        public Test test_by_id(int _id)
+        {
+            Test test = new Test(DataSource.Tests.Find(x => x.id.CompareTo(_id) == 0));
+            return test;
+        }
         public Trainee trainee_by_id(int _id)
         {
             Trainee trainee = new Trainee(DataSource.Trainees.Find(x => x.id.CompareTo(_id) == 0));
@@ -183,18 +188,13 @@ namespace DAL
         }
 
         //done
-        public void update_test(int _id, int _id_tester, int _id_trainee, DateTime _date, Address _address, bool _distance, bool _reverse, bool _mirrors, bool _signals,bool _crosswalk, bool _grade, string _mention)
+        public void update_test(int _id,, bool _distance, bool _reverse, bool _mirrors, bool _signals,bool _crosswalk, bool _grade, string _mention)
         {
             if (!DataSource.Tests.Exists(x => x.id.CompareTo(_id) == 0))
             {
                 throw new Exception("the id is not exsits");
             }
             Test temp = DataSource.Tests.Find(x => x.id.CompareTo(_id) == 0);
-            temp.id = _id;
-            temp.id_tester = _id_tester;
-            temp.id_trainee = _id_trainee;
-            temp.date = _date;
-            temp.address = _address;
             temp.distance = _distance;
             temp.reverse = _reverse;
             temp.mirrors = _mirrors;
@@ -202,7 +202,7 @@ namespace DAL
             temp.crosswalk = _crosswalk;
             temp.grade = _grade;
             temp.mention = _mention;
-            Trainee temp2 = DataSource.Trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
+            Trainee temp2 = DataSource.Trainees.Find(x => x.id.CompareTo(temp.id_trainee) == 0);
             temp2.waiting_for_test = false;
 
         }

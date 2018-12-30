@@ -188,7 +188,7 @@ namespace DAL
         }
 
         //done
-        public void update_test(int _id, bool _distance, bool _reverse, bool _mirrors, bool _signals,bool _crosswalk, bool _grade, string _mention)
+        public void update_test(int _id,int _id_trainee, bool? _distance, bool? _reverse, bool? _mirrors, bool? _signals,bool? _crosswalk, bool? _grade, string _mention)
         {
             if (!DataSource.Tests.Exists(x => x.id.CompareTo(_id) == 0))
             {
@@ -204,7 +204,8 @@ namespace DAL
             temp.mention = _mention;
             Trainee temp2 = DataSource.Trainees.Find(x => x.id.CompareTo(temp.id_trainee) == 0);
             temp2.waiting_for_test = false;
-
+            Trainee counter = DataSource.Trainees.Find(x => x.id.CompareTo(_id) == 0);
+            counter.num_of_test++;
         }
     }
 }

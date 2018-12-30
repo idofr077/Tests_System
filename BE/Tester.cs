@@ -33,7 +33,8 @@ namespace BE
         {
             return first_name + " " + last_name + "/n" + id + "/n" + date_of_birth + "/n" + Gender + "/n" + phone + "/n" + address + "/n" + expirence + "/n";
         }
-        //פרופרטים
+
+        //Properties:
         public int id
         {
             get { return _id; }
@@ -88,7 +89,7 @@ namespace BE
         public bool[,] work_time { get => _work_time; set => _work_time = value; }
         public List<DateTime> Tests_Determined { get => _Tests_Determined; set => _Tests_Determined = value; }
 
-        //construction
+        //C_Tors:
         public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender,long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _worktime, int _max_way)
         {
             id = _id;

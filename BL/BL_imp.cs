@@ -168,6 +168,7 @@ namespace BL
             return effector.all_test();
         }
 
+        //Function that we were asked to set but wil only be written at stage three.
         public List<Tester> testers_area(Address address)
         { return null; }
         public List<Tester> tester_time(DateTime dateAndHour)

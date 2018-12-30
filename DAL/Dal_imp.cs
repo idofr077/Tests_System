@@ -96,27 +96,33 @@ namespace DAL
         }
 
         public List<Test> all_test()
-        { 
-            var temp = from Test item in DataSource.Tests
-                       where true
-                       select item;
-            return temp.ToList();
+        {
+            List<Test> temp = new List<Test>();
+            for (int i = 0; i < DataSource.Tests.Count; i++)
+            {
+                temp.Add(DataSource.Tests[i]);
+            }
+            return temp;
         }
 
         public List<Tester> all_tester()
         {
-            var temp = from Tester item in DataSource.testers
-                       where true
-                       select item;
-            return temp.ToList();
+            List<Tester> temp = new List<Tester>();
+            for (int i = 0; i < DataSource.Tests.Count; i++)
+            {
+                temp.Add(DataSource.testers[i]);
+            }
+            return temp;
         }
         //done
         public List<Trainee> all_trainee()
         {
-            var temp = from Trainee item in DataSource.Trainees
-                       where true
-                       select item;
-            return temp.ToList();
+            List<Trainee> temp = new List<Trainee>();
+            for (int i = 0; i < DataSource.Trainees.Count; i++)
+            {
+                temp.Add(DataSource.Trainees[i]);
+            }
+            return temp;
         }
         //done
         public void remove_tester(int _id)

@@ -21,6 +21,7 @@ namespace BE
         bool _grade;
         string _mention;
          
+        //C_Tors:
         public Test(Test test)
         {
             id= test.id;
@@ -56,7 +57,7 @@ namespace BE
             this.grade = grade;
             this.mention = mention;
         }    
-        //פרופרטים
+        //Properties:
         public int id
         {
             get { return _id; }

@@ -22,6 +22,8 @@ namespace BE
         DateTime lastTest;
         vehicle [] _license;
         bool _waiting_for_test=false;
+
+        //C_Tors:
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, long phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
         {
             this.id = id;
@@ -51,12 +53,13 @@ namespace BE
             _teacher_name = Temp.teacher_name;
             numOfLessons = Temp.numOfLessons;
         }
+
+        //Properties:
         public bool waiting_for_test
         {
             get {return _waiting_for_test; }
             set {_waiting_for_test=value; }
         }
-        //פרופרטים
         public int id
         {
             get { return _id; }

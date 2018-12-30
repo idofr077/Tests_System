@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-   public class Configuration
+   public class Configuration //a class of all the consts.
     {
         static int min_lessons;
         static float max_AgeOfTester;

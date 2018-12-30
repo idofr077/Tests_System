@@ -11,5 +11,13 @@ namespace DS
         public static List<Test> Tests;
         public static List<Tester> testers;
         public static List<Trainee> Trainees;
+
+        public DataSource()
+        {
+            Tests = new List<Test>();
+            testers = new List<Tester>();
+            Trainees = new List<Trainee>();
+
+        }
     }
 }

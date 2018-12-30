@@ -102,9 +102,9 @@ namespace DAL
 
         public List<Test> all_test()
         { 
-            var temp = from Test item in DataSource.Tests
+            var temp = from  item in DataSource.Tests
                        where true
-                       select item;
+                       select new Test(item);
             return temp.ToList<Test>();
         }
 
@@ -112,7 +112,7 @@ namespace DAL
         {
             var temp = from Tester item in DataSource.testers
                        where true
-                       select item;
+                       select new Tester(item);
             return temp.ToList<Tester>();
         }
         //done
@@ -120,7 +120,7 @@ namespace DAL
         {
             var temp = from Trainee item in DataSource.Trainees
                        where true
-                       select item;
+                       select new Trainee(item);
             return temp.ToList<Trainee>();
         }
         //done

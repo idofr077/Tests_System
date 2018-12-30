@@ -26,7 +26,6 @@ namespace PL
                 run.add_tester(2, "ploni", "tomer", new DateTime(1970, 1, 1), gender.male, 587724243, new Address("helem", 4, "madim"), (float)8.8, 20, vehicle.private_vehicle, tomer_work, 50);
                 run.add_test(2, 212147870, new DateTime(2019, 1, 1, 10, 0, 0), new Address("zimbabue", 19, "moon"));
                 run.add_test(2, 21167752, new DateTime(2018, 12, 31, 10, 0, 0), new Address("erezt leulam lo", 40, "pupik shel peer"));
-            
             for (int i = 0; i < run.all_test().Count; i++)
             {
                 Console.WriteLine(run.all_test()[i]);

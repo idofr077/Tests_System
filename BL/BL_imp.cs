@@ -11,7 +11,7 @@ namespace BL
     public class BL_imp : IBL
     {
         Idal effector = new Dal_imp();
-        public  void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
+        public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
         {
             TimeSpan Temp;
             Temp = DateTime.Now - _date_of_birth;
@@ -167,14 +167,20 @@ namespace BL
         {
             return effector.all_test();
         }
-        List<Tester> testers_area(Address address)
-        {
-            return null;
-        }
-        List<Tester> tester_time(DateTime dateAndHour)
-        {
-            return null;
-        }
 
+        public List<Tester> testers_area(Address address)
+        { return null; }
+        public List<Tester> tester_time(DateTime dateAndHour)
+        { return null; }
+        public List<Test> find_all_tests(Predicate<Test> cond)
+        { return null; }
+        public int? trainee_tests(Trainee trainee)
+        { return null; }
+        public bool? pass(Trainee trainee)
+        { return null; }
+        public List<Test> test_on_date(DateTime date)
+        {
+            return null;
+        }
     }
 }

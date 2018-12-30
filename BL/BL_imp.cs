@@ -174,6 +174,8 @@ namespace BL
       public bool? pass(Trainee trainee)
         { return null ; }
       public List<Test> test_on_date(DateTime date)
-        { return null; }
+        {
+            return null;
+        }
     }
 }

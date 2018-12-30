@@ -165,5 +165,14 @@ namespace BL
         {
             return effector.all_test();
         }
+        List<Tester> testers_area(Address address)
+        {
+            return null;
+        }
+        List<Tester> tester_time(DateTime dateAndHour)
+        {
+            return null;
+        }
+        
     }
 }

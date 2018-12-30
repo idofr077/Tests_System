@@ -185,19 +185,19 @@ namespace BL
         }
         List<Tester> tester_expertise(bool sort)
         {
-            List<Tester> tester_group = from t in effector.all_tester()
-                               group t by .tester_expertise into new_group
-                               orderby new_group.Key
-                               select new_group;
-            return tester_group;
+            var tester_group = from Tester t in effector.all_tester()
+                               group t by t.tester_expertice into new_group
+                               orderby new_group.Key;
+                          
+            return tester_group.ToList<Tester>;
         }
-        List<Trainee> school(bool sort)
+        List<List<Trainee>> school(bool sort)
         {
-            List<Trainee> trainee_group = from Trainee t in effector.all_trainee()
-                                        group t by t.school into new_group
-                                        orderby new_group.Key
-                                        select new_group;
-            return tester_group;
+
+            var trainee_group = (from Trainee item in effector.all_trainee()
+                                 group item by (item.school));
+                                        
+            return trainee_group.ToList<ToList<Trainee>>();
         }
         List<Trainee> teacher(bool sort);
         List<Trainee> tests_num(bool sort);

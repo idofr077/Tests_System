@@ -188,7 +188,7 @@ namespace DAL
         }
 
         //done
-        public void update_test(int _id,, bool _distance, bool _reverse, bool _mirrors, bool _signals,bool _crosswalk, bool _grade, string _mention)
+        public void update_test(int _id, bool _distance, bool _reverse, bool _mirrors, bool _signals,bool _crosswalk, bool _grade, string _mention)
         {
             if (!DataSource.Tests.Exists(x => x.id.CompareTo(_id) == 0))
             {

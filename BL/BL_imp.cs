@@ -99,15 +99,15 @@ namespace BL
             effector.add_test(_id_tester, _id_trainee, _dateAndHour, _address);
         }
 
-        public void update_test(int id, int id_tester, int id_trainee, DateTime date, Address address, bool distance, bool reverse, bool mirrors, bool signals, bool crosswalk, bool grade, string mention)
+        public void update_test(int id, bool distance, bool reverse, bool mirrors, bool signals, bool crosswalk, bool grade, string mention)
         {
             if (!effector.id_tests_exsits(id))
             {
                 throw new Exception("the id of the test is not exsits");
             }
-
-            Trainee trainee = effector.trainee_by_id(id_trainee);
-            Tester tester = effector.tester_by_id(id_tester);
+            Test temp = effector.test_by_id(id);
+            Trainee trainee = effector.trainee_by_id(temp.id_trainee);
+            Tester tester = effector.tester_by_id(temp.id_tester);
 
             if (false == distance) { }
             else if (true == distance) { }

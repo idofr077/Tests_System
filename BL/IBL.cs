@@ -21,4 +21,5 @@ namespace BL
         List<Trainee> all_trainee();
         List<Test> all_test();
     }
+
 }

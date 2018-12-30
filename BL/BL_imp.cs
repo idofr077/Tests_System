@@ -99,7 +99,7 @@ namespace BL
             effector.add_test(_id_tester, _id_trainee, _dateAndHour, _address);
         }
 
-        public void update_test(int id, bool distance, bool reverse, bool mirrors, bool signals, bool crosswalk, bool grade, string mention)
+        public void update_test(int id, int id_trainee, bool? distance, bool? reverse, bool? mirrors, bool? signals, bool? crosswalk, bool? grade, string mention)
         {
             if (!effector.id_tests_exsits(id))
             {
@@ -109,34 +109,22 @@ namespace BL
             Trainee trainee = effector.trainee_by_id(temp.id_trainee);
             Tester tester = effector.tester_by_id(temp.id_tester);
 
-            if (false == distance) { }
-            else if (true == distance) { }
-            else
+            if(null==distance)
                 throw new Exception("tester must put value to distance");
 
-            if (false == reverse) { }
-            else if (true == reverse) { }
-            else
+            if (null==reverse)
                 throw new Exception("tester must put value to reverse");
 
-            if (false == mirrors) { }
-            else if (true == mirrors) { }
-            else
+            if (null==mirrors)
                 throw new Exception("tester must put value to mirrors");
 
-            if (false == signals) { }
-            else if (true == signals) { }
-            else
+            if (null==signals)
                 throw new Exception("tester must put value to signals");
 
-            if (false == crosswalk) { }
-            else if (true == crosswalk) { }
-            else
+            if (null==crosswalk)
                 throw new Exception("tester must put value to crosswalk");
-            //
-            if (false == grade) { }
-            else if (true == grade) { }
-            else
+            
+            if (null==grade)
                 throw new Exception("tester must put value to grade");
             if (string.IsNullOrEmpty(mention))
                 throw new Exception("tester must put mention");
@@ -149,7 +137,7 @@ namespace BL
 
             
 
-            effector.update_test(id, id_tester, id_trainee, date, address, distance, reverse, mirrors, signals, crosswalk, grade, mention);
+            effector.update_test(id, id_trainee, distance, reverse, mirrors, signals, crosswalk, grade, mention);
             trainee.waiting_for_test = false;
         }
 
@@ -183,23 +171,38 @@ namespace BL
         {
             return null;
         }
-        List<Tester> tester_expertise(bool sort)
-        {
-            var tester_group = from Tester t in effector.all_tester()
-                               group t by t.tester_expertice into new_group
-                               orderby new_group.Key;
-                          
-            return tester_group.ToList<Tester>;
-        }
-        List<List<Trainee>> school(bool sort)
+        public IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_expertice(bool sort)
         {
 
-            var trainee_group = (from Trainee item in effector.all_trainee()
-                                 group item by (item.school));
-                                        
-            return trainee_group.ToList<ToList<Trainee>>();
+            IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_group = from t in effector.all_tester()
+                                                                           group t by t.tester_expertice into new_group
+                                                                           orderby new_group.Key
+                                                                           select new_group;
+            return tester_group;
         }
-        List<Trainee> teacher(bool sort);
-        List<Trainee> tests_num(bool sort);
+        public IOrderedEnumerable<IGrouping<string, Trainee>> school(bool sort)
+        {
+            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
+                                        group t by t.school into new_group
+                                        orderby new_group.Key
+                                        select new_group;
+            return trainee_group;
+        }
+        public IOrderedEnumerable<IGrouping<string, Trainee>> teacher(bool sort)
+        {
+            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group=from t in effector.all_trainee()
+                                        group t by t.teacher_name into new_group
+                                        orderby new_group.Key
+                                        select new_group;
+            return trainee_group;
+        }
+        public  IOrderedEnumerable<IGrouping<int, Trainee>> tests_num(bool sort)
+        {
+            IOrderedEnumerable<IGrouping<int, Trainee>> trainee_group= from t in effector.all_trainee()
+                                        group t by t.num_of_test into new_group
+                                        orderby new_group.Key
+                                        select new_group;
+            return trainee_group;
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace DAL
         void remove_trainee(int _id);
         void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons);
         void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address); //Add new test.
-        void update_test(int id, bool distance, bool reverse, bool mirrors, bool signals, bool crosswalk, bool grade, string mention); //Update if a given test was successful. 
+        void update_test(int id,int id_trainee, bool? distance, bool? reverse, bool? mirrors, bool? signals, bool? crosswalk, bool? grade, string mention); //Update if a given test was successful. 
         bool id_alredy_exsits(int _id); //Checks if an ID number of a trainee or a tester already exists in data base.
         bool id_tests_exsits(int _id); //Checks if a test ID number exists in the data base.
         List<Tester> all_tester(); //Returns a list of all testers in data base.

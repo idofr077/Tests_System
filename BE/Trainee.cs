@@ -22,6 +22,7 @@ namespace BE
         DateTime lastTest;
         vehicle [] _license;
         bool _waiting_for_test=false;
+        int _num_of_test = 0;
 
         //C_Tors:
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, long phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
@@ -133,6 +134,7 @@ namespace BE
             get { return _license; }
             set { _license = value; }
         }
+        public int num_of_test { get { return _num_of_test; } set { _num_of_test++; } }
         // ToString
         public override string ToString()
         {

@@ -26,7 +26,10 @@ namespace BL
         int? trainee_tests(Trainee trainee);
         bool? pass(Trainee trainee);
         List <Test> test_on_date (DateTime date);
-        
+        List<Tester> tester_expertise(bool sort);
+        List<Trainee> school(bool sort);
+        List<Trainee> teacher(bool sort);
+        List<Trainee> tests_num(bool sort);
     }
 
 }

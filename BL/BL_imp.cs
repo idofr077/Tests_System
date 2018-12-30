@@ -182,5 +182,17 @@ namespace BL
         {
             return null;
         }
+        List<Tester> tester_expertise(bool sort)
+        {
+            var tester_group = from t in effector.all_tester()
+                               group t by .tester_expertise into new_group
+                               orderby new_group.Key
+                               select new_group;
+            return 
+
+        }
+        List<Trainee> school(bool sort);
+        List<Trainee> teacher(bool sort);
+        List<Trainee> tests_num(bool sort);
     }
 }

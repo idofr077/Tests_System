@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace BE  // a class to set adresses.
 {
     public struct Address
     {
@@ -12,7 +12,7 @@ namespace BE
         int num;
         string city;
 
-        public Address(string street, int num, string city)
+        public Address(string street, int num, string city) //C_Tor
         {
             this.street = street;
             this.num = num;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace BE //a class of all E_Nums.
 {
    public enum vehicle {private_vehicle,two_weels_vehicle,medium_track, heavy_track}
    public enum kind_of_gearbox {manual,auto}

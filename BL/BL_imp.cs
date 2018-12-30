@@ -88,10 +88,11 @@ namespace BL
             if (tester.Tests_Determined.Exists(X => X == _dateAndHour))
                 throw new Exception("the date and time are not avialible .");
             var test_on_week = from DateTime item in tester.Tests_Determined
-                               where ((DateTime.Now - item).Days < 7)
+                               let a= (DateTime.Now - item).Days
+                               where (a < 7)
                                select item;
             if (test_on_week.Count() >= tester.max_testPerWeek)
-                throw new Exception("the tester fiil his tests for week amount");
+                throw new Exception("the tester fill  his tests for week amount");
 
 
             trainee.waiting_for_test = true;

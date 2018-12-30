@@ -48,13 +48,13 @@ namespace DAL
         }
         public void add_test( int _id_tester, int _id_trainee, DateTime _date, Address _address)
         {
-            if (DataSource.Trainees.Exists(x => x.id.CompareTo(_id_trainee) == 0))
+            if (!DataSource.Trainees.Exists(x => x.id.CompareTo(_id_trainee) == 0))
             {
-                throw new Exception("the id of the trainee already in use");
+                throw new Exception("the id of the trainee isnt exsist");
             }
-            if (DataSource.testers.Exists(x => x.id.CompareTo(_id_tester) == 0))
+            if (!DataSource.testers.Exists(x => x.id.CompareTo(_id_tester) == 0))
             {
-                throw new Exception("the id of the tester already in use");
+                throw new Exception("the id of the tester isnt exsist");
             }
             if (DataSource.Tests.Exists(x => x.id.CompareTo(Configuration.id_test) == 0))
             {
@@ -96,36 +96,27 @@ namespace DAL
         }
 
         public List<Test> all_test()
-        {
-            List<Test> tests = new List<Test>();
-            for (int i = 0; i < DataSource.Tests.Count; i++)
-            {
-                Test a = new Test(DataSource.Tests[i]);
-                tests.Add(a);
-            }
-            return tests;
+        { 
+            var temp = from Test item in DataSource.Tests
+                       where true
+                       select item;
+            return temp.ToList();
         }
 
         public List<Tester> all_tester()
         {
-            List<Tester> tester = new List<Tester>();
-            for (int i = 0; i < DataSource.testers.Count; i++)
-            {
-                Tester a = new Tester(DataSource.testers[i]);
-                tester.Add(a);
-            }
-            return tester;
+            var temp = from Tester item in DataSource.testers
+                       where true
+                       select item;
+            return temp.ToList();
         }
         //done
         public List<Trainee> all_trainee()
         {
-            List<Trainee> trainees = new List<Trainee>();
-            for (int i = 0; i < DataSource.Trainees.Count; i++)
-            {
-                Trainee a = new Trainee(DataSource.Trainees[i]);
-                trainees.Add(a);
-            }
-            return trainees;
+            var temp = from Trainee item in DataSource.Trainees
+                       where true
+                       select item;
+            return temp.ToList();
         }
         //done
         public void remove_tester(int _id)

@@ -93,7 +93,7 @@ namespace BE
         {
             id = _id;
             last_name = _lastname;
-            first_name = _first_name;
+            first_name = _firstname;
             date_of_birth = _date_of_birth;
             Gender = _Gender;
             phone = _phone;

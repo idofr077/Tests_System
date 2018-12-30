@@ -162,17 +162,18 @@ namespace BL
         }
 
       public  List<Test> all_test()
-        {
-            return effector.all_test();
-        }
-        List<Tester> testers_area(Address address)
-        {
-            return null;
-        }
-        List<Tester> tester_time(DateTime dateAndHour)
-        {
-            return null;
-        }
-        
+      { return effector.all_test();}
+       public List<Tester> testers_area(Address address)
+        {return null; }
+       public List<Tester> tester_time(DateTime dateAndHour)
+        {return null; }
+       public List<Test> find_all_tests(Predicate<Test> cond)
+        { return null; }
+       public int? trainee_tests(Trainee trainee)
+        { return null; }
+      public  bool? pass(Trainee trainee)
+        { return null ; }
+      public List<Test> test_on_date(DateTime date)
+        { return null; }
     }
 }

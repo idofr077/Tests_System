@@ -20,6 +20,13 @@ namespace BL
         List<Tester> all_tester();
         List<Trainee> all_trainee();
         List<Test> all_test();
+        List<Tester> testers_area(Address address);
+        List<Tester> tester_time(DateTime dateAndHour);
+        List<Test> find_all_tests(Predicate<Test> cond);
+        int trainee_tests(Trainee trainee);
+        bool pass(Trainee trainee);
+        List <Test> test_on_date (DateTime date);
         
     }
+
 }

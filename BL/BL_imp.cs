@@ -171,7 +171,7 @@ namespace BL
 
             return testers.ToList();
 
-        }
+        }//
         public List<Test> find_all_tests(Predicate<Test> cond)
         { return null; }
         public int? trainee_tests(Trainee trainee)

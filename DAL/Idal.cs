@@ -27,7 +27,8 @@ namespace DAL
         Tester tester_by_id(int id); //Search a cpecific tester by an ID number.
         Trainee trainee_by_id(int id); //Search a cpecific trainee by an ID number.
         Test test_by_id(int id);
-        
+        int num_test(Trainee trainee);
+        bool is_tester_available(DateTime date_and_hour, int _testser_id);
         
     }
 }

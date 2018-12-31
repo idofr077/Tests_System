@@ -26,10 +26,10 @@ namespace BL
         int? trainee_tests(Trainee trainee);
         bool? pass(Trainee trainee);
         List <Test> test_on_date (DateTime date);
-        IOrderedEnumerable<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort);
-        IOrderedEnumerable<IGrouping<string, Trainee>> by_school(bool sort);
-        IOrderedEnumerable<IGrouping<string, Trainee>> by_teacher(bool sort);
-        IOrderedEnumerable<IGrouping<int, Trainee>> by_tests_num(bool sort);
+        List<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort);
+        List<IGrouping<string, Trainee>> by_school(bool sort);
+        List<IGrouping<string, Trainee>> by_teacher(bool sort);
+        List<IGrouping<int, Trainee>> by_tests_num(bool sort);
         }
 
 }

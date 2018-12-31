@@ -77,13 +77,13 @@ namespace BL
             Tester tester = effector.tester_by_id(_id_tester);
             if (_dateAndHour.Hour < 9 || _dateAndHour.Hour > 15)
                 throw new Exception("the official time of  tests is only from 9 am to 3 pm.");
-            if (!effector.is_tester_available(_dateAndHour,_id_tester))
+            if (!effector.is_tester_available(_dateAndHour, _id_tester))
                 throw new Exception("the tester is not available in this date and hour.");
             if (trainee.num_of_lessons <= 20)
                 throw new Exception("Trainee must do at least 20 lessons");
             if ((DateTime.Now - trainee.LastTest).Days < 7)
                 throw new Exception("must pass 7 days after the previous test");
-      
+
             if (trainee.waiting_for_test)
                 throw new Exception("you already Registered for a test.");
             if (trainee.learn_vehicle != tester.tester_expertice)
@@ -175,9 +175,9 @@ namespace BL
         }
         public List<Tester> tester_time(DateTime dateAndHour)
         {
-            IEnumerable<Tester> testers= from t in effector.all_tester()
-            where effector.is_tester_available(dateAndHour, t.id)
-            select t;
+            IEnumerable<Tester> testers = from t in effector.all_tester()
+                                          where effector.is_tester_available(dateAndHour, t.id)
+                                          select t;
 
             return testers.ToList();
 
@@ -201,78 +201,79 @@ namespace BL
                                      select item;
             return list.ToList<Test>();
         }
-        public IOrderedEnumerable<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort)
+        public List<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort)
         {
-            IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_group;
             if (sort)
             {
-                tester_group = from t in effector.all_tester()
-                               group t by t.tester_expertice into new_group
-                               orderby new_group.Key
-                               select new_group;
+                IEnumerable<IGrouping<vehicle, Tester>> tester_group = from t in effector.all_tester()
+                                                                       orderby t.last_name
+                                                                       group t by t.tester_expertice into new_group
+                                                                       select new_group;
+                return tester_group.ToList();
             }
             else
             {
-                tester_group = from t in effector.all_tester()
-                               group t by t.tester_expertice into new_group
-                               select new_group;
-            }
-            return tester_group;
-            
-        }
-        public IOrderedEnumerable<IGrouping<string, Trainee>> by_school(bool sort)
-        {
-            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group;
-            if (sort)
-            {
-                trainee_group = from t in effector.all_trainee()
-                                group t by t.school into new_group
-                                orderby new_group.Key
-                                select new_group;
-            }
-            else
-            {
-                trainee_group = from t in effector.all_trainee()
-                                group t by t.school into new_group
-                                select new_group;
+                IEnumerable<IGrouping<vehicle, Tester>> tester_group = from t in effector.all_tester()
+                                                                       group t by t.tester_expertice into new_group
+                                                                       select new_group;
+                return tester_group.ToList();
             }
 
-            return trainee_group;
         }
-        public IOrderedEnumerable<IGrouping<string, Trainee>> by_teacher(bool sort)
+        public List<IGrouping<string, Trainee>> by_school(bool sort)
         {
-            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group;
             if (sort)
             {
-                trainee_group = from t in effector.all_trainee()
-                                group t by t.teacher_name into new_group
-                                orderby new_group.Key
-                                select new_group;
-            }
-            {
-                trainee_group = from t in effector.all_trainee()
-                                group t by t.teacher_name into new_group
-                                select new_group;
-            }
-            return trainee_group;
-        }
-        public IOrderedEnumerable<IGrouping<int, Trainee>> by_tests_num(bool sort)
-        {
-            IOrderedEnumerable<IGrouping<int, Trainee>> trainee_group;
-            if (sort)
-            {
-                trainee_group = from t in effector.all_trainee()
-                                group t by t.num_of_test into new_group
-                                orderby new_group.Key
-                                select new_group;
+                IEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
+                                                                        orderby t.last_name
+                                                                        group t by t.school into new_group
+                                                                        select new_group;
+                return trainee_group.ToList();
             }
             else
             {
-                trainee_group = from t in effector.all_trainee()
-                                group t by t.num_of_test into new_group
-                                select new_group;
+                IEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
+                                                                        group t by t.school into new_group
+                                                                        select new_group;
+                return trainee_group.ToList();
             }
-            return trainee_group;
         }
-    }///
+        public List<IGrouping<string, Trainee>> by_teacher(bool sort)
+        {
+            if (sort)
+            {
+                IEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
+                                                                        orderby t.last_name
+                                                                        group t by t.teacher_name into new_group
+                                                                        select new_group;
+                return trainee_group.ToList();
+            }
+            else
+            {
+                IEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()                                                                       
+                                                                        group t by t.teacher_name into new_group
+                                                                        select new_group;
+                return trainee_group.ToList();
+
+            }
+        }
+        public List<IGrouping<int, Trainee>> by_tests_num(bool sort)
+        {
+            if (sort)
+            {
+                IEnumerable<IGrouping<int, Trainee>> trainee_group = from t in effector.all_trainee()
+                                                                     orderby t.last_name
+                                                                     group t by t.num_of_test into new_group
+                                                                     select new_group;
+                return trainee_group.ToList();
+            }
+            else
+            {
+                IEnumerable<IGrouping<int, Trainee>> trainee_group = from t in effector.all_trainee()
+                                                                     group t by t.num_of_test into new_group
+                                                                     select new_group;
+                return trainee_group.ToList();
+            }
+        }
+    }
 }

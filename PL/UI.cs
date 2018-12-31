@@ -108,7 +108,7 @@ namespace SimpleUI
                             int max_way = int.Parse(Console.ReadLine());
 
                             bl.add_tester(id, last_name, first_name, date_of_birth, Gender, phone, address, expirence, max_test_per_week, tester_expertise, work_time, max_way);
-                        }
+                        }//
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");

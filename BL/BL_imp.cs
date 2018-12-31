@@ -203,36 +203,76 @@ namespace BL
         }
         public IOrderedEnumerable<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort)
         {
-
-            IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_group = from t in effector.all_tester()
-                                                                          group t by t.tester_expertice into new_group
-                                                                          orderby new_group.Key
-                                                                          select new_group;
+            IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_group;
+            if (sort)
+            {
+                tester_group = from t in effector.all_tester()
+                               group t by t.tester_expertice into new_group
+                               orderby new_group.Key
+                               select new_group;
+            }
+            else
+            {
+                tester_group = from t in effector.all_tester()
+                               group t by t.tester_expertice into new_group
+                               select new_group;
+            }
             return tester_group;
+            
         }
         public IOrderedEnumerable<IGrouping<string, Trainee>> by_school(bool sort)
         {
-            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
-                                                                           group t by t.school into new_group
-                                                                           orderby new_group.Key
-                                                                           select new_group;
+            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group;
+            if (sort)
+            {
+                trainee_group = from t in effector.all_trainee()
+                                group t by t.school into new_group
+                                orderby new_group.Key
+                                select new_group;
+            }
+            else
+            {
+                trainee_group = from t in effector.all_trainee()
+                                group t by t.school into new_group
+                                select new_group;
+            }
+
             return trainee_group;
         }
         public IOrderedEnumerable<IGrouping<string, Trainee>> by_teacher(bool sort)
         {
-            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
-                                                                           group t by t.teacher_name into new_group
-                                                                           orderby new_group.Key
-                                                                           select new_group;
+            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group;
+            if (sort)
+            {
+                trainee_group = from t in effector.all_trainee()
+                                group t by t.teacher_name into new_group
+                                orderby new_group.Key
+                                select new_group;
+            }
+            {
+                trainee_group = from t in effector.all_trainee()
+                                group t by t.teacher_name into new_group
+                                select new_group;
+            }
             return trainee_group;
         }
         public IOrderedEnumerable<IGrouping<int, Trainee>> by_tests_num(bool sort)
         {
-            IOrderedEnumerable<IGrouping<int, Trainee>> trainee_group = from t in effector.all_trainee()
-                                                                        group t by t.num_of_test into new_group
-                                                                        orderby new_group.Key
-                                                                        select new_group;
+            IOrderedEnumerable<IGrouping<int, Trainee>> trainee_group;
+            if (sort)
+            {
+                trainee_group = from t in effector.all_trainee()
+                                group t by t.num_of_test into new_group
+                                orderby new_group.Key
+                                select new_group;
+            }
+            else
+            {
+                trainee_group = from t in effector.all_trainee()
+                                group t by t.num_of_test into new_group
+                                select new_group;
+            }
             return trainee_group;
         }
-    }//
+    }
 }

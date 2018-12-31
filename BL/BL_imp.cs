@@ -94,6 +94,14 @@ namespace BL
             if (test_on_week.Count() >= tester.max_testPerWeek)
                 throw new Exception("the tester fill  his tests for week amount");
 
+            bool flag = false;
+            for (int i = 0; i < trainee.num_of_licenses; i++)
+            {
+                if (tester.tester_expertice == trainee.license[i])
+                    flag = true;
+            }
+            if (flag)
+                throw new Exception("the trainee had already license for this type of vehicle");
 
             trainee.waiting_for_test = true;
             effector.add_test(_id_tester, _id_trainee, _dateAndHour, _address);
@@ -171,7 +179,7 @@ namespace BL
                                      select item;
             return list.ToList<Test>();
         }
-        public IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_expertice(bool sort)
+        public IOrderedEnumerable<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort)
         {
 
             IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_group = from t in effector.all_tester()
@@ -180,7 +188,7 @@ namespace BL
                                                                            select new_group;
             return tester_group;
         }
-        public IOrderedEnumerable<IGrouping<string, Trainee>> school(bool sort)
+        public IOrderedEnumerable<IGrouping<string, Trainee>> by_school(bool sort)
         {
             IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
                                         group t by t.school into new_group
@@ -188,7 +196,7 @@ namespace BL
                                         select new_group;
             return trainee_group;
         }
-        public IOrderedEnumerable<IGrouping<string, Trainee>> teacher(bool sort)
+        public IOrderedEnumerable<IGrouping<string, Trainee>> by_teacher(bool sort)
         {
             IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group=from t in effector.all_trainee()
                                         group t by t.teacher_name into new_group
@@ -196,7 +204,7 @@ namespace BL
                                         select new_group;
             return trainee_group;
         }
-        public  IOrderedEnumerable<IGrouping<int, Trainee>> tests_num(bool sort)
+        public  IOrderedEnumerable<IGrouping<int, Trainee>> by_tests_num(bool sort)
         {
             IOrderedEnumerable<IGrouping<int, Trainee>> trainee_group= from t in effector.all_trainee()
                                         group t by t.num_of_test into new_group

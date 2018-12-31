@@ -27,5 +27,7 @@ namespace DAL
         Tester tester_by_id(int id); //Search a cpecific tester by an ID number.
         Trainee trainee_by_id(int id); //Search a cpecific trainee by an ID number.
         Test test_by_id(int id);
+        
+        
     }
 }

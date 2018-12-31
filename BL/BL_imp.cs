@@ -162,7 +162,7 @@ namespace BL
         public int? trainee_tests(Trainee trainee)
         { return trainee.num_of_test; }
         public bool? pass(Trainee trainee)
-        { return null; }
+        { return effector.have_licenes_by_id(trainee.id); }
         public List<Test> test_on_date(DateTime date)
         {
             IEnumerable<Test> list = from item in all_test()

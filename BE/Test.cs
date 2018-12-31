@@ -30,12 +30,13 @@ namespace BE
             date=test.date;
             date_and_hour=test.date_and_hour;
             address=test.address;
-            distance = null;
-            reverse = null;
-            mirrors = null;
-            signals = null;
-            crosswalk = null;
-            mention= null;
+            distance = test.distance;
+            reverse = test.reverse;
+            mirrors = test.signals;
+            signals = test.signals;
+            crosswalk = test.crosswalk;
+            mention= test.mention;
+            grade = test.grade;
         }
 
         public Test(int id, int id_tester, int id_trainee, DateTime date, DateTime date_and_hour, Address address)

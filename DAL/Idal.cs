@@ -10,6 +10,7 @@ namespace DAL
 {
     public interface Idal
     {
+        bool have_licenes_by_id(int _id);
         void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time,int _max_way);
         void remove_tester(int _id);
         void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise);

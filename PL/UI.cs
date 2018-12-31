@@ -372,7 +372,7 @@ namespace SimpleUI
                         {
                             Console.WriteLine("enter trainee's id");
                             int id = int.Parse(Console.ReadLine());
-                            bl.trainee_tests(id);
+                            Console.WriteLine(bl.trainee_tests(id)); 
                             
                         }
                         catch (Exception e)
@@ -385,7 +385,7 @@ namespace SimpleUI
                         {
                             Console.WriteLine("enter trainee's id");
                             int id = int.Parse(Console.ReadLine());
-                            bl.pass(id);
+                            Console.WriteLine(bl.pass(id)); 
                         }
                         catch (Exception e)
                         {
@@ -397,7 +397,7 @@ namespace SimpleUI
                         {
                             Console.WriteLine("enter a date:(dd//mm/yy)");
                             DateTime date = DateTime.Parse(Console.ReadLine());
-                            bl.test_on_date(date);
+                            Console.WriteLine(bl.test_on_date(date)); 
                         }
                         catch (Exception e)
                         {

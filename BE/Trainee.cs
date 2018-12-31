@@ -22,7 +22,8 @@ namespace BE
         DateTime lastTest;
         vehicle [] _license;
         bool _waiting_for_test=false;
-        int _num_of_test = 0;
+        int _num_of_test =0;
+        int _num_of_licenses = 0;
 
         //C_Tors:
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, long phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
@@ -39,7 +40,11 @@ namespace BE
             this.school = school;
             this.teacher_name = teacher_name;
             this.numOfLessons = numOfLessons;
+            license = new vehicle[4];
+            this.num_of_licenses = num_of_licenses;
         }
+     
+
         public Trainee(Trainee Temp)
         {
             _id = Temp.id;
@@ -53,9 +58,16 @@ namespace BE
             _school = Temp.school;
             _teacher_name = Temp.teacher_name;
             numOfLessons = Temp.numOfLessons;
+            license = Temp.license;
+            
         }
 
         //Properties:
+        public int num_of_licenses
+        {
+            get { return _num_of_licenses; }
+            set { _num_of_licenses = value; }
+        }
         public bool waiting_for_test
         {
             get {return _waiting_for_test; }
@@ -134,7 +146,10 @@ namespace BE
             get { return _license; }
             set { _license = value; }
         }
-        public int num_of_test { get { return _num_of_test; } set { _num_of_test++; } }
+        
+
+        public int num_of_test { get => _num_of_test; set => _num_of_test = value; }
+
         // ToString
         public override string ToString()
         {

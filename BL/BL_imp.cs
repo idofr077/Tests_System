@@ -129,13 +129,9 @@ namespace BL
             if (string.IsNullOrEmpty(mention))
                 throw new Exception("tester must put mention");
 
-            for (int i = 0; i < 4; i++)
-            {
-                if (trainee.license[i] == tester.tester_expertice)
-                    throw new Exception("alredy have license to this vehicle");
-            }
-
+       
             
+
 
             effector.update_test(id, id_trainee, distance, reverse, mirrors, signals, crosswalk, grade, mention);
             trainee.waiting_for_test = false;
@@ -157,7 +153,7 @@ namespace BL
         }
 
         //Function that we were asked to set but wil only be written at stage three.
-        public List<Tester> testers_area(Address address)
+        public List<Tester> testers_area(Address address,int x)
         { return null; }
         public List<Tester> tester_time(DateTime dateAndHour)
         { return null; }
@@ -169,7 +165,11 @@ namespace BL
         { return null; }
         public List<Test> test_on_date(DateTime date)
         {
-            return null;
+            IEnumerable<Test> list = from item in all_test()
+                                     orderby item.id
+                                     where item.date == date.Date
+                                     select item;
+            return list.ToList<Test>();
         }
         public IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_expertice(bool sort)
         {

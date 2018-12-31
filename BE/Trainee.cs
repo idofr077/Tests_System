@@ -146,11 +146,8 @@ namespace BE
             get { return _license; }
             set { _license = value; }
         }
-        
 
         public int num_of_test { get => _num_of_test; set => _num_of_test = value; }
-
-        // ToString
         public override string ToString()
         {
             return first_name + " " + last_name + "/n" + id + "/n" + date_of_birth + "/n" + Gender + "/n" + phone + "/n" + address + "/n" + school + "/n" + teacher_name + "/n";

@@ -157,14 +157,14 @@ namespace BL
         }
 
         //Function that we were asked to set but wil only be written at stage three.
-        public List<Tester> testers_area(Address address)
+        public List<Tester> testers_area(Address address, int x)
         { return null; }
         public List<Tester> tester_time(DateTime dateAndHour)
         { return null; }
         public List<Test> find_all_tests(Predicate<Test> cond)
         { return null; }
         public int? trainee_tests(Trainee trainee)
-        { return null; }
+        { return trainee.num_of_test; }
         public bool? pass(Trainee trainee)
         { return null; }
         public List<Test> test_on_date(DateTime date)

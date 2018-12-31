@@ -134,7 +134,7 @@ namespace BE
             get { return _license; }
             set { _license = value; }
         }
-        public int num_of_test { get { return _num_of_test; } set { _num_of_test++; } }
+       
         // ToString
         public override string ToString()
         {

@@ -190,7 +190,7 @@ namespace SimpleUI
                             string street = Console.ReadLine();
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
-                            Console.WriteLine("enter distance");
+                            Console.WriteLine("entr distance");
                             int x = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
                             Console.WriteLine("which vehicle the trainee learn?");

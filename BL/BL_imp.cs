@@ -274,5 +274,5 @@ namespace BL
             }
             return trainee_group;
         }
-    }/////
+    }///
 }

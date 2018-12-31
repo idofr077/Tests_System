@@ -75,12 +75,15 @@ namespace BL
 
             Trainee trainee = effector.trainee_by_id(_id_trainee);
             Tester tester = effector.tester_by_id(_id_tester);
+            if (_dateAndHour.Hour < 9 || _dateAndHour.Hour > 15)
+                throw new Exception("the official time of  tests is only from 9 am to 3 pm.");
+            if (!effector.is_tester_available(_dateAndHour,_id_tester))
+                throw new Exception("the tester is not available in this date and hour.");
             if (trainee.numOfLessons <= 20)
                 throw new Exception("Trainee must do at least 20 lessons");
             if ((DateTime.Now - trainee.LastTest).Days < 7)
                 throw new Exception("must pass 7 days after the previous test");
-            if (_dateAndHour.Hour < 9 || _dateAndHour.Hour > 15)
-                throw new Exception("the official time of  tests is only from 9 am to 3 pm.");
+      
             if (trainee.waiting_for_test)
                 throw new Exception("you already Registered for a test.");
             if (trainee.learn_vehicle != tester.tester_expertice)

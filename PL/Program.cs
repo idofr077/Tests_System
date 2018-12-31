@@ -99,7 +99,7 @@ namespace PL
             }
             while (num != 0);
         }
-
+        //
         private static void GetTraineseByNumOfTesters()
         {
             foreach (IGrouping<int, Trainee> group in bl.GetTraineseByNumOfTesters(true))

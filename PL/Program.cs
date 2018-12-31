@@ -51,6 +51,28 @@ namespace PL
             {
                 Console.WriteLine(run.test_on_date(new DateTime(2019, 1, 1))[i]);
             }
+            for (int i = 0; i < run.all_trainee().Count; i++)
+            {
+                Console.WriteLine(run.all_trainee()[i]);
+            }
+            run.remove_trainee(21167752);
+                        for (int i = 0; i < run.all_trainee().Count; i++)
+            {
+                Console.WriteLine(run.all_trainee()[i]);
+            }
+            for (int i = 0; i < run.all_tester().Count; i++)
+            {
+                Console.WriteLine(run.all_tester()[i]);
+            }
+            for (int i = 0; i < run.all_test().Count; i++)
+            {
+                Console.WriteLine(run.all_test()[i]);
+            }
+            for (int i = 0; i < run.testers_area(new Address("zimbabue", 19, "moon"),50).Count; i++)
+            {
+                Console.WriteLine(run.testers_area(new Address("zimbabue", 19, "moon"), 50)[i]);
+            }
+
         }
     }
 }

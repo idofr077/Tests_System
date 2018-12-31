@@ -29,7 +29,7 @@ namespace BE
         //ToString
         public override string ToString()
         {
-            return first_name + " " + last_name + "/n" + id + "/n" + date_of_birth + "/n" + Gender + "/n" + phone + "/n" + address + "/n" + expirence + "/n";
+            return first_name + " " + last_name + "\n" + id + "\n" + date_of_birth + "\n" + Gender + "\n" + phone + "\n" + address + "\n" + expirence + "\n";
         }
         //Properties:
         public int id

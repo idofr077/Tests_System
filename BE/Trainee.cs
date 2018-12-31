@@ -24,9 +24,10 @@ namespace BE
         bool _waiting_for_test=false;
         int _num_of_test =0;
         int _num_of_licenses = 0;
+        int _num_of_lessons;
         bool _have_licenses = false;
         //C_Tors:
-        public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, long phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
+        public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, long phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int num_of_lessons)
         {
             this.id = id;
             this.last_name = last_name;
@@ -39,7 +40,7 @@ namespace BE
             this.gearbox = gearbox;
             this.school = school;
             this.teacher_name = teacher_name;
-            this.numOfLessons = numOfLessons;
+            this.num_of_lessons = num_of_lessons;
             license = new vehicle[4];
             this.num_of_licenses = num_of_licenses;
         }
@@ -64,6 +65,7 @@ namespace BE
              num_of_test = Temp.num_of_test;
              num_of_licenses = Temp._num_of_licenses;
             have_licenses = Temp.have_licenses;
+            num_of_lessons = Temp.num_of_lessons;
         }
 
         //Properties:
@@ -144,7 +146,7 @@ namespace BE
             set { _teacher_name = value; }
             get { return _teacher_name; }
         }
-        public int numOfLessons { set; get; }
+        public int num_of_lessons { set { _num_of_lessons = value; } get { return _num_of_lessons; } }
         public DateTime LastTest { get => lastTest; set => lastTest = value; }
         public vehicle[] license
         {
@@ -157,7 +159,7 @@ namespace BE
 
         public override string ToString()
         {
-            return first_name + " " + last_name + "/n" + id + "/n" + date_of_birth + "/n" + Gender + "/n" + phone + "/n" + address + "/n" + school + "/n" + teacher_name + "/n";
+            return first_name + " " + last_name + "\n" + id + "\n" + date_of_birth + "\n" + Gender + "\n" +"0" +phone + "\n" + address + "\n" + school + "\n" + teacher_name + "\n";
         }
     }
 }

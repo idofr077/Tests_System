@@ -18,5 +18,9 @@ namespace BE  // a class to set adresses.
             this.num = num;
             this.city = city;
         }
+        public override string ToString()
+        {
+            return street + " " + num + " " + city;
+        }
     }
 }

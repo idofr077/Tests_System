@@ -189,7 +189,7 @@ namespace DAL
             Temp.gearbox = _gearbox;
             Temp.school = _school;
             Temp.teacher_name = _teacher_name;
-            Temp.numOfLessons = _numOfLessons;
+            Temp.num_of_lessons = _numOfLessons;
         }
 
         //done

@@ -164,11 +164,18 @@ namespace BL
         public List<Tester> testers_area(Address address, int x)
         { return null; }
         public List<Tester> tester_time(DateTime dateAndHour)
-        { return null; }
+        {
+            IEnumerable<Tester> testers= from t in effector.all_tester()
+            where effector.is_tester_available(dateAndHour, t.id)
+            select t;
+
+            return testers.ToList();
+
+        }
         public List<Test> find_all_tests(Predicate<Test> cond)
         { return null; }
         public int? trainee_tests(Trainee trainee)
-        { return trainee.num_of_test; }
+        { return effector.num_test(trainee); }
         public bool? pass(Trainee trainee)
         { return effector.have_licenes_by_id(trainee.id); }
         public List<Test> test_on_date(DateTime date)

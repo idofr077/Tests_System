@@ -8,11 +8,11 @@ using DS;
 
 namespace DAL
 {
-  public  class Dal_imp : Idal
+    public class Dal_imp : Idal
     {
-        DataSource DS= new DataSource();
+        DataSource DS = new DataSource();
         //done
-       public bool have_licenes_by_id(int _id)
+        public bool have_licenes_by_id(int _id)
         {
             Trainee trainee = trainee_by_id(_id);
             return trainee.have_licenses;
@@ -56,7 +56,7 @@ namespace DAL
             }
             return false;
         }
-        public void add_test( int _id_tester, int _id_trainee, DateTime _date, Address _address)
+        public void add_test(int _id_tester, int _id_trainee, DateTime _date, Address _address)
         {
             if (!DataSource.Trainees.Exists(x => x.id.CompareTo(_id_trainee) == 0))
             {
@@ -77,37 +77,37 @@ namespace DAL
             trainee.LastTest = _date;
             Tester tester = DataSource.testers.Find(x => x.id.CompareTo(_id_tester) == 0);
             tester.Tests_Determined.Add(_date);
-            
+
         }
-        
-        public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time,int _max_way)
+
+        public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
         {
-           
-            if ( DataSource.testers.Exists(x => x.id.CompareTo(_id) == 0))
-                {
-                    throw new Exception("the id is already in use");
-                }
-            Tester temp = new Tester( _id,  _lastname,  _firstname,  _date_of_birth,  _Gender,  _phone,  _address,  _expirence,  _max_testPerWeek,  _tester_expertise,_work_time,  _max_way);
-          
+
+            if (DataSource.testers.Exists(x => x.id.CompareTo(_id) == 0))
+            {
+                throw new Exception("the id is already in use");
+            }
+            Tester temp = new Tester(_id, _lastname, _firstname, _date_of_birth, _Gender, _phone, _address, _expirence, _max_testPerWeek, _tester_expertise, _work_time, _max_way);
+
             DataSource.testers.Add(temp);
         }
 
         public void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
         {
-           
-            
-                if (DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
-                {
-                    throw new Exception("the id is already in use");
-                }
-            
+
+
+            if (DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
+            {
+                throw new Exception("the id is already in use");
+            }
+
             Trainee Temp = new Trainee(_id, _last_name, _first_name, _date_of_birth, _Gender, _phone, _address, _learn_vehicle, _gearbox, _school, _teacher_name, _numOfLessons);
             DataSource.Trainees.Add(Temp);
         }
 
         public List<Test> all_test()
-        { 
-            var temp = from  item in DataSource.Tests
+        {
+            var temp = from item in DataSource.Tests
                        where true
                        select new Test(item);
             return temp.ToList<Test>();
@@ -141,13 +141,13 @@ namespace DAL
 
         public void remove_trainee(int _id)
         {
-         
+
             if (!DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
             {
                 throw new Exception("the id is not exsits");
             }
-            
-           
+
+
             Trainee temp = DataSource.Trainees.Find(x => x.id.CompareTo(_id) == 0);
             DataSource.Trainees.Remove(temp);
         }
@@ -193,7 +193,7 @@ namespace DAL
         }
 
         //done
-        public void update_test(int _id,int _id_trainee, bool? _distance, bool? _reverse, bool? _mirrors, bool? _signals,bool? _crosswalk, bool? _grade, string _mention)
+        public void update_test(int _id, int _id_trainee, bool? _distance, bool? _reverse, bool? _mirrors, bool? _signals, bool? _crosswalk, bool? _grade, string _mention)
         {
             if (!DataSource.Tests.Exists(x => x.id.CompareTo(_id) == 0))
             {
@@ -216,5 +216,23 @@ namespace DAL
                 temp2.num_of_licenses++;
             }
         }
-    }////       
+       public int num_test(Trainee trainee)
+        {
+            return trainee.num_of_test;
+        }
+      public  bool is_tester_available(DateTime date_and_hour, int _testser_id)
+        {
+            Tester tester = tester_by_id(_testser_id);
+            for (int i = 0; i < tester.Tests_Determined.Count; i++)
+            {
+                if (tester.Tests_Determined[i] == date_and_hour)
+                    return false;
+            }
+            if (!((int)date_and_hour.DayOfWeek < 5 && (date_and_hour.Hour < 15) && date_and_hour.Hour > 9))
+                return false;
+            if (tester.work_time[(int)date_and_hour.DayOfWeek, date_and_hour.Hour - 9])
+                return true;
+            return true;
+        }
+    }
 }

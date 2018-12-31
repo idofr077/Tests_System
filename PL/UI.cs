@@ -56,8 +56,6 @@ namespace SimpleUI
                             string street = Console.ReadLine();
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
-                            Console.WriteLine("enter distance");
-                            int x = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
                             Console.WriteLine("which vehicle the trainee learn?");
                             string _learn_vehicle=Console.ReadLine();
@@ -101,8 +99,6 @@ namespace SimpleUI
                             string street = Console.ReadLine();
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
-                            Console.WriteLine("enter distance");
-                            int x = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
                             Console.WriteLine("how many expirence the tester have?");
                             float expirence=float.Parse(Console.ReadLine());
@@ -151,8 +147,6 @@ namespace SimpleUI
                             string street = Console.ReadLine();
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
-                            Console.WriteLine("enter distance");
-                            int x = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
                             bl.add_test(teseter_id, trainee_id, temp, address);
                         }
@@ -184,8 +178,6 @@ namespace SimpleUI
                             string street = Console.ReadLine();
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
-                            Console.WriteLine("enter distance");
-                            int x = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
                             Console.WriteLine("which vehicle the trainee learn?");
                             string _learn_vehicle = Console.ReadLine();
@@ -229,8 +221,6 @@ namespace SimpleUI
                             string street = Console.ReadLine();
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
-                            Console.WriteLine("enter distance");
-                            int x = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
                             Console.WriteLine("how many expirence the tester have?");
                             float expirence = float.Parse(Console.ReadLine());

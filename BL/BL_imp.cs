@@ -80,7 +80,7 @@ namespace BL
             if ((DateTime.Now - trainee.LastTest).Days < 7)
                 throw new Exception("must pass 7 days after the previous test");
             if (_dateAndHour.Hour < 9 || _dateAndHour.Hour > 15)
-                throw new Exception("the official time of the test is only from 9 am to 3 pm.");
+                throw new Exception("the official time of  tests is only from 9 am to 3 pm.");
             if (trainee.waiting_for_test)
                 throw new Exception("you already Registered for a test.");
             if (trainee.learn_vehicle != tester.tester_expertice)
@@ -117,28 +117,28 @@ namespace BL
             Trainee trainee = effector.trainee_by_id(temp.id_trainee);
             Tester tester = effector.tester_by_id(temp.id_tester);
 
-            if(null==distance)
+            if (null == distance)
                 throw new Exception("tester must put value to distance");
 
-            if (null==reverse)
+            if (null == reverse)
                 throw new Exception("tester must put value to reverse");
 
-            if (null==mirrors)
+            if (null == mirrors)
                 throw new Exception("tester must put value to mirrors");
 
-            if (null==signals)
+            if (null == signals)
                 throw new Exception("tester must put value to signals");
 
-            if (null==crosswalk)
+            if (null == crosswalk)
                 throw new Exception("tester must put value to crosswalk");
-            
-            if (null==grade)
+
+            if (null == grade)
                 throw new Exception("tester must put value to grade");
             if (string.IsNullOrEmpty(mention))
                 throw new Exception("tester must put mention");
 
-       
-            
+
+
 
 
             effector.update_test(id, id_trainee, distance, reverse, mirrors, signals, crosswalk, grade, mention);
@@ -160,13 +160,25 @@ namespace BL
             return effector.all_test();
         }
 
-        //Function that we were asked to set but wil only be written at stage three.
         public List<Tester> testers_area(Address address, int x)
-        { return null; }
+        {
+            Random r = new Random();
+
+            IEnumerable<Tester> testers = from item in all_tester()
+                                          let y = r.Next(2 * x)
+                                          where y < x
+                                          select item;
+            return testers.ToList();
+        }
         public List<Tester> tester_time(DateTime dateAndHour)
         { return null; }
         public List<Test> find_all_tests(Predicate<Test> cond)
-        { return null; }
+        {
+            IEnumerable<Test> tests = from item in all_test()
+                                      where cond(item)
+                                      select item;
+            return tests.ToList();
+        }
         public int? trainee_tests(Trainee trainee)
         { return trainee.num_of_test; }
         public bool? pass(Trainee trainee)
@@ -183,33 +195,33 @@ namespace BL
         {
 
             IOrderedEnumerable<IGrouping<vehicle, Tester>> tester_group = from t in effector.all_tester()
-                                                                           group t by t.tester_expertice into new_group
-                                                                           orderby new_group.Key
-                                                                           select new_group;
+                                                                          group t by t.tester_expertice into new_group
+                                                                          orderby new_group.Key
+                                                                          select new_group;
             return tester_group;
         }
         public IOrderedEnumerable<IGrouping<string, Trainee>> by_school(bool sort)
         {
             IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
-                                        group t by t.school into new_group
-                                        orderby new_group.Key
-                                        select new_group;
+                                                                           group t by t.school into new_group
+                                                                           orderby new_group.Key
+                                                                           select new_group;
             return trainee_group;
         }
         public IOrderedEnumerable<IGrouping<string, Trainee>> by_teacher(bool sort)
         {
-            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group=from t in effector.all_trainee()
-                                        group t by t.teacher_name into new_group
-                                        orderby new_group.Key
-                                        select new_group;
+            IOrderedEnumerable<IGrouping<string, Trainee>> trainee_group = from t in effector.all_trainee()
+                                                                           group t by t.teacher_name into new_group
+                                                                           orderby new_group.Key
+                                                                           select new_group;
             return trainee_group;
         }
-        public  IOrderedEnumerable<IGrouping<int, Trainee>> by_tests_num(bool sort)
+        public IOrderedEnumerable<IGrouping<int, Trainee>> by_tests_num(bool sort)
         {
-            IOrderedEnumerable<IGrouping<int, Trainee>> trainee_group= from t in effector.all_trainee()
-                                        group t by t.num_of_test into new_group
-                                        orderby new_group.Key
-                                        select new_group;
+            IOrderedEnumerable<IGrouping<int, Trainee>> trainee_group = from t in effector.all_trainee()
+                                                                        group t by t.num_of_test into new_group
+                                                                        orderby new_group.Key
+                                                                        select new_group;
             return trainee_group;
         }
     }//

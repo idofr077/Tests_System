@@ -63,19 +63,18 @@ namespace SimpleUI
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
-                            Console.WriteLine("which vehicle the trainee learn?");
+                            Console.WriteLine("which vehicle the trainee learn?(private_vehicle,two_weels_vehicle,medium_track, heavy_track)");
                             string _learn_vehicle=Console.ReadLine();
                             vehicle learn_vehicle = (vehicle)Enum.Parse(typeof(vehicle), _learn_vehicle);
                             Console.WriteLine("what kind of gearbox? (auto or manual ");
                             string _gearbox=Console.ReadLine();
-                            kind_of_gearbox gearbox = (kind_of_gearbox)Enum.Parse(typeof(kind_of_gearbox), _Gender);
+                            kind_of_gearbox gearbox = (kind_of_gearbox)Enum.Parse(typeof(kind_of_gearbox), _gearbox);
                             Console.WriteLine("enter trainee's school:");
                             string school= Console.ReadLine();
                             Console.WriteLine("enter trainee's teacher name:");
                             string teacher_name=Console.ReadLine();
                             Console.WriteLine("how many lessons the trainee did?");
                             int num_of_lessons=int.Parse(Console.ReadLine());
-
                             bl.add_trainee(id, last_name, first_name, date_of_birth, Gender, phone, address, learn_vehicle, gearbox, school, teacher_name, num_of_lessons);
                         }
                         catch(Exception e)
@@ -185,12 +184,12 @@ namespace SimpleUI
                             Console.WriteLine("enter house number");
                             int house_number = int.Parse(Console.ReadLine());
                             Address address = new Address(street, house_number, city);
-                            Console.WriteLine("which vehicle the trainee learn?");
+                            Console.WriteLine("which vehicle the trainee learn?(private_vehicle,two_weels_vehicle,medium_track, heavy_track)");
                             string _learn_vehicle = Console.ReadLine();
                             vehicle learn_vehicle = (vehicle)Enum.Parse(typeof(vehicle), _learn_vehicle);
-                            Console.WriteLine("what kind of gearbox? (auto or manual ");
+                            Console.WriteLine("what kind of gearbox? (auto or manual )");
                             string _gearbox = Console.ReadLine();
-                            kind_of_gearbox gearbox = (kind_of_gearbox)Enum.Parse(typeof(kind_of_gearbox), _Gender);
+                            kind_of_gearbox gearbox = (kind_of_gearbox)Enum.Parse(typeof(kind_of_gearbox), _gearbox);
                             Console.WriteLine("enter trainee's school:");
                             string school = Console.ReadLine();
                             Console.WriteLine("enter trainee's teacher name:");

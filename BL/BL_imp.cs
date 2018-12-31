@@ -45,7 +45,7 @@ namespace BL
         {
             TimeSpan Temp;
             Temp = DateTime.Now - _date_of_birth;
-            if (Temp.Days / 365 <= 18)
+            if (Temp.Days / 365 < 18)
             {
                 throw new Exception("Trainee must be  at least 18 years old.");
             }

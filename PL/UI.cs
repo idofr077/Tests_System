@@ -42,7 +42,7 @@ namespace SimpleUI
                             string last_name = Console.ReadLine();
                             Console.WriteLine("enter trainee's first name:");
                             string first_name = Console.ReadLine();
-                            Console.WriteLine("enter trainee's date of birth:");
+                            Console.WriteLine("enter trainee's date of birth:(dd/mm/yy)");
                             DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
                             Console.WriteLine("enter trainee's gender:");
                             gender Gender = Enum.Parse(gender,);
@@ -80,7 +80,9 @@ namespace SimpleUI
                             Console.WriteLine("enter tester's date of birth:");
                             DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
                             Console.WriteLine("enter tester's gender:");
-                            gender Gender = Console.ReadLine();
+                            string _gender = Console.ReadLine();
+                            gender fdsfs = gender.
+                            gender Gender = gender.Parse(gender,_gender);
                             Console.WriteLine("enter tester's phone number:");
                             long phone = long.Parse(Console.ReadLine());
                             Console.WriteLine("enter tester's address:");
@@ -91,10 +93,21 @@ namespace SimpleUI
                             int max_test_per_week=int.Parse(Console.ReadLine());
                             Console.WriteLine("enter tester's expertise:");
                             vehicle tester_expertise = Enum.Parse(,Console.ReadLine());
-                            Console.WriteLine("enter tester's work time");
-                             = Console.ReadLine();// idk
+                            Console.WriteLine("enter tester's work time (true/false) ");
+                            bool[,] work_time = new bool[5, 6]; 
+                            for (int i = 0; i < 5; i++)
+                            {
+                                Console.WriteLine("at" + (DayOfWeek)i);
+                                for (int j = 0; j < 6; j++)
+                                {
+                                    Console.WriteLine((j+9)+":00 ?");
+                                    work_time[i, j] = bool.Parse(Console.ReadLine());
+                                }
+                            }
                             Console.WriteLine("enter tester's max way to go");
                             int max_way = int.Parse(Console.ReadLine());
+
+                            bl.add_tester(id, last_name, first_name, date_of_birth, Gender, phone, address, expirence, max_test_per_week, tester_expertise, work_time, max_way);
                         }
                         catch (Exception e)
                         {
@@ -112,6 +125,8 @@ namespace SimpleUI
                             DateTime date_and_hour = DateTime.Parse(Console.ReadLine());
                             Console.WriteLine("enter the address of the test:");
                             Address address = DateTime.Parse(Console.ReadLine());
+
+                            bl.add_test(teseter_id, trainee_id, date_and_hour, address);
                             }
                         catch (Exception e)
                         {
@@ -145,6 +160,8 @@ namespace SimpleUI
                             string teacher_name = Console.ReadLine();
                             Console.WriteLine("how many lessons the trainee did?");
                             int num_of_lessons = int.Parse(Console.ReadLine());
+
+                            bl.update_trainee(id, last_name, first_name, date_of_birth, Gender, phone, address, learn_vehicle, gearbox, school, teacher_name, num_of_lessons);
                         }
                         catch (Exception e)
                         {
@@ -185,7 +202,24 @@ namespace SimpleUI
                         {
                             Console.WriteLine("enter test's id:");
                             int id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter trainee's id:");
                             int id_trainee = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter true or false \n the trainee take good distance?");
+                            bool distance = bool.Parse(Console.ReadLine());
+                            Console.WriteLine("enter true or false \n the trainee did reverse well?");
+                            bool reverse = bool.Parse(Console.ReadLine());
+                            Console.WriteLine("enter true or false \n the trainee use the mirrors?");
+                            bool mirrors = bool.Parse(Console.ReadLine());
+                            Console.WriteLine("enter true or false \n the trainee use the signals?");
+                            bool signals = bool.Parse(Console.ReadLine());
+                            Console.WriteLine("enter true or false \n the trainee did well at crosswalks?");
+                            bool crosswalk = bool.Parse(Console.ReadLine());
+                            Console.WriteLine("enter true or false \n the trainee should pass?");
+                            bool grade = bool.Parse(Console.ReadLine());
+                            Console.WriteLine("you can enter a mention if you want to");
+                            string mention = Console.ReadLine();
+
+                            bl.update_test(id, id_trainee, distance, reverse, mirrors, signals, crosswalk, grade, mention);
                         }
                         catch (Exception e)
                         {

@@ -36,7 +36,32 @@ namespace SimpleUI
                     case 1:
                         try
                         {
+                            Console.WriteLine("enter trainee's id:");
+                            int id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter trainee's last name:");
+                            string last_name = Console.ReadLine();
+                            Console.WriteLine("enter trainee's first name:");
+                            string first_name = Console.ReadLine();
+                            Console.WriteLine("enter trainee's date of birth:");
+                            DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("enter trainee's gender:");
+                            gender Gender = Enum.Parse(gender,);
+                            Console.WriteLine("enter trainee's phone number:");
+                            long phone=long.Parse(Console.ReadLine());
+                            Console.WriteLine("enter trainee's address:");
+                            Address address=Address.Parse(Console.ReadLine());
+                            Console.WriteLine("which vehicle the trainee learn?");
+                            vehicle learn_vehicle;
+                            Console.WriteLine("what kind of gearbox?");
+                            kind_of_gearbox gearbox;
+                            Console.WriteLine("enter trainee's school:");
+                            string school= Console.ReadLine();
+                            Console.WriteLine("enter trainee's teacher name:");
+                            string teacher_name=Console.ReadLine();
+                            Console.WriteLine("how many lessons the trainee did?");
+                            int num_of_lessons=int.Parse(Console.ReadLine());
 
+                            bl.add_trainee(id, last_name, first_name, date_of_birth, Gender, phone, address, learn_vehicle, gearbox, school, teacher_name, num_of_lessons);
                         }
                         catch(Exception e)
                         {
@@ -46,18 +71,48 @@ namespace SimpleUI
                     case 2:
                         try
                         {
-
+                            Console.WriteLine("enter tester's id:");
+                            int id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's last name:");
+                            string last_name = Console.ReadLine();
+                            Console.WriteLine("enter tester's first name:");
+                            string first_name = Console.ReadLine();
+                            Console.WriteLine("enter tester's date of birth:");
+                            DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's gender:");
+                            gender Gender = Console.ReadLine();
+                            Console.WriteLine("enter tester's phone number:");
+                            long phone = long.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's address:");
+                            Address address = Address.Parse(Console.ReadLine());
+                            Console.WriteLine("how many expirence the tester have?");
+                            float expirence=float.Parse(Console.ReadLine());
+                            Console.WriteLine("how many tests the tester can do in a week?");
+                            int max_test_per_week=int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's expertise:");
+                            vehicle tester_expertise = Enum.Parse(,Console.ReadLine());
+                            Console.WriteLine("enter tester's work time");
+                             = Console.ReadLine();// idk
+                            Console.WriteLine("enter tester's max way to go");
+                            int max_way = int.Parse(Console.ReadLine());
                         }
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
                         }
-                        break;//
+                        break;
                     case 3:
                         try
                         {
-
-                        }
+                            Console.WriteLine("enter tester's id:");
+                            int teseter_id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter trainee's id:");
+                            int trainee_id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter the date and the hour of the test:");
+                            DateTime date_and_hour = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("enter the address of the test:");
+                            Address address = DateTime.Parse(Console.ReadLine());
+                            }
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
@@ -66,7 +121,30 @@ namespace SimpleUI
                     case 4:
                         try
                         {
-
+                            Console.WriteLine("enter again trainee's id:");
+                            int id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter again trainee's last name:");
+                            string last_name = Console.ReadLine();
+                            Console.WriteLine("enter again trainee's first name:");
+                            string first_name = Console.ReadLine();
+                            Console.WriteLine("enter again trainee's date of birth:");
+                            DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("enter trainee's gender:");
+                            gender Gender = Console.ReadLine();
+                            Console.WriteLine("enter again trainee's phone number:");
+                            long phone = long.Parse(Console.ReadLine());
+                            Console.WriteLine("enter again trainee's address:");
+                            Address address = Address.Parse(Console.ReadLine());
+                            Console.WriteLine("which vehicle the trainee learn?");
+                            vehicle learn_vehicle;
+                            Console.WriteLine("what kind of gearbox?");
+                            kind_of_gearbox gearbox;
+                            Console.WriteLine("enter again trainee's school:");
+                            string school = Console.ReadLine();
+                            Console.WriteLine("enter again trainee's teacher name:");
+                            string teacher_name = Console.ReadLine();
+                            Console.WriteLine("how many lessons the trainee did?");
+                            int num_of_lessons = int.Parse(Console.ReadLine());
                         }
                         catch (Exception e)
                         {
@@ -76,7 +154,26 @@ namespace SimpleUI
                     case 5:
                         try
                         {
-
+                            Console.WriteLine("enter tester's id:");
+                            int id = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's last name:");
+                            string last_name = Console.ReadLine();
+                            Console.WriteLine("enter tester's first name:");
+                            string first_name = Console.ReadLine();
+                            Console.WriteLine("enter tester's date of birth:");
+                            DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's gender:");
+                            gender Gender = Console.ReadLine();
+                            Console.WriteLine("enter tester's phone number:");
+                            long phone = long.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's address:");
+                            Address address = Address.Parse(Console.ReadLine());
+                            Console.WriteLine("how many expirence the tester have?");
+                            float expirence = float.Parse(Console.ReadLine());
+                            Console.WriteLine("how many tests the tester can do in a week?");
+                            int max_test_per_week = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter tester's expertise:");
+                            vehicle tester_expertise = Enum.Parse(, Console.ReadLine());
                         }
                         catch (Exception e)
                         {
@@ -86,7 +183,9 @@ namespace SimpleUI
                     case 6:
                         try
                         {
-
+                            Console.WriteLine("enter test's id:");
+                            int id = int.Parse(Console.ReadLine());
+                            int id_trainee = int.Parse(Console.ReadLine());
                         }
                         catch (Exception e)
                         {

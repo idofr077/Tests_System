@@ -344,7 +344,7 @@ namespace SimpleUI
                     case 15:
                         try
                         {
-
+                            Console.WriteLine("do you want to sort by tester's expertise? (true/false)");
                         }
                         catch (Exception e)
                         {

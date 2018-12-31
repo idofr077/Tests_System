@@ -109,10 +109,22 @@ namespace SimpleUI
                             Console.WriteLine("enter trainee's id:");
                             int trainee_id = int.Parse(Console.ReadLine());
                             Console.WriteLine("enter the date and the hour of the test:");
-                            DateTime date_and_hour = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("enter date and hour (2/16/2008 12:00:00 PM you must write pm or am!!!).");
+                            string date_and_hour = Console.ReadLine();
+                            DateTime temp = new DateTime();
+                            temp = DateTime.Parse(date_and_hour); ;
                             Console.WriteLine("enter the address of the test:");
-                            Address address = DateTime.Parse(Console.ReadLine());
-                            }
+                            Console.WriteLine("enter city");
+                            string city = Console.ReadLine();
+                            Console.WriteLine("enter street");
+                            string street = Console.ReadLine();
+                            Console.WriteLine("enter house number");
+                            int house_number = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter distance");
+                            int x = int.Parse(Console.ReadLine());
+                            Address address = new Address(street, house_number, city);
+                            bl.add_test(teseter_id, trainee_id, temp, address);
+                        }
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");

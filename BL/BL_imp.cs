@@ -10,7 +10,7 @@ namespace BL
 {
     public class BL_imp : IBL
     {
-        Idal effector = new Dal_imp();
+        Idal effector = DAL.FactoryDal.getDal();
         public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
         {
             TimeSpan Temp;

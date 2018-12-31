@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 using BE;
 namespace DS
 {
-    public class DataSource
+    public static class DataSource
     {
-        public static List<Test> Tests;
-        public static List<Tester> testers;
-        public static List<Trainee> Trainees;
+        public static List<Test> Tests=new List<Test>();
+        public static List<Tester> testers=new List<Tester>();
+        public static List<Trainee> Trainees=new List<Trainee>();
 
-        public DataSource()
-        {
-            Tests = new List<Test>();
-            testers = new List<Tester>();
-            Trainees = new List<Trainee>();
-
-        }
+  
     }
 }

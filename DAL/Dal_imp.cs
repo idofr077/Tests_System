@@ -210,8 +210,33 @@ namespace DAL
             Trainee temp2 = DataSource.Trainees.Find(x => x.id.CompareTo(temp.id_trainee) == 0);
             temp2.waiting_for_test = false;
             temp2.num_of_test++;
+            int count = 0;
+            if (_distance==false)
+            {
+                count++;
+            }
+            if (_crosswalk == false)
+            {
+                count++;
+
+            }
+            if (_reverse == false)
+            {
+                count++;
+            }
+            if (_mirrors == false)
+            {
+                count++;
+            }
+            if (_signals == false)
+            {
+                count++;
+            }
+            if (count > 2 && _grade == true)
+                throw new Exception("the trainee cannot pass the test since he fail in most of categories");
             if (_grade == true)
             {
+                temp2.license[temp2.num_of_licenses] = temp2.learn_vehicle;
                 temp2.have_licenses = true;
                 temp2.num_of_licenses++;
             }

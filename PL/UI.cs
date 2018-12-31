@@ -45,15 +45,26 @@ namespace SimpleUI
                             Console.WriteLine("enter trainee's date of birth:(dd/mm/yy)");
                             DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
                             Console.WriteLine("enter trainee's gender:");
-                            gender Gender = Enum.Parse(gender,);
+                            string _Gender = Console.ReadLine();
+                            gender Gender = (gender)Enum.Parse(typeof(gender), _Gender);  
                             Console.WriteLine("enter trainee's phone number:");
                             long phone=long.Parse(Console.ReadLine());
-                            Console.WriteLine("enter trainee's address:");
-                            Address address=Address.Parse(Console.ReadLine());
+                            Console.WriteLine("the address of the test: \n");
+                            Console.WriteLine("enter city");
+                            string city = Console.ReadLine();
+                            Console.WriteLine("enter street");
+                            string street = Console.ReadLine();
+                            Console.WriteLine("enter house number");
+                            int house_number = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter distance");
+                            int x = int.Parse(Console.ReadLine());
+                            Address address = new Address(street, house_number, city);
                             Console.WriteLine("which vehicle the trainee learn?");
-                            vehicle learn_vehicle;
-                            Console.WriteLine("what kind of gearbox?");
-                            kind_of_gearbox gearbox;
+                            string _learn_vehicle=Console.ReadLine();
+                            vehicle learn_vehicle = (vehicle)Enum.Parse(typeof(vehicle), _learn_vehicle);
+                            Console.WriteLine("what kind of gearbox? (auto or manual ");
+                            string _gearbox=Console.ReadLine();
+                            kind_of_gearbox gearbox = (kind_of_gearbox)Enum.Parse(typeof(kind_of_gearbox), _Gender);
                             Console.WriteLine("enter trainee's school:");
                             string school= Console.ReadLine();
                             Console.WriteLine("enter trainee's teacher name:");
@@ -80,13 +91,19 @@ namespace SimpleUI
                             Console.WriteLine("enter tester's date of birth:");
                             DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
                             Console.WriteLine("enter tester's gender:");
-                            string _gender = Console.ReadLine();
-                            gender fdsfs = gender.
-                            gender Gender = gender.Parse(gender,_gender);
-                            Console.WriteLine("enter tester's phone number:");
+                            string _Gender = Console.ReadLine();
+                            gender Gender = (gender)Enum.Parse(typeof(gender), _Gender);
                             long phone = long.Parse(Console.ReadLine());
-                            Console.WriteLine("enter tester's address:");
-                            Address address = Address.Parse(Console.ReadLine());
+                            Console.WriteLine("the address of the test: \n");
+                            Console.WriteLine("enter city");
+                            string city = Console.ReadLine();
+                            Console.WriteLine("enter street");
+                            string street = Console.ReadLine();
+                            Console.WriteLine("enter house number");
+                            int house_number = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter distance");
+                            int x = int.Parse(Console.ReadLine());
+                            Address address = new Address(street, house_number, city);
                             Console.WriteLine("how many expirence the tester have?");
                             float expirence=float.Parse(Console.ReadLine());
                             Console.WriteLine("how many tests the tester can do in a week?");
@@ -122,12 +139,22 @@ namespace SimpleUI
                             Console.WriteLine("enter trainee's id:");
                             int trainee_id = int.Parse(Console.ReadLine());
                             Console.WriteLine("enter the date and the hour of the test:");
-                            DateTime date_and_hour = DateTime.Parse(Console.ReadLine());
-                            Console.WriteLine("enter the address of the test:");
-                            Address address = DateTime.Parse(Console.ReadLine());
-
-                           
-                            }
+                            Console.WriteLine("enter date and hour (2/16/2008 12:00:00 PM you must write pm or am!!!).");
+                            string date_and_hour = Console.ReadLine();
+                            DateTime temp = new DateTime();
+                            temp = DateTime.Parse(date_and_hour); ;
+                            Console.WriteLine("the address of the test: \n");
+                            Console.WriteLine("enter city");
+                            string city = Console.ReadLine();
+                            Console.WriteLine("enter street");
+                            string street = Console.ReadLine();
+                            Console.WriteLine("enter house number");
+                            int house_number = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter distance");
+                            int x = int.Parse(Console.ReadLine());
+                            Address address = new Address(street, house_number, city);
+                            bl.add_test(teseter_id, trainee_id, temp, address);
+                        }
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
@@ -136,27 +163,38 @@ namespace SimpleUI
                     case 4:
                         try
                         {
-                            Console.WriteLine("enter again trainee's id:");
+                            Console.WriteLine("enter trainee's id:");
                             int id = int.Parse(Console.ReadLine());
-                            Console.WriteLine("enter again trainee's last name:");
+                            Console.WriteLine("enter trainee's last name:");
                             string last_name = Console.ReadLine();
-                            Console.WriteLine("enter again trainee's first name:");
+                            Console.WriteLine("enter trainee's first name:");
                             string first_name = Console.ReadLine();
-                            Console.WriteLine("enter again trainee's date of birth:");
+                            Console.WriteLine("enter trainee's date of birth:");
                             DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
                             Console.WriteLine("enter trainee's gender:");
-                            gender Gender = Console.ReadLine();
-                            Console.WriteLine("enter again trainee's phone number:");
+                            string _Gender = Console.ReadLine();
+                            gender Gender = (gender)Enum.Parse(typeof(gender), _Gender);
+                            Console.WriteLine("enter trainee's phone number:");
                             long phone = long.Parse(Console.ReadLine());
-                            Console.WriteLine("enter again trainee's address:");
-                            Address address = Address.Parse(Console.ReadLine());
+                            Console.WriteLine("the address of the test: \n");
+                            Console.WriteLine("enter city");
+                            string city = Console.ReadLine();
+                            Console.WriteLine("enter street");
+                            string street = Console.ReadLine();
+                            Console.WriteLine("enter house number");
+                            int house_number = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter distance");
+                            int x = int.Parse(Console.ReadLine());
+                            Address address = new Address(street, house_number, city);
                             Console.WriteLine("which vehicle the trainee learn?");
-                            vehicle learn_vehicle;
-                            Console.WriteLine("what kind of gearbox?");
-                            kind_of_gearbox gearbox=Enum.Parse(typeof(ge))
-                            Console.WriteLine("enter again trainee's school:");
+                            string _learn_vehicle = Console.ReadLine();
+                            vehicle learn_vehicle = (vehicle)Enum.Parse(typeof(vehicle), _learn_vehicle);
+                            Console.WriteLine("what kind of gearbox? (auto or manual ");
+                            string _gearbox = Console.ReadLine();
+                            kind_of_gearbox gearbox = (kind_of_gearbox)Enum.Parse(typeof(kind_of_gearbox), _Gender);
+                            Console.WriteLine("enter trainee's school:");
                             string school = Console.ReadLine();
-                            Console.WriteLine("enter again trainee's teacher name:");
+                            Console.WriteLine("enter trainee's teacher name:");
                             string teacher_name = Console.ReadLine();
                             Console.WriteLine("how many lessons the trainee did?");
                             int num_of_lessons = int.Parse(Console.ReadLine());
@@ -180,17 +218,31 @@ namespace SimpleUI
                             Console.WriteLine("enter tester's date of birth:");
                             DateTime date_of_birth = DateTime.Parse(Console.ReadLine());
                             Console.WriteLine("enter tester's gender:");
-                            gender Gender = Console.ReadLine();
+                            string _Gender = Console.ReadLine();
+                            gender Gender = (gender)Enum.Parse(typeof(gender), _Gender);
                             Console.WriteLine("enter tester's phone number:");
                             long phone = long.Parse(Console.ReadLine());
-                            Console.WriteLine("enter tester's address:");
-                            Address address = Address.Parse(Console.ReadLine());
+                            Console.WriteLine("the address of the test: \n");
+                            Console.WriteLine("enter city");
+                            string city = Console.ReadLine();
+                            Console.WriteLine("enter street");
+                            string street = Console.ReadLine();
+                            Console.WriteLine("enter house number");
+                            int house_number = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter distance");
+                            int x = int.Parse(Console.ReadLine());
+                            Address address = new Address(street, house_number, city);
                             Console.WriteLine("how many expirence the tester have?");
                             float expirence = float.Parse(Console.ReadLine());
                             Console.WriteLine("how many tests the tester can do in a week?");
                             int max_test_per_week = int.Parse(Console.ReadLine());
                             Console.WriteLine("enter tester's expertise:");
-                            vehicle tester_expertise = Enum.Parse(, Console.ReadLine());
+                            string _tester_expertise = Console.ReadLine();
+                            vehicle tester_expertise = (vehicle)Enum.Parse(typeof(vehicle), _tester_expertise);
+                            Console.WriteLine("enter tester's work time");
+                             = Console.ReadLine();// idk
+                            Console.WriteLine("enter tester's max way to go");
+                            int max_way = int.Parse(Console.ReadLine());
                         }
                         catch (Exception e)
                         {

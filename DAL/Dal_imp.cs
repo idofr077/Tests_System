@@ -12,6 +12,11 @@ namespace DAL
     {
         DataSource DS= new DataSource();
         //done
+       public bool have_licenes_by_id(int _id)
+        {
+            Trainee trainee = trainee_by_id(_id);
+            return trainee.have_licenses;
+        }
         public Tester tester_by_id(int _id)
         {
             Tester tester = new Tester(DataSource.testers.Find(x => x.id.CompareTo(_id) == 0));
@@ -204,8 +209,12 @@ namespace DAL
             temp.mention = _mention;
             Trainee temp2 = DataSource.Trainees.Find(x => x.id.CompareTo(temp.id_trainee) == 0);
             temp2.waiting_for_test = false;
-            Trainee counter = DataSource.Trainees.Find(x => x.id.CompareTo(_id) == 0);
-            counter.num_of_test++;
+            temp2.num_of_test++;
+            if (_grade == true)
+            {
+                temp2.have_licenses = true;
+                temp2.num_of_licenses++;
+            }
         }
     }
 }

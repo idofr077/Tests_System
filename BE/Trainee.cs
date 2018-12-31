@@ -24,7 +24,7 @@ namespace BE
         bool _waiting_for_test=false;
         int _num_of_test =0;
         int _num_of_licenses = 0;
-
+        bool _have_licenses = false;
         //C_Tors:
         public Trainee(int id, string last_name, string first_name, DateTime date_of_birth, gender Gender, long phone, Address address, vehicle learn_vehicle, kind_of_gearbox gearbox, string school, string teacher_name, int numOfLessons)
         {
@@ -47,22 +47,27 @@ namespace BE
 
         public Trainee(Trainee Temp)
         {
-            _id = Temp.id;
-            _last_name = Temp.last_name;
-            _first_name = Temp.first_name;
-            _date_of_birth = Temp.date_of_birth;
-            _Gender = Temp.Gender;
-            _phone = Temp.phone;
-            _address = Temp.address;
-            _gearbox = Temp.gearbox;
-            _school = Temp.school;
-            _teacher_name = Temp.teacher_name;
-            numOfLessons = Temp.numOfLessons;
-            license = Temp.license;
-            
+             id=Temp.id;
+             last_name=Temp.last_name;
+             first_name = Temp.first_name;
+             date_of_birth = Temp.date_of_birth;
+             Gender = Temp.Gender;
+             phone = Temp.phone;
+             address = Temp.address;
+             learn_vehicle = Temp.learn_vehicle;
+             gearbox = Temp.gearbox;
+             school = Temp.school;
+             teacher_name = Temp.teacher_name;
+             lastTest = Temp.LastTest;
+             license = Temp.license;
+             waiting_for_test  = Temp.waiting_for_test;
+             num_of_test = Temp.num_of_test;
+             num_of_licenses = Temp._num_of_licenses;
+            have_licenses = Temp.have_licenses;
         }
 
         //Properties:
+        
         public int num_of_licenses
         {
             get { return _num_of_licenses; }
@@ -148,6 +153,8 @@ namespace BE
         }
 
         public int num_of_test { get => _num_of_test; set => _num_of_test = value; }
+        public bool have_licenses { get => _have_licenses; set => _have_licenses = value; }
+
         public override string ToString()
         {
             return first_name + " " + last_name + "/n" + id + "/n" + date_of_birth + "/n" + Gender + "/n" + phone + "/n" + address + "/n" + school + "/n" + teacher_name + "/n";

@@ -26,14 +26,11 @@ namespace BE
             get { return _max_way; }
             set { _max_way = value; }
         }
-
-
         //ToString
         public override string ToString()
         {
             return first_name + " " + last_name + "/n" + id + "/n" + date_of_birth + "/n" + Gender + "/n" + phone + "/n" + address + "/n" + expirence + "/n";
         }
-
         //Properties:
         public int id
         {
@@ -85,10 +82,8 @@ namespace BE
             get { return _tester_expertise; }
             set { _tester_expertise = value; }
         }
-
         public bool[,] work_time { get => _work_time; set => _work_time = value; }
         public List<DateTime> Tests_Determined { get => _Tests_Determined; set => _Tests_Determined = value; }
-
         //C_Tors:
         public Tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender,long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _worktime, int _max_way)
         {

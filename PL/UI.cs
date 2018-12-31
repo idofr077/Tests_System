@@ -11,7 +11,13 @@ namespace SimpleUI
     class UI
     {
         private static IBL bl = BL.FactoryBl.getBl();
-
+        static bool  done(Test t)
+        {
+            if (t.grade != null)
+                return true;
+            else
+                return false;
+        }
         private static int InPutNum()
         {
             int x;
@@ -397,6 +403,7 @@ namespace SimpleUI
                         try
                         {
                             Console.WriteLine("do you want to sort by tester's expertise? (true/false)");
+                            bl.by_tester_expertice(bool.Parse(Console.ReadLine()));
                         }
                         catch (Exception e)
                         {
@@ -406,6 +413,12 @@ namespace SimpleUI
                     case 16:
                         try
                         {
+                            Console.WriteLine("do you want to sort by school? (true/false)");
+                            bool sort = bool.Parse(Console.ReadLine());
+                            for (int i = 0; i < bl.by_school(sort).Count; i++)
+                            {
+                                Console.WriteLine(bl.by_school(sort)[i]);
+                            }
 
                         }
                         catch (Exception e)
@@ -416,6 +429,12 @@ namespace SimpleUI
                     case 17:
                         try
                         {
+                            Console.WriteLine("do you want to sort by teacher? (true/false)");
+                            bool sort = bool.Parse(Console.ReadLine());
+                            for(int i = 0; i< bl.by_teacher(sort).Count;i++)
+                            {
+                                Console.WriteLine(bl.by_teacher(sort)[i]);
+                            }
 
                         }
                         catch (Exception e)
@@ -426,7 +445,12 @@ namespace SimpleUI
                     case 18:
                         try
                         {
-
+                            Console.WriteLine("do you want to sort by test number? (true/false)");
+                            bool sort = bool.Parse(Console.ReadLine());
+                            for (int i = 0; i < bl.by_tests_num(sort).Count; i++)
+                            {
+                                Console.WriteLine(bl.by_tests_num(sort)[i]); 
+                            }
                         }
                         catch (Exception e)
                         {
@@ -436,7 +460,11 @@ namespace SimpleUI
                     case 19:
                         try
                         {
-
+                            for (int i = 0; i < bl.find_all_tests(done).Count; i++)
+                            {
+                                Console.WriteLine(bl.find_all_tests(done)[i]);
+                            }
+                           
                         }
                         catch (Exception e)
                         {
@@ -450,6 +478,7 @@ namespace SimpleUI
             while (num != 0);
         }
     }
+   
 }
 
        

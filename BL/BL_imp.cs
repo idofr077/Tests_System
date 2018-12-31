@@ -273,6 +273,6 @@ namespace BL
                                 select new_group;
             }
             return trainee_group;
-        }
+        }//
     }
 }

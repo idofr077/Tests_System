@@ -13,7 +13,6 @@ namespace BE
         static float max_AgeOfTester;
         static float min_AgeOfTrainee;
         static public int id_test=0;
-
         //we need to ask about the date
 
     }

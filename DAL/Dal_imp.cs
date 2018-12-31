@@ -151,7 +151,7 @@ namespace DAL
             DataSource.Trainees.Remove(temp);
         }
 
-        public void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise)
+        public void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
         {
             if (!DataSource.testers.Exists(x => x.id.CompareTo(_id) == 0))
             {
@@ -168,6 +168,8 @@ namespace DAL
             temp.expirence = _expirence;
             temp.max_testPerWeek = _max_testPerWeek;
             temp.tester_expertice = _tester_expertise;
+            temp.work_time = _work_time;
+            temp.max_way = _max_way;
         }
         //done
         public void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)

@@ -10,7 +10,6 @@ namespace DAL
 {
     public class Dal_imp : Idal
     {
-        DataSource DS = new DataSource();
         //done
         public bool have_licenes_by_id(int _id)
         {

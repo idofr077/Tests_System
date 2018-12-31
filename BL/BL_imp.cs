@@ -189,10 +189,10 @@ namespace BL
                                       select item;
             return tests.ToList();
         }
-        public int? trainee_tests(Trainee trainee)
-        { return effector.num_test(trainee); }
-        public bool? pass(Trainee trainee)
-        { return effector.have_licenes_by_id(trainee.id); }
+        public int? trainee_tests(int id)
+        { return effector.num_test(effector.trainee_by_id(id)); }
+        public bool? pass(int id)
+        { return effector.have_licenes_by_id(id); }
         public List<Test> test_on_date(DateTime date)
         {
             IEnumerable<Test> list = from item in all_test()

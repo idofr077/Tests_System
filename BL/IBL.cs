@@ -23,8 +23,8 @@ namespace BL
         List<Tester> testers_area(Address address,int x);
         List<Tester> tester_time(DateTime dateAndHour);
         List<Test> find_all_tests(Predicate<Test> cond);
-        int? trainee_tests(Trainee trainee);
-        bool? pass(Trainee trainee);
+        int? trainee_tests(int id);
+        bool? pass(int id);
         List <Test> test_on_date (DateTime date);
         List<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort);
         List<IGrouping<string, Trainee>> by_school(bool sort);

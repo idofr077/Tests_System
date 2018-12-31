@@ -15,7 +15,7 @@ namespace SimpleUI
         private static int InPutNum()
         {
             int x;
-            Console.WriteLine("0-quit \n 1-add trainee \n 2-add tester \n 3-add test \n 4-update trainee \n 5-update tester \n 6-update test \n 7-all trainees \n 8-all testers \n 9-all tests \n 10-testers in area \n 11-testers available on time \n 12- numner of tests for trainee \n 13-to check if a trainee have a license \n 14-to get all the test by a date \n 15-all testers by expertice \n 16-all trainees by school \n 17-all trainees by teacher \n 18-all trainees by tests number \n 19-all tests that done ");
+            Console.WriteLine("0-quit \n 1-add trainee \n 2-add tester \n 3-add test \n 4-update trainee \n 5-update tester \n 6-update test \n 7-all trainees \n 8-all testers \n 9-all tests \n 10-testers in area \n 11-testers available on time \n 12- number of tests for trainee \n 13-to check if a trainee have a license \n 14-to get all the test by a date \n 15-all testers by expertise \n 16-all trainees by school \n 17-all trainees by teacher \n 18-all trainees by tests number \n 19-all tests that done ");
             string a = Console.ReadLine();
             x = int.Parse(a);
             return x;
@@ -126,7 +126,7 @@ namespace SimpleUI
                             Console.WriteLine("enter the address of the test:");
                             Address address = DateTime.Parse(Console.ReadLine());
 
-                            bl.add_test(teseter_id, trainee_id, date_and_hour, address);
+                           
                             }
                         catch (Exception e)
                         {
@@ -153,7 +153,7 @@ namespace SimpleUI
                             Console.WriteLine("which vehicle the trainee learn?");
                             vehicle learn_vehicle;
                             Console.WriteLine("what kind of gearbox?");
-                            kind_of_gearbox gearbox;
+                            kind_of_gearbox gearbox=Enum.Parse(typeof(ge))
                             Console.WriteLine("enter again trainee's school:");
                             string school = Console.ReadLine();
                             Console.WriteLine("enter again trainee's teacher name:");
@@ -307,7 +307,10 @@ namespace SimpleUI
                     case 12:
                         try
                         {
-
+                            Console.WriteLine("enter trainee's id");
+                            int id = int.Parse(Console.ReadLine());
+                            bl.trainee_tests(id);
+                            
                         }
                         catch (Exception e)
                         {
@@ -317,7 +320,9 @@ namespace SimpleUI
                     case 13:
                         try
                         {
-
+                            Console.WriteLine("enter trainee's id");
+                            int id = int.Parse(Console.ReadLine());
+                            bl.pass(id);
                         }
                         catch (Exception e)
                         {
@@ -327,7 +332,9 @@ namespace SimpleUI
                     case 14:
                         try
                         {
-
+                            Console.WriteLine("enter a date:(dd//mm/yy)");
+                            DateTime date = DateTime.Parse(Console.ReadLine());
+                            bl.test_on_date(date);
                         }
                         catch (Exception e)
                         {

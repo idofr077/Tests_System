@@ -195,7 +195,10 @@ namespace SimpleUI
                     case 7:
                         try
                         {
-
+                            for (int i = 0; i < bl.all_trainee().Count; i++)
+                            {
+                                Console.WriteLine(bl.all_trainee()[i]+"\n");
+                            }
                         }
                         catch (Exception e)
                         {
@@ -205,7 +208,10 @@ namespace SimpleUI
                     case 8:
                         try
                         {
-
+                            for (int i = 0; i < bl.all_tester().Count; i++)
+                            {
+                                Console.WriteLine(bl.all_tester()[i] + "\n");
+                            }
                         }
                         catch (Exception e)
                         {
@@ -215,7 +221,10 @@ namespace SimpleUI
                     case 9:
                         try
                         {
-
+                            for (int i = 0; i < bl.all_test().Count; i++)
+                            {
+                                Console.WriteLine(bl.all_test()[i] + "\n");
+                            }
                         }
                         catch (Exception e)
                         {
@@ -225,17 +234,36 @@ namespace SimpleUI
                     case 10:
                         try
                         {
-
+                            Console.WriteLine("enter city");
+                            string city = Console.ReadLine();
+                            Console.WriteLine("enter street");
+                            string street = Console.ReadLine();
+                            Console.WriteLine("enter house number");
+                            int house_number = int.Parse(Console.ReadLine());
+                            Console.WriteLine("enter distance");
+                            int x = int.Parse(Console.ReadLine());
+                            for (int i = 0; i < bl.testers_area(new Address(street, house_number, city), x).Count; i++)
+                            {
+                                Console.WriteLine(bl.testers_area(new Address(street, house_number, city), x)[i]+"\n");
+                            }
+                            
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine(e.Message + "\n");
+                            Console.WriteLine(e.Message +"\n");
                         }
                         break;
                     case 11:
                         try
                         {
-
+                            Console.WriteLine("enter date and hour (2/16/2008 12:00:00 PM you must write pm or am!!!).");
+                            string date_and_hour = Console.ReadLine();
+                            DateTime temp = new DateTime();
+                            temp = DateTime.Parse(date_and_hour);
+                            for (int i = 0; i < bl.test_on_date(temp).Count; i++)
+                            {
+                                Console.WriteLine(bl.test_on_date(temp)[i]);
+                            }
                         }
                         catch (Exception e)
                         {

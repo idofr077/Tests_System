@@ -32,13 +32,13 @@ namespace BL
             effector.remove_tester(_id);
         }
 
-        public void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise)
+        public void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
         {
             if (!effector.id_alredy_exsits(_id))
             {
                 throw new Exception("the id is not exsits");
             }
-            effector.update_tester(_id, _lastname, _firstname, _date_of_birth, _Gender, _phone, _address, _expirence, _max_testPerWeek, _tester_expertise);
+            effector.update_tester(_id, _lastname, _firstname, _date_of_birth, _Gender, _phone, _address, _expirence, _max_testPerWeek, _tester_expertise,  _work_time,  _max_way);
         }
 
         public void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)

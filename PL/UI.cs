@@ -52,7 +52,7 @@ namespace SimpleUI
                         {
                             Console.WriteLine(e.Message + "\n");
                         }
-                        break;
+                        break;//
                     case 3:
                         try
                         {

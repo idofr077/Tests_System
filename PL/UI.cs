@@ -109,7 +109,8 @@ namespace SimpleUI
                             Console.WriteLine("how many tests the tester can do in a week?");
                             int max_test_per_week=int.Parse(Console.ReadLine());
                             Console.WriteLine("enter tester's expertise:");
-                            vehicle tester_expertise = Enum.Parse(,Console.ReadLine());
+                            string _tester_expertise = Console.ReadLine();
+                            vehicle tester_expertise = (vehicle)Enum.Parse(typeof(vehicle), _tester_expertise);
                             Console.WriteLine("enter tester's work time (true/false) ");
                             bool[,] work_time = new bool[5, 6]; 
                             for (int i = 0; i < 5; i++)
@@ -117,7 +118,7 @@ namespace SimpleUI
                                 Console.WriteLine("at" + (DayOfWeek)i);
                                 for (int j = 0; j < 6; j++)
                                 {
-                                    Console.WriteLine((j+9)+":00 ?");
+                                    Console.WriteLine((j+9)+" :00 ?");
                                     work_time[i, j] = bool.Parse(Console.ReadLine());
                                 }
                             }
@@ -220,7 +221,6 @@ namespace SimpleUI
                             Console.WriteLine("enter tester's gender:");
                             string _Gender = Console.ReadLine();
                             gender Gender = (gender)Enum.Parse(typeof(gender), _Gender);
-                            Console.WriteLine("enter tester's phone number:");
                             long phone = long.Parse(Console.ReadLine());
                             Console.WriteLine("the address of the test: \n");
                             Console.WriteLine("enter city");
@@ -239,10 +239,21 @@ namespace SimpleUI
                             Console.WriteLine("enter tester's expertise:");
                             string _tester_expertise = Console.ReadLine();
                             vehicle tester_expertise = (vehicle)Enum.Parse(typeof(vehicle), _tester_expertise);
-                            Console.WriteLine("enter tester's work time");
-                             = Console.ReadLine();// idk
+                            Console.WriteLine("enter tester's work time (true/false) ");
+                            bool[,] work_time = new bool[5, 6];
+                            for (int i = 0; i < 5; i++)
+                            {
+                                Console.WriteLine("at" + (DayOfWeek)i);
+                                for (int j = 0; j < 6; j++)
+                                {
+                                    Console.WriteLine((j + 9) + ":00 ?");
+                                    work_time[i, j] = bool.Parse(Console.ReadLine());
+                                }
+                            }
                             Console.WriteLine("enter tester's max way to go");
                             int max_way = int.Parse(Console.ReadLine());
+
+                            bl.update_tester(id, last_name, first_name, date_of_birth, Gender, phone, address, expirence, max_test_per_week, tester_expertise, work_time, max_way);
                         }
                         catch (Exception e)
                         {

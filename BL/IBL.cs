@@ -90,19 +90,78 @@ namespace BL
         /// check if the updated of the test was ok and without errors
         /// </summary>
         /// <returns></returns>
-        List<Tester> all_tester();
+        List<Tester> all_tester();/// <summary>
+        /// return a list with all the testers
+        /// </summary>
+        /// <returns></returns>
         List<Trainee> all_trainee();
-        List<Test> all_test();
+        /// <summary>
+        /// return a list with all the trainees
+        /// </summary>
+        /// <returns></returns>
+        List<Test> all_test();/// <summary>
+        /// return a list with all the tests
+        /// </summary>
+        /// <param name="address"></param>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        
         List<Tester> testers_area(Address address,int x);
+        /// <summary>
+        /// return a list with all the testers in the radar of x
+        /// </summary>
+        /// <param name="dateAndHour"></param>
+        /// <returns></returns>
         List<Tester> tester_time(DateTime dateAndHour);
+        /// <summary>
+        /// return a list withe all the testers that avialible in a dateandhour
+        /// </summary>
+        /// <param name="cond"></param>
+        /// <returns></returns>
         List<Test> find_all_tests(Predicate<Test> cond);
+        /// <summary>
+        /// return a list with all the tests that have a parameter condition
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         int? trainee_tests(int id);
-        bool? pass(int id);
-        List <Test> test_on_date (DateTime date);
-        List<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort);
-        List<IGrouping<string, Trainee>> by_school(bool sort);
+        /// <summary>
+        /// return the num of tests yo trainee
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        bool? pass(int id);/// <summary>
+        /// is a trainee hace a license
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        List <Test> test_on_date (DateTime date);/// <summary>
+        /// list with all the tests on this date
+        /// </summary>
+        /// <param name="sort"></param>
+        /// <returns></returns>
+
+        List<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort);/// <summary>
+                                                                        /// list of groups by tester_expertice
+                                                                        /// </summary>
+                                                                        /// <param name="sort"></param>
+                                                                        /// <returns></returns>
+        List<IGrouping<string, Trainee>> by_school(bool sort);/// <summary>
+                                                              /// list of groups by school
+                                                              /// </summary>
+                                                              /// <param name="sort"></param>
+                                                              /// <returns></returns>
         List<IGrouping<string, Trainee>> by_teacher(bool sort);
-        List<IGrouping<int, Trainee>> by_tests_num(bool sort);
-        }
+        /// <summary>
+        /// list of groups by teacher name
+        /// </summary>
+        /// <param name="sort"></param>
+        /// <returns></returns>
+        List<IGrouping<int, Trainee>> by_tests_num(bool sort);/// <summary>
+                                                              /// list of groups by num of tests that the trainee did
+                                                              /// </summary>
+                                                              /// <param name="sort"></param>
+                                                              /// <returns></returns>
+    }
 
 }

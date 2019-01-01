@@ -21,7 +21,7 @@ namespace SimpleUI
         private static int InPutNum()
         {
             int x;
-            Console.WriteLine("0-quit \n 1-add trainee \n 2-add tester \n 3-add test \n 4-update trainee \n 5-update tester \n 6-update test \n 7-all trainees \n 8-all testers \n 9-all tests \n 10-testers in area \n 11-testers available on time \n 12- number of tests for trainee \n 13-to check if a trainee have a license \n 14-to get all the test by a date \n 15-all testers by expertise \n 16-all trainees by school \n 17-all trainees by teacher \n 18-all trainees by tests number \n 19-all tests that done ");
+            Console.WriteLine("0-quit \n 1-add trainee \n 2-add tester \n 3-add test \n 4-update trainee \n 5-update tester \n 6-update test \n 7-all trainees \n 8-all testers \n 9-all tests \n 10-testers in area \n 11-testers available on time \n 12- number of tests for trainee \n 13-to check if a trainee have a license \n 14-to get all the test by a date \n 15-all testers by expertise \n 16-all trainees by school \n 17-all trainees by teacher \n 18-all trainees by tests number \n 19-all tests that done \n 20-remove trainee \n 21- remove tester ");
             string a = Console.ReadLine();
             x = int.Parse(a);
             return x;
@@ -66,7 +66,7 @@ namespace SimpleUI
                             Console.WriteLine("which vehicle the trainee learn?(private_vehicle,two_weels_vehicle,medium_track, heavy_track)");
                             string _learn_vehicle=Console.ReadLine();
                             vehicle learn_vehicle = (vehicle)Enum.Parse(typeof(vehicle), _learn_vehicle);
-                            Console.WriteLine("what kind of gearbox? (auto or manual ");
+                            Console.WriteLine("what kind of gearbox? (auto or manual )");
                             string _gearbox=Console.ReadLine();
                             kind_of_gearbox gearbox = (kind_of_gearbox)Enum.Parse(typeof(kind_of_gearbox), _gearbox);
                             Console.WriteLine("enter trainee's school:");
@@ -96,8 +96,9 @@ namespace SimpleUI
                             Console.WriteLine("enter tester's gender:");
                             string _Gender = Console.ReadLine();
                             gender Gender = (gender)Enum.Parse(typeof(gender), _Gender);
+                            Console.WriteLine("enter phone number:");
                             long phone = long.Parse(Console.ReadLine());
-                            Console.WriteLine("the address of the test: \n");
+                            Console.WriteLine("the address of the tester: \n");
                             Console.WriteLine("enter city");
                             string city = Console.ReadLine();
                             Console.WriteLine("enter street");
@@ -403,7 +404,15 @@ namespace SimpleUI
                         try
                         {
                             Console.WriteLine("do you want to sort by tester's expertise? (true/false)");
-                            bl.by_tester_expertice(bool.Parse(Console.ReadLine()));
+                            bool sort = bool.Parse(Console.ReadLine());
+                            foreach (var item in bl.by_tester_expertice(sort))
+                            {
+                                Console.WriteLine(item.Key+":");
+                                foreach(Tester t in item)
+                                {
+                                    Console.WriteLine(t);
+                                }
+                            }
                         }
                         catch (Exception e)
                         {
@@ -415,9 +424,13 @@ namespace SimpleUI
                         {
                             Console.WriteLine("do you want to sort by school? (true/false)");
                             bool sort = bool.Parse(Console.ReadLine());
-                            for (int i = 0; i < bl.by_school(sort).Count; i++)
+                            foreach (var item in bl.by_school(sort))
                             {
-                                Console.WriteLine(bl.by_school(sort)[i]);
+                                Console.WriteLine(item.Key + ":");
+                                foreach (Trainee t in item)
+                                {
+                                    Console.WriteLine(t);
+                                }
                             }
 
                         }
@@ -431,9 +444,13 @@ namespace SimpleUI
                         {
                             Console.WriteLine("do you want to sort by teacher? (true/false)");
                             bool sort = bool.Parse(Console.ReadLine());
-                            for(int i = 0; i< bl.by_teacher(sort).Count;i++)
+                            foreach (var item in bl.by_teacher(sort))
                             {
-                                Console.WriteLine(bl.by_teacher(sort)[i]);
+                                Console.WriteLine(item.Key + ":");
+                                foreach (Trainee t in item)
+                                {
+                                    Console.WriteLine(t);
+                                }
                             }
 
                         }
@@ -447,9 +464,13 @@ namespace SimpleUI
                         {
                             Console.WriteLine("do you want to sort by test number? (true/false)");
                             bool sort = bool.Parse(Console.ReadLine());
-                            for (int i = 0; i < bl.by_tests_num(sort).Count; i++)
+                            foreach( var item in bl.by_tests_num(sort))
                             {
-                                Console.WriteLine(bl.by_tests_num(sort)[i]); 
+                                Console.WriteLine(item.Key + ":");
+                                foreach (Trainee t in item)
+                                {
+                                    Console.WriteLine(t);
+                                }
                             }
                         }
                         catch (Exception e)
@@ -465,6 +486,30 @@ namespace SimpleUI
                                 Console.WriteLine(bl.find_all_tests(done)[i]);
                             }
                            
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message + "\n");
+                        }
+                        break;
+                    case 20:
+                        try
+                        {
+                            Console.WriteLine("enter id:");
+                            int x = int.Parse(Console.ReadLine());
+                            bl.remove_trainee(x);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message + "\n");
+                        }
+                        break;
+                    case 21:
+                        try
+                        {
+                            Console.WriteLine("enter id:");
+                            int x = int.Parse(Console.ReadLine());
+                            bl.remove_tester(x);
                         }
                         catch (Exception e)
                         {

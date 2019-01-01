@@ -349,7 +349,7 @@ namespace SimpleUI
                     case 11:
                         try
                         {
-                            Console.WriteLine("enter date and hour (2/16/2008 12:00:00 PM you must write pm or am!!!).");
+                            Console.WriteLine("enter date and hour (2/16/2008 12:00:00 PM you must write PM or AM!!!).");
                             string date_and_hour = Console.ReadLine();
                             DateTime temp = new DateTime();
                             temp = DateTime.Parse(date_and_hour);
@@ -393,7 +393,11 @@ namespace SimpleUI
                         {
                             Console.WriteLine("enter a date:(dd//mm/yy)");
                             DateTime date = DateTime.Parse(Console.ReadLine());
-                            Console.WriteLine(bl.test_on_date(date)); 
+                            for (int i = 0; i < bl.test_on_date(date).Count; i++)
+                            {
+                                Console.WriteLine(bl.test_on_date(date)[i]);
+                            }
+                           
                         }
                         catch (Exception e)
                         {

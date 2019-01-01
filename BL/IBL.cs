@@ -9,14 +9,87 @@ namespace BL
 {
   public interface IBL
     {
-        void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time,int _max_way);
-        void remove_tester(int _id);
-        void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time, int _max_way);
-        void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons);
-        void remove_trainee(int _id);
-        void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons);
-        void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address);
-        void update_test(int id,int id_trainee, bool? distance, bool? reverse, bool? mirrors, bool? signals, bool? crosswalk, bool? grade, string mention);
+        void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time,int _max_way);/// <summary>
+        /// check if the addded of the tester was ok and without errors
+        /// </summary>
+        /// <param name="_id"></param>
+        void remove_tester(int _id);/// <summary>
+                                    /// check if the removed of the tester was ok and without errors
+                                    /// </summary>
+                                    /// 
+                                    /// 
+                                    /// <param name="_id"></param>
+                                    /// <param name="_lastname"></param>
+                                    /// <param name="_firstname"></param>
+                                    /// <param name="_date_of_birth"></param>
+                                    /// <param name="_Gender"></param>
+                                    /// <param name="_phone"></param>
+                                    /// <param name="_address"></param>
+                                    /// <param name="_expirence"></param>
+                                    /// <param name="_max_testPerWeek"></param>
+                                    /// <param name="_tester_expertise"></param>
+                                    /// <param name="_work_time"></param>
+                                    /// <param name="_max_way"></param>
+        void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time, int _max_way);/// <summary>
+        /// check if the updated of the tester was ok and without errors
+        /// </summary>
+        /// 
+        /// 
+        /// <param name="_id"></param>
+        /// <param name="_last_name"></param>
+        /// <param name="_first_name"></param>
+        /// <param name="_date_of_birth"></param>
+        /// <param name="_Gender"></param>
+        /// <param name="_phone"></param>
+        /// <param name="_address"></param>
+        /// <param name="_learn_vehicle"></param>
+        /// <param name="_gearbox"></param>
+        /// <param name="_school"></param>
+        /// <param name="_teacher_name"></param>
+        /// <param name="_numOfLessons"></param>
+        void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons);/// <summary>
+        /// check if the added of the trainee was ok and without errors
+        /// </summary>
+        /// create a new trainee
+        /// <param name="_id"></param>
+        void remove_trainee(int _id);/// <summary>
+                                     /// check if the removed of the trainee was ok and without errors
+                                     /// </summary>
+                                     /// <param name="_id"></param>
+                                     /// <param name="_last_name"></param>
+                                     /// <param name="_first_name"></param>
+                                     /// <param name="_date_of_birth"></param>
+                                     /// <param name="_Gender"></param>
+                                     /// <param name="_phone"></param>
+                                     /// <param name="_address"></param>
+                                     /// <param name="_learn_vehicle"></param>
+                                     /// <param name="_gearbox"></param>
+                                     /// <param name="_school"></param>
+                                     /// <param name="_teacher_name"></param>
+                                     /// <param name="_numOfLessons"></param>
+        void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons);/// <summary>
+        /// check if the updated of the trainee was ok and without errors
+        /// </summary>
+        /// <param name="_id_tester"></param>
+        /// <param name="_id_trainee"></param>
+        /// <param name="_dateAndHour"></param>
+        /// <param name="_address"></param>
+        void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address);/// <summary>
+        /// check if the added of the test was ok and without errors
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="id_trainee"></param>
+        /// <param name="distance"></param>
+        /// <param name="reverse"></param>
+        /// <param name="mirrors"></param>
+        /// <param name="signals"></param>
+        /// <param name="crosswalk"></param>
+        /// <param name="grade"></param>
+        /// <param name="mention"></param>
+        void update_test(int id,int id_trainee, bool? distance, bool? reverse, bool? mirrors, bool? signals, bool? crosswalk, bool? grade, string mention);/// <summary>
+        /// check if the updated of the test was ok and without errors
+        /// </summary>
+        /// <returns></returns>
         List<Tester> all_tester();
         List<Trainee> all_trainee();
         List<Test> all_test();

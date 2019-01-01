@@ -80,7 +80,7 @@ namespace SimpleUI
                         catch(Exception e)
                         {
                             Console.WriteLine(e.Message+"\n");
-                        }
+                        }//add trainee
                         break;
                     case 2:
                         try
@@ -132,7 +132,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//add tester
                         break;
                     case 3:
                         try
@@ -159,7 +159,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//add test
                         break;
                     case 4:
                         try
@@ -203,7 +203,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//update trainee
                         break;
                     case 5:
                         try
@@ -254,7 +254,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//update tester
                         break;
                     case 6:
                         try
@@ -283,7 +283,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//update test
                         break;
                     case 7:
                         try
@@ -296,7 +296,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all trainees
                         break;
                     case 8:
                         try
@@ -309,7 +309,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all testers
                         break;
                     case 9:
                         try
@@ -322,7 +322,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all tests
                         break;
                     case 10:
                         try
@@ -344,7 +344,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message +"\n");
-                        }
+                        }//return the testers in the area
                         break;
                     case 11:
                         try
@@ -361,7 +361,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return the testers that are available at the time
                         break;
                     case 12:
                         try
@@ -374,7 +374,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return how many tests the trainee did
                         break;
                     case 13:
                         try
@@ -386,7 +386,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//check if the trainee already have the license
                         break;
                     case 14:
                         try
@@ -402,7 +402,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all the test by date
                         break;
                     case 15:
                         try
@@ -421,7 +421,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all test by expertise
                         break;
                     case 16:
                         try
@@ -441,7 +441,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all trainees by school
                         break;
                     case 17:
                         try
@@ -461,7 +461,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all trainees by teacher
                         break;
                     case 18:
                         try
@@ -480,7 +480,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all trainees by number of test
                         break;
                     case 19:
                         try
@@ -494,7 +494,7 @@ namespace SimpleUI
                         catch (Exception e)
                         {
                             Console.WriteLine(e.Message + "\n");
-                        }
+                        }//return all test that done
                         break;
                     case 20:
                         try

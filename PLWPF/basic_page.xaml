@@ -7,16 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="800">
     <Grid>
-
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="267*"/>
         </Grid.RowDefinitions>
-        <Image Source="images/up_slider.JPG" Grid.Row="0"/>
+        <Image Source="images/up_slider.JPG" Grid.Row="0" Stretch="Fill"/>
         <Grid  Grid.Column="0" Grid.ColumnSpan="4">
-            <Button Grid.Column="0" Background="Transparent" Name="contact" FontSize="19" Foreground="Wheat">
-                <local:basic_page Height="100" Width="100" Loaded="basic_page_Loaded"/>
-            </Button>
+            <Button Content="צור קשר" Grid.Column="0" Background="Transparent" Name="contact" FontSize="19" Foreground="Wheat"/>
             <Button Content="עזרה" Grid.Column="1" Background="Transparent" Name="help" FontSize="19" Foreground="Wheat"/>
             <Button Content="אודות" Grid.Column="2" Background="Transparent" Name="about" FontSize="19" Foreground="Wheat"/>
             <Button Content="ראשי" Grid.Column="3" Background="Transparent" Name="main" FontSize="19" Foreground="Wheat"/>
@@ -29,7 +27,7 @@
 
         </Grid>
         <Grid  Grid.Row="1" >
-            <Image Source="images/main_image7.JPG"/>
+            <Image Source="images/main_image7.JPG" Stretch="Fill"/>
         </Grid>
 
 

@@ -25,6 +25,5 @@ namespace PLWPF
             InitializeComponent();
         }
 
-       
     }
 }

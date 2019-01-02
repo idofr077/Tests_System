@@ -24,10 +24,5 @@ namespace PLWPF
         {
             InitializeComponent();
         }
-
-        private void basic_page_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for basic_page.xaml
+    /// Interaction logic for slider_down_2.xaml
     /// </summary>
-    public partial class basic_page : UserControl
+    public partial class slider_down_2 : UserControl
     {
-        public basic_page()
+        public slider_down_2()
         {
             InitializeComponent();
-        }
-
-        private void basic_page_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

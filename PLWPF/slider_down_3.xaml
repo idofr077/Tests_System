@@ -8,15 +8,15 @@
              d:DesignHeight="50" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            
+
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
-            
+
+
         </Grid.ColumnDefinitions>
         <Button Name="by_tests_num"    Foreground="Blue" FontSize="12" FontStyle="Oblique"  Content="חלוקה לפי &#xa; מספר מבחנים" Background="white" Grid.Column="4"/>
         <Button Name="by_teacher"  Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="חלוקה לפי &#xa; מורים" Background="white" Grid.Column="3"/>

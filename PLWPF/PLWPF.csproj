@@ -61,6 +61,12 @@
     <Compile Include="slider_down_1.xaml.cs">
       <DependentUpon>slider_down_1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="slider_down_2.xaml.cs">
+      <DependentUpon>slider_down_2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="slider_down_3.xaml.cs">
+      <DependentUpon>slider_down_3.xaml</DependentUpon>
+    </Compile>
     <Page Include="basic_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +84,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="slider_down_1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="slider_down_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="slider_down_3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

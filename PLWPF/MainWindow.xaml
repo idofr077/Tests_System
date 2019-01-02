@@ -11,7 +11,7 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <local:basic_page />
+        <local:basic_page Loaded="basic_page_Loaded" />
         <local:slider_down_1 Grid.Row="1"/>
 
     </Grid>

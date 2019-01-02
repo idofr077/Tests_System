@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="PLWPF.slider_down_1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Name="remove_tester" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הסר בוחן" Background="white" Grid.Column="1"  />
+        <Button Name="remove_trainee" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הסר תלמיד" Background="white" Grid.Column="2"/>
+        <Button Name="update_test" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="עדכן  מבחן" Background="white" Grid.Column="3"/>
+        <Button Name="add_test"    Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הוסף מבחן" Background="white" Grid.Column="4"/>
+        <Button Name="add_tester"  Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הוסף בוחן" Background="white" Grid.Column="5"/>
+        <Button Name="all_trainee" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="כל התלמידים" Background="white" Grid.Column="6"/>
+        <Button Name="add_trainee" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הוסף תלמיד" Background="White" Grid.Column="7"/>
+        <Button  Name="left_move_slider" Background="white" >
+            <Grid Height="auto" Width="auto">
+                <Image Source="images/left_pointer.png"/>
+            </Grid>
+        </Button>
+        <Button Background="white" Grid.Column="8" Name="right_move_slider"  >
+            <Grid Height="auto" Width="auto">
+                <Image Source="images/right_pointer.png"/>
+            </Grid>
+        </Button>
+    </Grid>
+</UserControl>

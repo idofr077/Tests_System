@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="add_trainee.xaml.cs">
+      <DependentUpon>add_trainee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <Compile Include="slider_down_3.xaml.cs">
       <DependentUpon>slider_down_3.xaml</DependentUpon>
     </Compile>
+    <Page Include="add_trainee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="basic_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

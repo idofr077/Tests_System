@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for basic_page.xaml
+    /// Interaction logic for contact.xaml
     /// </summary>
-    public partial class basic_page : UserControl
+    public partial class contact : UserControl
     {
-        public basic_page()
+        public contact()
         {
             InitializeComponent();
-        }
-
-        private void contact_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -61,6 +61,9 @@
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="contact.xaml.cs">
+      <DependentUpon>contact.xaml</DependentUpon>
+    </Compile>
     <Compile Include="slider_down_1.xaml.cs">
       <DependentUpon>slider_down_1.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="basic_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="contact.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

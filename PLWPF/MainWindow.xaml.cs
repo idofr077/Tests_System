@@ -27,6 +27,7 @@ namespace PLWPF
         {
             InitializeComponent();
             dockPanel.Children.Add(d1);
+            
         }
 
         private void left_move_slider_Click(object sender, RoutedEventArgs e)
@@ -65,7 +66,7 @@ namespace PLWPF
                 dockPanel.Children.Add(d2);
             }
         }
-
+        
  
     }
 }

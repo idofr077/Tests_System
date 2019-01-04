@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Image Source="images/up_slider.JPG" Grid.Row="0" Stretch="Fill"/>
         <Grid  Grid.Column="0" Grid.ColumnSpan="4">
-            <Button Content="צור קשר" Grid.Column="0" Background="Transparent" Name="contact" FontSize="19" Foreground="Wheat"/>
+            <Button Content="צור קשר" Grid.Column="0" Background="Transparent" Name="contact" FontSize="19" Foreground="Wheat" Click="contact_Click"/>
             <Button Content="עזרה" Grid.Column="1" Background="Transparent" Name="help" FontSize="19" Foreground="Wheat"/>
             <Button Content="אודות" Grid.Column="2" Background="Transparent" Name="about" FontSize="19" Foreground="Wheat"/>
             <Button Content="ראשי" Grid.Column="3" Background="Transparent" Name="main" FontSize="19" Foreground="Wheat"/>

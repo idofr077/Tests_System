@@ -58,6 +58,9 @@
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="contact.xaml.cs">
+      <DependentUpon>contact.xaml</DependentUpon>
+    </Compile>
     <Compile Include="slider_down_1.xaml.cs">
       <DependentUpon>slider_down_1.xaml</DependentUpon>
     </Compile>
@@ -68,6 +71,10 @@
       <DependentUpon>slider_down_3.xaml</DependentUpon>
     </Compile>
     <Page Include="basic_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="contact.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,6 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\left_pointer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\contact2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\contact_down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

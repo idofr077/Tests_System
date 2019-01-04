@@ -11,8 +11,18 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <local:basic_page />
-        <local:slider_down_1 Grid.Row="1" />
-
+        <local:basic_page  />
+        <DockPanel Grid.Row="1" x:Name="dockPanel" LastChildFill="True">
+            <Button  x:Name="rightButton" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="right_move_slider_Click">
+                <Grid Height="auto" Width="auto">
+                    <Image Source="images/right_pointer.png"/>
+                </Grid>
+            </Button>
+            <Button  Name="left_move_slider" Background="white" DockPanel.Dock="Left" HorizontalAlignment="Left" Click="left_move_slider_Click" >
+                <Grid Height="auto" Width="auto">
+                    <Image Source="images/left_pointer.png"/>
+                </Grid>
+            </Button>
+        </DockPanel>
     </Grid>
 </Window>

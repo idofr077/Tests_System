@@ -20,10 +20,52 @@ namespace PLWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        slider_down_1 d1 = new slider_down_1();
+        slider_down_2 d2 = new slider_down_2();
+        slider_down_3 d3 = new slider_down_3();
         public MainWindow()
         {
             InitializeComponent();
+            dockPanel.Children.Add(d1);
         }
 
+        private void left_move_slider_Click(object sender, RoutedEventArgs e)
+        {
+            if (dockPanel.Children.IndexOf(d1) >= 0)
+            {
+                dockPanel.Children.Remove(d1);
+                dockPanel.Children.Add(d2);
+            }
+            else if (dockPanel.Children.IndexOf(d2) >= 0)
+            {
+                dockPanel.Children.Remove(d2);
+                dockPanel.Children.Add(d3);
+            }
+            else if (dockPanel.Children.IndexOf(d3) >= 0)
+            {
+                dockPanel.Children.Remove(d3);
+                dockPanel.Children.Add(d1);
+            }
+        }
+        private void right_move_slider_Click(object sender,RoutedEventArgs e)
+        {
+            if (dockPanel.Children.IndexOf(d1) >= 0)
+            {
+                dockPanel.Children.Remove(d1);
+                dockPanel.Children.Add(d3);
+            }
+            else if (dockPanel.Children.IndexOf(d2) >= 0)
+            {
+                dockPanel.Children.Remove(d2);
+                dockPanel.Children.Add(d1);
+            }
+            else if (dockPanel.Children.IndexOf(d3) >= 0)
+            {
+                dockPanel.Children.Remove(d3);
+                dockPanel.Children.Add(d2);
+            }
+        }
+
+ 
     }
 }

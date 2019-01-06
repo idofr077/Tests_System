@@ -11,7 +11,6 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <local:basic_page  />
         <DockPanel Grid.Row="1" x:Name="dockPanel" LastChildFill="True">
             <Button  x:Name="rightButton" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="right_move_slider_Click">
                 <Grid Height="auto" Width="auto">
@@ -24,5 +23,29 @@
                 </Grid>
             </Button>
         </DockPanel>
+        <Grid Grid.Column="0">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="267*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Name="up_slider_click" Grid.Column="0" Grid.ColumnSpan="4">
+                <Image x:Name="main_image" Source="images/up_slider.jpg" Stretch="Fill" Grid.ColumnSpan="4"/>
+
+                <Button Content="צור קשר" Grid.Column="0" Background="Transparent" Name="contact" FontSize="19" Foreground="Wheat" Click="contact_exp" />
+                <Button Content="אודות" Grid.Column="1" Background="Transparent" Name="about" FontSize="19" Foreground="Wheat" Click="about_click"/>
+                <Button Content="עזרה" Grid.Column="2" Background="Transparent" Name="help" FontSize="19" Foreground="Wheat" Click="help_click"/>
+                <Button Content="ראשי" Grid.Column="3" Background="Transparent" Name="main" FontSize="19" Foreground="Wheat" Click="main_click"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <DockPanel Grid.Row="1" x:Name="middle"/>
+            <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="100" Margin="261,116,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Visibility="Hidden" LoadedBehavior="Manual"/>
+        </Grid>
     </Grid>
 </Window>

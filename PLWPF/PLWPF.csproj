@@ -55,11 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="about_exp.xaml.cs">
+      <DependentUpon>about_exp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
     </Compile>
     <Compile Include="contact.xaml.cs">
       <DependentUpon>contact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="contact_exp.xaml.cs">
+      <DependentUpon>contact_exp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="help_exp.xaml.cs">
+      <DependentUpon>help_exp.xaml</DependentUpon>
     </Compile>
     <Compile Include="slider_down_1.xaml.cs">
       <DependentUpon>slider_down_1.xaml</DependentUpon>
@@ -70,11 +79,26 @@
     <Compile Include="slider_down_3.xaml.cs">
       <DependentUpon>slider_down_3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="up_slider.xaml.cs">
+      <DependentUpon>up_slider.xaml</DependentUpon>
+    </Compile>
+    <Page Include="about_exp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="basic_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="contact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="contact_exp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="help_exp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="slider_down_3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="up_slider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +173,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\contact_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\odot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\help.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Music\26.mp3" />
+    <Content Include="Music\Believer.mp3" />
+    <Content Include="Music\Cold water.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

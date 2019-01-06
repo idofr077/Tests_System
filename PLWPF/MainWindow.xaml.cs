@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace PLWPF
 {
@@ -23,10 +25,38 @@ namespace PLWPF
         slider_down_1 d1 = new slider_down_1();
         slider_down_2 d2 = new slider_down_2();
         slider_down_3 d3 = new slider_down_3();
+        basic_page basic = new basic_page();
+        contact_exp contact_Exp = new contact_exp();
+        about_exp about_Exp = new about_exp();
+        help_exp help_Exp = new help_exp();
+        string[] audioPath = Directory.GetFiles(@"C:\Users\PC\source\repos\idofr077\Tests_System\PLWPF\Music");
+        int index = 0;
         public MainWindow()
         {
             InitializeComponent();
             dockPanel.Children.Add(d1);
+            middle.Children.Add(basic);
+            //Uri f = new Uri(@"C:\Users\\PC\Music\26.mp3");
+            //music.Add(f);
+            //music.Add(new Uri(@"C:\Users\\PC\\\Music\\Believer.mp3"));
+            //music.Add(new Uri(@"C:\Users\\PC\\Music\\Cold water.mp3"));
+            mediaElement.Source = new Uri(audioPath[index]);
+            mediaElement.Play();
+            mediaElement.MediaEnded += sss;
+        }
+        private void sss(object sender, RoutedEventArgs e)
+        {
+            if (index < audioPath.Length)
+            {
+                mediaElement.Source = new Uri(audioPath[++index]);
+                mediaElement.Play();
+            }
+            else
+            {
+                index = 0;
+                mediaElement.Source = new Uri(audioPath[index]);
+                mediaElement.Play();
+            }
         }
 
         private void left_move_slider_Click(object sender, RoutedEventArgs e)
@@ -66,6 +96,28 @@ namespace PLWPF
             }
         }
 
- 
+        private void contact_exp(object sender, RoutedEventArgs e)
+        {
+            middle.Children.Clear();
+            middle.Children.Add(contact_Exp);
+        }
+
+        private void about_click(object sender, RoutedEventArgs e)
+        {
+            middle.Children.Clear();
+            middle.Children.Add(about_Exp);
+        }
+
+        private void help_click(object sender, RoutedEventArgs e)
+        {
+            middle.Children.Clear();
+            middle.Children.Add(help_Exp);
+        }
+
+        private void main_click(object sender, RoutedEventArgs e)
+        {
+            middle.Children.Clear();
+            middle.Children.Add(basic);
+        }
     }
 }

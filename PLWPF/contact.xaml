@@ -11,9 +11,9 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <local:basic_page Name="basic_page"/>
+        <local:basic_page x:Name="bssic_page"/>
         <Grid HorizontalAlignment="Left" Height="260" Margin="0,49,0,0" VerticalAlignment="Top" Width="790">
-            <Image x:Name="contact" Source="images/contact2.png" Stretch="Fill" />
+            <Image x:Name="contact_explanation" Source="images/contact2.png" Stretch="Fill" />
         </Grid>
         <Image x:Name="contact_down" Grid.Row="1" Source="images/contact_down.png" Stretch="Fill"/>
 

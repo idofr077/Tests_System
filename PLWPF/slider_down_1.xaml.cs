@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BL
+using BL;
 namespace PLWPF
 {
     /// <summary>
@@ -38,6 +38,15 @@ namespace PLWPF
               
                     
       
+        }
+
+        private void add_test_Click(object sender, RoutedEventArgs e)
+        {
+            IBL bl = BL.FactoryBl.getBl();
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            add_Test temp = new add_Test();
+            father.middle.Children.Add(temp);
         }
     }
 }

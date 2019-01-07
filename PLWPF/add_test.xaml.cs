@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for add_test.xaml
+    /// Interaction logic for add_Test.xaml
     /// </summary>
-    public partial class add_test : UserControl
+    public partial class add_Test : UserControl
     {
-        public add_test()
+        public add_Test()
         {
             InitializeComponent();
         }

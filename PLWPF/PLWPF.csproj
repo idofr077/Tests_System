@@ -58,6 +58,9 @@
     <Compile Include="about_exp.xaml.cs">
       <DependentUpon>about_exp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="add_test.xaml.cs">
+      <DependentUpon>add_test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="add_Trainee.xaml.cs">
       <DependentUpon>add_Trainee.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
       <DependentUpon>up_slider.xaml</DependentUpon>
     </Compile>
     <Page Include="about_exp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

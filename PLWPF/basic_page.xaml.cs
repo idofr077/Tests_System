@@ -26,14 +26,22 @@ namespace PLWPF
             InitializeComponent();
         }
 
-        private void mute_Click(object sender, RoutedEventArgs e)
+        private void mute_Click(object sender, RoutedEventArgs e)//בעצם זה היה שקט ועכשיו מגבירים
         {
             IBL bl = BL.FactoryBl.getBl();
             MainWindow father = MainWindow.FindParentWindow(this);
-            if (father.mediaElement.Volume != 0)
-                father.mediaElement.Volume = 0;
-            else
-                father.mediaElement.Volume = 0.5;
+            father.mediaElement.Volume = 0;
+            sound_or_not.Visibility = Visibility.Visible;
+            mute_or_not.Visibility = Visibility.Hidden;
+        }
+
+        private void sound_Click(object sender, RoutedEventArgs e)//זה היה עובד ועכשיו משתיקים
+        {
+            IBL bl = BL.FactoryBl.getBl();
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.mediaElement.Volume = 0.5;
+            sound_or_not.Visibility= Visibility.Hidden;
+            mute_or_not.Visibility = Visibility.Visible;
         }
     }
 }

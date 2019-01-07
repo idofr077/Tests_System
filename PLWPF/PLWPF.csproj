@@ -201,6 +201,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\mute.png" />
+    <Resource Include="images\sound.png" />
     <Content Include="Music\26.mp3" />
     <Content Include="Music\Believer.mp3" />
     <Content Include="Music\Cold water.mp3" />

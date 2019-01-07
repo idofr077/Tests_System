@@ -16,8 +16,13 @@
         <Grid  Grid.Row="0" >
             <Image Source="images/main_image7.JPG" Stretch="Fill"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="60,211,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.809,-0.433">
-            <Button x:Name="mute" Content="mute/sound" Click="mute_Click" RenderTransformOrigin="-3.507,2.504"/>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="60,200,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.809,-0.433">
+            <Button x:Name="mute_or_not" Click="mute_Click" Background="Transparent" Visibility="Visible">
+                <Image x:Name="mute" Stretch="Fill" Source="images/sound.png"/>
+            </Button>
+            <Button x:Name="sound_or_not" Click="sound_Click" Background="Transparent" Visibility="Hidden">
+                <Image x:Name="sound" Stretch="Fill" Source="images/mute.png"/>
+            </Button>
         </Grid>
 
 

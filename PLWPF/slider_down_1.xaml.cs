@@ -32,9 +32,10 @@ namespace PLWPF
                 IBL bl = BL.FactoryBl.getBl();
                 MainWindow father = MainWindow.FindParentWindow(this);
                 father.middle.Children.Clear();
-                add_Trainee temp = new add_Trainee();
+                add_trainee temp = new add_trainee();
                 father.middle.Children.Add(temp);
-
+      
+               
               
                     
       

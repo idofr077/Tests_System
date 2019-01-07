@@ -61,8 +61,8 @@
     <Compile Include="add_test.xaml.cs">
       <DependentUpon>add_test.xaml</DependentUpon>
     </Compile>
-    <Compile Include="add_Trainee.xaml.cs">
-      <DependentUpon>add_Trainee.xaml</DependentUpon>
+    <Compile Include="add_trainee.xaml.cs">
+      <DependentUpon>add_trainee.xaml</DependentUpon>
     </Compile>
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
@@ -93,7 +93,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="add_Trainee.xaml">
+    <Page Include="add_trainee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

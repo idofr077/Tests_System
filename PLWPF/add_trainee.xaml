@@ -7,87 +7,227 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <local:basic_page />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="404*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
         <Grid >
             <Grid.RowDefinitions>
-                <RowDefinition Height="31*"/>
-                <RowDefinition Height="119*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid  Grid.Row="1" Name="fields_grid">
+            <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid    Name="id">
+                <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Id:" Background="White" FontSize="20"/>
-                    <TextBox Grid.Column="1" />
+                    <TextBlock  Text="תז:" FontSize="15" FontWeight="Heavy"/>
+                    <TextBox Grid.Column="1" Name="id"   Text="TextBox" />
                 </Grid>
-                <Grid  Name="last_name" Grid.Row="1">
+                <Grid Grid.Column="1" >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Last name:" Background="White" FontSize="15"/>
-                    <TextBox Grid.Column="1" />
+                    <TextBlock Text="תאריך לידה:" FontSize="15" FontWeight="Heavy" />
+                    <DatePicker Name="date_of_birth"  Grid.Column="1" />
                 </Grid>
-                <Grid  Name="first_name" Grid.Row="2">
+
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="First name:" Background="White" FontSize="15"/>
-                    <TextBox Grid.Column="1" />
+                    <TextBlock  Text="שם פרטי:" FontSize="15" FontWeight="Heavy"/>
+                    <TextBox Grid.Column="1" Name="first_name"   Text="TextBox" />
                 </Grid>
-                <Grid  Name="date_of_birth" Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Date of birth:" Background="White" FontSize="15"/>
-                    <ListBox Name="day" Grid.Column="1" Width="auto" />
-                    <ListBox Name="month" Grid.Column="1" Width="auto" />
-                    <ListBox Name="year" Grid.Column="1" Width="auto" />
+                <Grid Grid.Column="1" >
+                    <Grid Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="117*"/>
+                            <ColumnDefinition Width="283*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text=" מין:" FontSize="15" FontWeight="Heavy" />
+                        <ListBox Grid.Column="1" Name="gender">
+                            <ListBoxItem>
+                                <ListBoxItem Content="זכר"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="נקבה"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="אחר"/>
+                            </ListBoxItem>
+
+
+                        </ListBox>
+
+                    </Grid>
                 </Grid>
-                <Grid  Name="gender" Grid.Row="4">
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Gender:" Background="White" FontSize="15"/>
-                    <ListBox Name="_gender" Grid.Column="1" Width="auto" Height="auto">
-                        <ListBox.Items>
-                            <ListBoxItem Content="male" Height="auto"/>
-                            <ListBoxItem Content="female" Height="auto"/>
-                            <ListBoxItem Content="other" Height="auto"/>
-                        </ListBox.Items>
+                    <TextBlock  Text="שם משפחה:" FontSize="15" FontWeight="Heavy"/>
+                    <TextBox Grid.Column="1" Name="last_name"   Text="TextBox" />
+                </Grid>
+                <Grid Grid.Column="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="סוג הרכב:" FontSize="15" FontWeight="Heavy"/>
+                    <ListBox Grid.Column="1" Name="vehicle">
+                        <ListBoxItem>
+                            <ListBoxItem Content="רכב פרטי"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ListBoxItem Content="רכב דו גלגלי"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ListBoxItem Content="משאית בינונית"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ListBoxItem Content="משאית כבדה"/>
+                        </ListBoxItem>
+
                     </ListBox>
-                         
 
                 </Grid>
-                <Grid  Name="Phone_number" Grid.Row="5">
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Phone number:" Background="White" FontSize="15"/>
-                    <TextBox Grid.Column="1" />
+                    <TextBlock  Text="מספר טלפון:" FontSize="15" FontWeight="Heavy"/>
+                    <TextBox Grid.Column="1" Name="phone_number"   Text="TextBox" />
                 </Grid>
-                
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="סוג הילוכים:"   FontSize="15" FontWeight="Heavy" VerticalAlignment="Top"/>
+                    <ListBox Grid.Column="1" Name="kind_of_gearbox">
+                        <ListBoxItem>
+                            <ListBoxItem Content="ידני"/>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ListBoxItem Content="אוטומט"/>
+                        </ListBoxItem>
+                    </ListBox>
+
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  Text="בית ספר:" FontSize="15" FontWeight="Heavy"/>
+                    <TextBox Grid.Column="1" Name="school"   Text="TextBox" />
+                </Grid>
+                <Grid Grid.Column="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  FontSize="15" FontWeight="Heavy" Text="עיר:"/>
+                    <TextBox Grid.Column="1"  Name="city"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  Text="מורה:" FontSize="15" FontWeight="Heavy"/>
+                    <TextBox Grid.Column="1" Name="teacher"   Text="TextBox" />
+                </Grid>
+                <Grid Grid.Column="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  Text="רחוב:" FontSize="15" FontWeight="Heavy"/>
+                    <TextBox Grid.Column="1" Name="street"/>
+                </Grid>
+            </Grid>
+            <Grid  Grid.Row="6" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="117*"/>
+                            <ColumnDefinition Width="283*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  Text="מספר שיעורים:" FontSize="15" FontWeight="Heavy" Grid.ColumnSpan="2"/>
+                        <TextBox Name="num_of_lessons"   Text="TextBox" Grid.Column="1" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="283*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  Text="מספר בית:" FontSize="15" FontWeight="Heavy" />
+                    <TextBox Grid.Column="1" Name="house_number"/>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Image Source="images/up_slider.jpg" Stretch="Fill"/>
+            <Grid>
+            <Button Content="אשר" Background="Transparent" FontSize="20" FontWeight="Bold"/>
             </Grid>
         </Grid>
+
+
+
 
 
 

@@ -29,8 +29,13 @@ namespace PLWPF
         contact_exp contact_Exp = new contact_exp();
         about_exp about_Exp = new about_exp();
         help_exp help_Exp = new help_exp();
-        string[] audioPath = Directory.GetFiles(@"C:\Users\PC\source\repos\idofr077\Tests_System\PLWPF\Music");
+        string[] audioPath = Directory.GetFiles(@"C:\Users\idofr\source\repos\Tests_System\PLWPF\Music");
+        
         int index = 0;
+        public static MainWindow FindParentWindow(DependencyObject child)
+        {
+            return MainWindow.GetWindow(child)as MainWindow;
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -43,7 +48,9 @@ namespace PLWPF
             mediaElement.Source = new Uri(audioPath[index]);
             mediaElement.Play();
             mediaElement.MediaEnded += sss;
-        }
+            
+        } 
+       
         private void sss(object sender, RoutedEventArgs e)
         {
             if (index < audioPath.Length)
@@ -58,7 +65,7 @@ namespace PLWPF
                 mediaElement.Play();
             }
         }
-
+        
         private void left_move_slider_Click(object sender, RoutedEventArgs e)
         {
             if (dockPanel.Children.IndexOf(d1) >= 0)

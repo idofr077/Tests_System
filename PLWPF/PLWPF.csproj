@@ -58,11 +58,8 @@
     <Compile Include="about_exp.xaml.cs">
       <DependentUpon>about_exp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="add_test.xaml.cs">
-      <DependentUpon>add_test.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="add_trainee.xaml.cs">
-      <DependentUpon>add_trainee.xaml</DependentUpon>
+    <Compile Include="add_Trainee.xaml.cs">
+      <DependentUpon>add_Trainee.xaml</DependentUpon>
     </Compile>
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
@@ -92,11 +89,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="add_test.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="add_trainee.xaml">
+    <Page Include="add_Trainee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,7 +190,16 @@
   <ItemGroup>
     <Resource Include="images\help.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{09d6c83c-e79f-41e5-b762-3e3ea13f9ce9}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{4a768fc3-ae87-474f-a06f-2fe78ef8a0fe}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Music\26.mp3" />
     <Content Include="Music\Believer.mp3" />

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BL
 namespace PLWPF
 {
     /// <summary>
@@ -20,11 +20,24 @@ namespace PLWPF
     /// </summary>
     public partial class slider_down_1 : UserControl
     {
+
         public slider_down_1()
         {
             InitializeComponent();
         }
 
+        private void add_trainee_Click(object sender, RoutedEventArgs e)
+        {
+           
+                IBL bl = BL.FactoryBl.getBl();
+                MainWindow father = MainWindow.FindParentWindow(this);
+                father.middle.Children.Clear();
+                add_Trainee temp = new add_Trainee();
+                father.middle.Children.Add(temp);
+
+              
+                    
       
+        }
     }
 }

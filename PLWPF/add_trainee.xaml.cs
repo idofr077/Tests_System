@@ -18,11 +18,14 @@ namespace PLWPF
     /// <summary>
     /// Interaction logic for add_trainee.xaml
     /// </summary>
-    public partial class add_trainee : UserControl
+    public partial class add_Trainee : UserControl
     {
-        public add_trainee()
+        
+        public add_Trainee()
         {
             InitializeComponent();
+
         }
+
     }
 }

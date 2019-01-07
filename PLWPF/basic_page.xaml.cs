@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BL;
 
 namespace PLWPF
 {
@@ -23,6 +24,16 @@ namespace PLWPF
         public basic_page()
         {
             InitializeComponent();
+        }
+
+        private void mute_Click(object sender, RoutedEventArgs e)
+        {
+            IBL bl = BL.FactoryBl.getBl();
+            MainWindow father = MainWindow.FindParentWindow(this);
+            if (father.mediaElement.Volume != 0)
+                father.mediaElement.Volume = 0;
+            else
+                father.mediaElement.Volume = 0.5;
         }
     }
 }

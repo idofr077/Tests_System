@@ -8,15 +8,19 @@
 
              d:DesignHeight="350" d:DesignWidth="800">
     <Grid >
-        
+
         <Grid.RowDefinitions>
-           
+
             <RowDefinition Height="267*"/>
         </Grid.RowDefinitions>
         <Grid  Grid.Row="0" >
             <Image Source="images/main_image7.JPG" Stretch="Fill"/>
         </Grid>
-        
+        <Grid HorizontalAlignment="Left" Height="100" Margin="60,211,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.809,-0.433">
+            <Button x:Name="mute" Content="mute/sound" Click="mute_Click" RenderTransformOrigin="-3.507,2.504"/>
+        </Grid>
+
+
 
 
     </Grid>

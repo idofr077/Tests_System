@@ -31,7 +31,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text=":תז" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text="תז:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="id"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -39,7 +39,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text=":תאריך לידה" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock Text="תאריך לידה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <DatePicker Name="date_of_birth"  Grid.Column="0" />
                 </Grid>
 
@@ -55,7 +55,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text=":שם פרטי" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text="שם פרטי:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="first_name"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -64,7 +64,7 @@
                             <ColumnDefinition Width="283*"/>
                             <ColumnDefinition Width="117*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text=" :מין" FontSize="15" FontWeight="Heavy" Grid.Column="1" />
+                        <TextBlock Text="מין:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                         <ListBox Grid.Column="0" Name="gender">
                             <ListBoxItem>
                                 <ListBoxItem Content="זכר"/>
@@ -92,7 +92,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text=":שם משפחה" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text="שם משפחה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="last_name"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -100,7 +100,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text=":התמחות" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock Text="התמחות:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <ListBox Grid.Column="0" Name="expertise">
                         <ListBoxItem>
                             <ListBoxItem Content="רכב פרטי"/>
@@ -129,7 +129,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text=":מספר טלפון" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text="מספר טלפון:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="phone_number"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1">
@@ -137,7 +137,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="כמה שנות &#xa; :ניסיון"   FontSize="12" FontWeight="Heavy" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBlock Text="כמה שנות &#xa; ניסיון:"   FontSize="12" FontWeight="Heavy" VerticalAlignment="Top" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="expirence"/>
                 </Grid>
             </Grid>
@@ -151,7 +151,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="כמה &#xa; :טסטים בשבוע" FontSize="12" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text="כמה &#xa; טסטים בשבוע:" FontSize="12" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="school"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -159,7 +159,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  FontSize="15" FontWeight="Heavy" Text=":עיר" Grid.Column="1"/>
+                    <TextBlock  FontSize="15" FontWeight="Heavy" Text="עיר:" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0"  Name="city"/>
                 </Grid>
             </Grid>
@@ -173,7 +173,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text=":מורה" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text=":מורה" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="teacher"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -181,7 +181,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text=":רחוב" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text="רחוב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="street"/>
                 </Grid>
             </Grid>
@@ -196,7 +196,7 @@
                             <ColumnDefinition Width="283*"/>
                             <ColumnDefinition Width="117*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock  Text=":מספר שיעורים" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                        <TextBlock  Text=":מספר שיעורים" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                         <TextBox Name="num_of_lessons"   Text="TextBox" Grid.Column="0" />
                     </Grid>
                 </Grid>
@@ -205,7 +205,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text=":מספר בית" FontSize="15" FontWeight="Heavy" Grid.Column="1"/>
+                    <TextBlock  Text="מספר בית:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="house_number"/>
                 </Grid>
             </Grid>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BE;
 
 namespace PLWPF
 {
@@ -23,6 +24,30 @@ namespace PLWPF
         public slider_down_2()
         {
             InitializeComponent();
+        }
+
+        private void all_testers_click(object sender, RoutedEventArgs e)
+        {
+            BL.IBL bl = BL.FactoryBl.getBl();
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new all_testers());
+        }
+
+        private void update_trainee_Click(object sender, RoutedEventArgs e)
+        {
+            BL.IBL bl = BL.FactoryBl.getBl();
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new update_trainee());
+        }
+
+        private void all_test_click(object sender, RoutedEventArgs e)
+        {
+            BL.IBL bl = BL.FactoryBl.getBl();
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new all_tests());
         }
     }
 }

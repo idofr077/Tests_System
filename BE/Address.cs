@@ -8,9 +8,9 @@ namespace BE  // a class to set adresses.
 {
     public struct Address
     {
-        string street;
-        int num;
-        string city;
+        public string street;
+        public int num;
+        public string city;
 
         public Address(string street, int num, string city) //C_Tor
         {

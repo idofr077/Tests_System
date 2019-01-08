@@ -39,6 +39,9 @@ namespace BE
             grade = test.grade;
         }
 
+        public Test()
+        { }
+
         public Test(int id, int id_tester, int id_trainee, DateTime date, DateTime date_and_hour, Address address)
         {
             this.id = id;

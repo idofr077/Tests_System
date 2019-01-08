@@ -44,7 +44,10 @@ namespace BE
             license = new vehicle[4];
             this.num_of_licenses = num_of_licenses;
         }
-     
+
+        public Trainee()
+        { }
+
 
         public Trainee(Trainee Temp)
         {

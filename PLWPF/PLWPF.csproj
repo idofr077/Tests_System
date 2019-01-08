@@ -67,6 +67,15 @@
     <Compile Include="add_trainee.xaml.cs">
       <DependentUpon>add_trainee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="all_testers.xaml.cs">
+      <DependentUpon>all_testers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="all_tests.xaml.cs">
+      <DependentUpon>all_tests.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="all_trainee.xaml.cs">
+      <DependentUpon>all_trainee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
     </Compile>
@@ -85,6 +94,12 @@
     <Compile Include="slider_down_3.xaml.cs">
       <DependentUpon>slider_down_3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="update_tester.xaml.cs">
+      <DependentUpon>update_tester.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="update_trainee.xaml.cs">
+      <DependentUpon>update_trainee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="up_slider.xaml.cs">
       <DependentUpon>up_slider.xaml</DependentUpon>
     </Compile>
@@ -101,6 +116,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="add_trainee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="all_testers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="all_tests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="all_trainee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,6 +164,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="slider_down_3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="update_tester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="update_trainee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

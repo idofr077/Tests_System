@@ -58,5 +58,15 @@ namespace PLWPF
             add_tester temp = new add_tester();
             father.middle.Children.Add(temp);
         }
+
+        private void all_trainee_Click(object sender, RoutedEventArgs e)
+        {
+            IBL bl = BL.FactoryBl.getBl();
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            all_trainee temp = new all_trainee();
+            father.middle.Children.Add(temp);
+
+        }
     }
 }

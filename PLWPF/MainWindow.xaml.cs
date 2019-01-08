@@ -46,27 +46,27 @@ namespace PLWPF
             //music.Add(new Uri(@"C:\Users\\PC\\\Music\\Believer.mp3"));//
             //music.Add(new Uri(@"C:\Users\\PC\\Music\\Cold water.mp3"));
             index = num();
-            mediaElement.Source = new Uri(audioPath[index]);
+            mediaElement.Source = new Uri(audioPath[index++]);
             mediaElement.Play();
             mediaElement.MediaEnded += sss;
         }
         int num()
         {
 
-            return rnd.Next(3);
+            return rnd.Next(audioPath.Length);
         }
 
         private void sss(object sender, RoutedEventArgs e)
         {
             if (index < audioPath.Length)
             {
-                mediaElement.Source = new Uri(audioPath[++index]);
+                mediaElement.Source = new Uri(audioPath[index++]);
                 mediaElement.Play();
             }
             else
             {
                 index = 0;
-                mediaElement.Source = new Uri(audioPath[index]);
+                mediaElement.Source = new Uri(audioPath[index++]);
                 mediaElement.Play();
             }
         }

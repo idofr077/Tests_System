@@ -20,7 +20,7 @@ namespace PLWPF
     /// <summary>
     /// Interaction logic for all_tests.xaml
     /// </summary>
-    public partial class all_tests : UserControl
+    public partial class all_tests : UserControl//
     {
         public all_tests()
         {

@@ -28,9 +28,9 @@
             <TextBox Grid.Column="0" Grid.Row="0"/>
             <TextBlock Text=":עיר" Background="White" FontSize="15" Grid.Column="3" Grid.Row="0" FontWeight="Bold"/>
             <TextBox Grid.Column="2" Grid.Row="0"/>
-            <TextBlock Text="תעודת &#xa; זהות &#xa; של &#xa; :התלמיד" Background="White" FontSize="16" Grid.Column="1" Grid.Row="1" FontWeight="Bold"/>
+            <TextBlock Text="תעודת &#xa; זהות &#xa; של &#xa; :התלמיד" Background="White" FontSize="12" Grid.Column="1" Grid.Row="1" FontWeight="Bold"/>
             <TextBox Grid.Column="0" Grid.Row="1"/>
-            <TextBlock Text=":רחוב" Background="White" FontSize="17" Grid.Column="3" Grid.Row="1" FontWeight="Bold"/>
+            <TextBlock Text=":רחוב" Background="White" FontSize="15" Grid.Column="3" Grid.Row="1" FontWeight="Bold"/>
             <TextBox Grid.Column="2" Grid.Row="1"/>
             <TextBlock Text="תאריך &#xa; :ושעה" Background="White" FontSize="17" Grid.Column="1" Grid.Row="2" FontWeight="Bold"/>
             <TextBox Grid.Column="0" Grid.Row="2" />

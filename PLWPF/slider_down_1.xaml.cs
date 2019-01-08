@@ -55,7 +55,7 @@ namespace PLWPF
             IBL bl = BL.FactoryBl.getBl();
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
-            add_tester temp = new add_tester();
+            add_Tester temp = new add_Tester();
             father.middle.Children.Add(temp);
         }
 

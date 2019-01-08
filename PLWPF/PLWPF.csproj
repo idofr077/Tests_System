@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -46,9 +48,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -61,8 +65,11 @@
     <Compile Include="add_test.xaml.cs">
       <DependentUpon>add_test.xaml</DependentUpon>
     </Compile>
-    <Compile Include="add_trainee.xaml.cs">
-      <DependentUpon>add_trainee.xaml</DependentUpon>
+    <Compile Include="add_Tester.xaml.cs">
+      <DependentUpon>add_Tester.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_Trainee.xaml.cs">
+      <DependentUpon>add_Trainee.xaml</DependentUpon>
     </Compile>
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
@@ -93,7 +100,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="add_trainee.xaml">
+    <Page Include="add_Tester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_Trainee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -29,10 +29,10 @@ namespace PLWPF
         private void add_trainee_Click(object sender, RoutedEventArgs e)
         {
            
-                IBL bl = BL.FactoryBl.getBl();
+                
                 MainWindow father = MainWindow.FindParentWindow(this);
                 father.middle.Children.Clear();
-                add_trainee temp = new add_trainee();
+                add_Trainee temp = new add_Trainee();
                 father.middle.Children.Add(temp);
       
                

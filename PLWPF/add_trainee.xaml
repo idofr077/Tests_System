@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PLWPF.add_trainee"
+﻿<UserControl x:Class="PLWPF.add_Trainee"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -132,7 +132,7 @@
                     <TextBlock  Text="מספר טלפון:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="phone_number"   Text="TextBox" />
                 </Grid>
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="1" HorizontalAlignment="Left" Width="400" Background="Blue">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>

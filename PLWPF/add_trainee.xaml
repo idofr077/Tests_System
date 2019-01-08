@@ -132,12 +132,12 @@
                     <TextBlock  Text="מספר טלפון:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0" Name="phone_number"   Text="TextBox" />
                 </Grid>
-                <Grid Grid.Column="1" HorizontalAlignment="Left" Width="400" Background="Blue">
+                <Grid Grid.Column="1" Width="400" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="סוג הילוכים:"   FontSize="15" FontWeight="Heavy" VerticalAlignment="Top" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock Text="סוג הילוכים:"   FontSize="15" FontWeight="Heavy"  Grid.Column="1" FlowDirection="RightToLeft" Background="Blue"/>
                     <ListBox Grid.Column="0" Name="kind_of_gearbox">
                         <ListBoxItem>
                             <ListBoxItem Content="ידני"/>

@@ -49,6 +49,10 @@ namespace BL
             {
                 throw new Exception("Trainee must be  at least 18 years old.");
             }
+            if (_numOfLessons  < 20)
+            {
+                throw new Exception("Trainee must be  do at least 20 lessons before the test.");
+            }
             effector.add_trainee(_id, _last_name, _first_name, _date_of_birth, _Gender, _phone, _address, _learn_vehicle, _gearbox, _school, _teacher_name, _numOfLessons);
         }
 

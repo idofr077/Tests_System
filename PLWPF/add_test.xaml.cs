@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BL;
+using BE;
 namespace PLWPF
 {
     /// <summary>
@@ -27,6 +28,12 @@ namespace PLWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            IBL bl = FactoryBl.getBl();
+            
+            DateTime date_and_hour = new DateTime();
+            date_and_hour = (DateTime)(date.SelectedDate);
+            date_and_hour.AddHours (hour.SelectedIndex+9);
+            bl.add_test(int.Parse(id_tester.Text), int.Parse(id_trainee.Text), date_and_hour, new Address(street.Text, int.Parse(house_number.Text), city.Text));
 
         }
     }

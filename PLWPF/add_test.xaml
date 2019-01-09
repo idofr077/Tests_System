@@ -24,17 +24,17 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="תעודת זהות&#xa; של הבוחן:" Background="White" FontSize="15" Grid.Column="1" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="תעודת זהות&#xa; של הבוחן:"  Background="blue" FontSize="15" Grid.Column="1" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft"/>
             <TextBox Name="id_tester" Grid.Column="0" Grid.Row="0"/>
-            <TextBlock Text="עיר:" Background="White" FontSize="15" Grid.Column="3" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="עיר:"  Background="blue" FontSize="15" Grid.Column="3" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft"/>
             <TextBox Name="city" Grid.Column="2" Grid.Row="0"/>
-            <TextBlock Text="תעודת &#xa; זהות &#xa; של &#xa; התלמיד:" Background="White" FontSize="12" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="תעודת &#xa; זהות &#xa; של &#xa; התלמיד:"  Background="blue" FontSize="12" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft"/>
             <TextBox Name="id_trainee" Grid.Column="0" Grid.Row="1"/>
-            <TextBlock Text="רחוב:" Background="White" FontSize="15" Grid.Column="3" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="רחוב:"  Background="blue" FontSize="15" Grid.Column="3" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft"/>
             <TextBox Grid.Column="2" Grid.Row="1" Name="street"/>
-            <TextBlock Text="תאריך &#xa; ושעה:" Background="White" FontSize="17" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Background="blue" Text="תאריך &#xa; ושעה:" FontSize="17" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft"/>
             <TextBox Grid.Column="0" Grid.Row="2" />
-            <TextBlock Text="מספר בית:" Background="White" FontSize="17" Grid.Column="3" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="מספר בית:"  Background="blue" FontSize="17" Grid.Column="3" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft"/>
             <TextBox Name="house_number" Grid.Column="2" Grid.Row="2"/>
 
             <Grid Grid.Column="0" Grid.Row="2">
@@ -89,7 +89,7 @@
         <Grid Grid.Row="1">
             <Image Source="images/up_slider.jpg" Stretch="Fill"/>
             <Grid>
-                <Button Content="אשר" Background="Transparent" FontSize="20" FontWeight="Bold" />
+                <Button Content="אשר" Background="Transparent" FontSize="20" FontWeight="Bold" Click="Button_Click_1" />
             </Grid>
         </Grid>
     </Grid>

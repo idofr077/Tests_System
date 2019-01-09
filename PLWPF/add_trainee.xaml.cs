@@ -72,8 +72,7 @@ namespace PLWPF
                     _Gearbox = BE.kind_of_gearbox.auto;
                 }
                 
-                
-                 DateTime _date = new DateTime();
+                DateTime _date = new DateTime();
                 _date = (DateTime)(date_of_birth.SelectedDate);
 
                 bl.add_trainee(int.Parse(id.Text), (string)last_name.Text, (string)first_name.Text,_date , _Gender, long.Parse(phone_number.Text), new BE.Address(street.Text, int.Parse(house_number.Text), city.Text),   _Vehicle, _Gearbox, school.Text, teacher.Text, int.Parse(num_of_lessons.Text));

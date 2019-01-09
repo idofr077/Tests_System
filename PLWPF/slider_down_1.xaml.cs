@@ -43,7 +43,7 @@ namespace PLWPF
 
         private void add_test_Click(object sender, RoutedEventArgs e)
         {
-            IBL bl = BL.FactoryBl.getBl();
+            
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             add_Test temp = new add_Test();
@@ -52,7 +52,7 @@ namespace PLWPF
 
         private void add_tester_Click(object sender, RoutedEventArgs e)
         {
-            IBL bl = BL.FactoryBl.getBl();
+            
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             add_Tester temp = new add_Tester();
@@ -61,12 +61,20 @@ namespace PLWPF
 
         private void all_trainee_Click(object sender, RoutedEventArgs e)
         {
-            IBL bl = BL.FactoryBl.getBl();
+            
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             all_trainee temp = new all_trainee();
             father.middle.Children.Add(temp);
 
+        }
+
+        private void remove_trainee_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            Remove_Traineer temp = new Remove_Traineer();
+            father.middle.Children.Add(temp);
         }
     }
 }

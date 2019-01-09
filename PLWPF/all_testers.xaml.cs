@@ -25,8 +25,8 @@ namespace PLWPF
         public all_testers()
         {
             InitializeComponent();
-            List<Tester> items = new List<Tester>();
-            items.Add(new Tester() { id = 1, last_name= "flyshman", first_name= "peer", phone= 0584509872, max_testPerWeek=4, date_of_birth= DateTime.Parse("january 1, 2001"),Gender=gender.male, tester_expertice=vehicle.private_vehicle, expirence=88, address= new Address("hzait",1,"bni darom") });
+            List<Tester> items = (BL.FactoryBl.getBl().all_tester());
+            //items.Add(new Tester() { id = 1, last_name= "flyshman", first_name= "peer", phone= 0584509872, max_testPerWeek=4, date_of_birth= DateTime.Parse("january 1, 2001"),Gender=gender.male, tester_expertice=vehicle.private_vehicle, expirence=88, address= new Address("hzait",1,"bni darom") });
             lvUsers.ItemsSource = items;
         }
     }

@@ -147,7 +147,7 @@
 
                 </Grid>
             </Grid>
-            <Grid Grid.Row="4">
+            <Grid Grid.Row="4" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -166,159 +166,19 @@
                     <TextBlock  FontSize="15" FontWeight="Heavy" Text="עיר:" Grid.Column="1" FlowDirection="RightToLeft"/>
                     <TextBox Grid.Column="0"  Name="_city"/>
                 </Grid>
-                <Grid HorizontalAlignment="Left" Height="116" Margin="0,0,0,-59" VerticalAlignment="Top" Width="400">
-                    <Grid HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="400">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="4" >
-                            <Label Content="ראשון" Background="Blue" FlowDirection="RightToLeft"  VerticalAlignment="Top" FontStyle="Normal" FontWeight="Heavy"/>
-                        </Grid>
-                        <Grid Grid.Column="3" >
-                            <Label Content="שני" FlowDirection="RightToLeft" Background="Blue"  VerticalAlignment="Top" FontStyle="Normal" FontWeight="Heavy"/>
-                        </Grid>
-                        <Grid Grid.Column="2" >
-                            <Label Content="שלישי" Background="Blue"  FlowDirection="RightToLeft" VerticalAlignment="Top" FontStyle="Normal" FontWeight="Heavy"/>
-                        </Grid>
-                        <Grid Grid.Column="1" >
-                            <Label Content="רביעי" Background="Blue" FlowDirection="RightToLeft" VerticalAlignment="Top" FontStyle="Normal" FontWeight="Heavy"/>
-                        </Grid>
-                        <Grid>
-                            <Label Content="חמישי"  Background="Blue" FlowDirection="RightToLeft" VerticalAlignment="Top" FontStyle="Normal" FontWeight="Heavy"/>
-                        </Grid>
-
-                    </Grid>
-                    <Grid HorizontalAlignment="Left" Height="88" Margin="0,28,0,0" VerticalAlignment="Top" Width="400">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="4">
-                            <ListBox SelectionMode="Multiple"  Name="sunday">
-                                <ListBoxItem>
-                                    <ListBoxItem Content="9:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="10:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="11:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="12:00"/>
-                                </ListBoxItem>
-
-                                <ListBoxItem>
-                                    <ListBoxItem Content="13:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="14:00"/>
-                                </ListBoxItem>
-                            </ListBox>
-                        </Grid>
-                        <Grid Grid.Column="3">
-                            <ListBox SelectionMode="Multiple" Name="monday">
-                                <ListBoxItem>
-                                    <ListBoxItem Content="9:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="10:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="11:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="12:00"/>
-                                </ListBoxItem>
-
-                                <ListBoxItem>
-                                    <ListBoxItem Content="13:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="14:00"/>
-                                </ListBoxItem>
-                            </ListBox>
-                        </Grid>
-                        <Grid Grid.Column="2">
-                            <ListBox SelectionMode="Multiple" Name="tuesday">
-                                <ListBoxItem>
-                                    <ListBoxItem Content="9:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="10:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="11:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="12:00"/>
-                                </ListBoxItem>
-
-                                <ListBoxItem>
-                                    <ListBoxItem Content="13:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="14:00"/>
-                                </ListBoxItem>
-                            </ListBox>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <ListBox SelectionMode="Multiple" Name="wednesday">
-                                <ListBoxItem>
-                                    <ListBoxItem Content="9:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="10:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="11:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="12:00"/>
-                                </ListBoxItem>
-
-                                <ListBoxItem>
-                                    <ListBoxItem Content="13:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="14:00"/>
-                                </ListBoxItem>
-                            </ListBox>
-                        </Grid>
-                        <Grid Grid.Column="0">
-                            <ListBox SelectionMode="Multiple" Name="saturday">
-                                <ListBoxItem>
-                                    <ListBoxItem Content="9:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="10:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="11:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="12:00"/>
-                                </ListBoxItem>
-
-                                <ListBoxItem>
-                                    <ListBoxItem Content="13:00"/>
-                                </ListBoxItem>
-                                <ListBoxItem>
-                                    <ListBoxItem Content="14:00"/>
-                                </ListBoxItem>
-                            </ListBox>
-                        </Grid>
-
-
-
-                    </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="ראשון" Background="Blue" FlowDirection="RightToLeft"  FontStyle="Normal" FontWeight="Heavy" Grid.Column="4"/>
+                    <Label Content="שני" FlowDirection="RightToLeft" Background="Blue"   FontStyle="Normal" FontWeight="Heavy" Grid.Column="3"/>
+                    <Label Content="שלישי" Background="Blue"  FlowDirection="RightToLeft"  FontStyle="Normal" FontWeight="Heavy" Grid.Column="2"/>
+                    <Label Content="רביעי" Background="Blue" FlowDirection="RightToLeft"  FontStyle="Normal" FontWeight="Heavy" Grid.Column="1"/>
+                    <Label Content="חמישי"  Background="Blue" FlowDirection="RightToLeft" FontStyle="Normal" FontWeight="Heavy" Grid.Column="0"/>
                 </Grid>
             </Grid>
             <Grid Grid.Row="5">
@@ -326,8 +186,131 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="4">
+                        <ListBox SelectionMode="Multiple"  Name="sunday">
+                            <ListBoxItem>
+                                <ListBoxItem Content="9:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="10:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="11:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="12:00"/>
+                            </ListBoxItem>
 
-                <Grid Grid.Column="1" >
+                            <ListBoxItem>
+                                <ListBoxItem Content="13:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="14:00"/>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <ListBox SelectionMode="Multiple" Name="monday">
+                            <ListBoxItem>
+                                <ListBoxItem Content="9:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="10:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="11:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="12:00"/>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <ListBoxItem Content="13:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="14:00"/>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <ListBox SelectionMode="Multiple" Name="tuesday">
+                            <ListBoxItem>
+                                <ListBoxItem Content="9:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="10:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="11:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="12:00"/>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <ListBoxItem Content="13:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="14:00"/>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <ListBox SelectionMode="Multiple" Name="wednesday">
+                            <ListBoxItem>
+                                <ListBoxItem Content="9:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="10:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="11:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="12:00"/>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <ListBoxItem Content="13:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="14:00"/>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid Grid.Column="0">
+                        <ListBox SelectionMode="Multiple" Name="saturday">
+                            <ListBoxItem>
+                                <ListBoxItem Content="9:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="10:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="11:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="12:00"/>
+                            </ListBoxItem>
+
+                            <ListBoxItem>
+                                <ListBoxItem Content="13:00"/>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <ListBoxItem Content="14:00"/>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                </Grid>
+            <Grid Grid.Column="1" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
@@ -347,18 +330,15 @@
                             <ColumnDefinition Width="283*"/>
                             <ColumnDefinition Width="117*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid Grid.ColumnSpan="2">
-                            <Grid>
+                        
+                            <Grid Grid.Column="0">
                                 <TextBox Name="num_of_test_in_week"   Text="" Grid.Column="0" />
-                        </Grid>
+                            </Grid>
                         <Grid Grid.Column="1">
                             <TextBlock  Text="מספר &#xa;טסטים שבועי:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                           
+
                         </Grid>
-
-
                     </Grid>
-                  </Grid>
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid.ColumnDefinitions>

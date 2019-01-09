@@ -12,28 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BL;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for update_trainee.xaml
+    /// Interaction logic for Remove_Traineer.xaml
     /// </summary>
-    public partial class update_trainee : UserControl
+    public partial class Remove_Traineer : UserControl
     {
-        public update_trainee()
+        public Remove_Traineer()
         {
             InitializeComponent();
-            List<int> idis = new List<int>();
-            for (int i = 0; i < BL.FactoryBl.getBl().all_trainee().Count; i++)
-            {
-                idis.Add(BL.FactoryBl.getBl().all_trainee()[i].id);
-            }
-            id.ItemsSource = idis;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                IBL bl = FactoryBl.getBl();
+                bl.remove_trainee(int.Parse(id_remove.Text));
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+           
         }
     }
 }

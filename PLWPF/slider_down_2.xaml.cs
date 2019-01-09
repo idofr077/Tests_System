@@ -28,7 +28,7 @@ namespace PLWPF
 
         private void all_testers_click(object sender, RoutedEventArgs e)
         {
-            BL.IBL bl = BL.FactoryBl.getBl();
+            
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             father.middle.Children.Add(new all_testers());
@@ -36,7 +36,7 @@ namespace PLWPF
 
         private void update_trainee_Click(object sender, RoutedEventArgs e)
         {
-            BL.IBL bl = BL.FactoryBl.getBl();
+            
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             father.middle.Children.Add(new update_trainee());
@@ -44,7 +44,7 @@ namespace PLWPF
 
         private void all_test_click(object sender, RoutedEventArgs e)
         {
-            BL.IBL bl = BL.FactoryBl.getBl();
+           
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             father.middle.Children.Add(new all_tests());

@@ -20,7 +20,18 @@ namespace PLWPF
     /// Interaction logic for add_Test.xaml
     /// </summary>
     public partial class add_Test : UserControl
+
     {
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
         public add_Test()
         {
             InitializeComponent();
@@ -35,8 +46,29 @@ namespace PLWPF
                 DateTime date_and_hour = new DateTime();
                 date_and_hour = (DateTime)(date.SelectedDate);
                 date_and_hour.AddHours(hour.SelectedIndex + 9);
-           
+                if (!IsDigitsOnly(id_tester.Text))
+                {
+                    throw (new Exception("תעודות זהות מורכבות מספרות בלבד"));
+                    
+                }
+                if (!IsDigitsOnly(id_trainee.Text))
+                {
+                    throw (new Exception("תעודות זהות מורכבות מספרות בלבד"));
+
+                }
+                if (!IsDigitsOnly(house_number.Text))
+                {
+                    throw (new Exception("במרכיב מספר בית נדרשים להכניס מספר שלם"));
+
+                }
                 bl.add_test(int.Parse(id_tester.Text), int.Parse(id_trainee.Text), date_and_hour, new Address(street.Text, int.Parse(house_number.Text), city.Text));
+                id_tester.Clear();
+                id_trainee.Clear();
+                street.Clear();
+                house_number.Clear();
+                city.Clear();
+                MessageBox.Show("הפעולה בוצעה בהצלחה");
+               
             }
             catch (Exception exception)
             {

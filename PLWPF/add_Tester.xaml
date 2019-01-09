@@ -316,7 +316,7 @@
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Text="רחוב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                    <TextBox Grid.Column="0" Name="_street"/>
+                    <TextBox Grid.Column="0" Name="_street" />
                 </Grid>
             </Grid>
             <Grid  Grid.Row="6" >

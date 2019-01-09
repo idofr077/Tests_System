@@ -6,6 +6,13 @@
              xmlns:local="clr-namespace:PLWPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="MyBackground2" EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+            <GradientStop Color="Cyan" Offset="0"/>
+            <GradientStop Color="LightBlue" Offset="0.567"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="404*"/>
@@ -24,17 +31,17 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="תעודת זהות&#xa; של הבוחן:" Background="White" FontSize="15" Grid.Column="1" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="תעודת זהות&#xa; של הבוחן:" FontSize="15" Grid.Column="1" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground2}"/>
             <TextBox Name="id_tester" Grid.Column="0" Grid.Row="0"/>
-            <TextBlock Text="עיר:" Background="White" FontSize="15" Grid.Column="3" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="עיר:" FontSize="15" Grid.Column="3" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground2}"/>
             <TextBox Name="city" Grid.Column="2" Grid.Row="0"/>
-            <TextBlock Text="תעודת &#xa; זהות &#xa; של &#xa; התלמיד:" Background="White" FontSize="12" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="תעודת &#xa; זהות &#xa; של &#xa; התלמיד:" FontSize="12" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground2}"/>
             <TextBox Name="id_trainee" Grid.Column="0" Grid.Row="1"/>
-            <TextBlock Text="רחוב:" Background="White" FontSize="15" Grid.Column="3" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="רחוב:" FontSize="15" Grid.Column="3" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground2}"/>
             <TextBox Grid.Column="2" Grid.Row="1" Name="street"/>
-            <TextBlock Text="תאריך &#xa; ושעה:" Background="White" FontSize="17" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="תאריך &#xa; ושעה:" FontSize="17" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground2}"/>
             <TextBox Grid.Column="0" Grid.Row="2" />
-            <TextBlock Text="מספר בית:" Background="White" FontSize="17" Grid.Column="3" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft"/>
+            <TextBlock Text="מספר בית:" FontSize="17" Grid.Column="3" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground2}"/>
             <TextBox Name="house_number" Grid.Column="2" Grid.Row="2"/>
 
             <Grid Grid.Column="0" Grid.Row="2">

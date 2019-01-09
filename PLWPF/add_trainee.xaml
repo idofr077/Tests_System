@@ -6,6 +6,12 @@
              xmlns:local="clr-namespace:PLWPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="MyBackground" EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+            <GradientStop Color="Cyan" Offset="0"/>
+            <GradientStop Color="LightBlue" Offset="0.567"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="404*"/>
@@ -31,7 +37,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="תז:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="תז:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="id"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -39,7 +45,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="תאריך לידה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock Text="תאריך לידה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <DatePicker Name="date_of_birth"  Grid.Column="0" />
                 </Grid>
 
@@ -55,7 +61,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="שם פרטי:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="שם פרטי:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="first_name"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -64,7 +70,7 @@
                             <ColumnDefinition Width="283*"/>
                             <ColumnDefinition Width="117*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="מין:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" />
+                        <TextBlock Text="מין:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                         <ListBox Grid.Column="0" Name="gender">
                             <ListBoxItem>
                                 <ListBoxItem Content="זכר"/>
@@ -92,7 +98,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="שם משפחה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="שם משפחה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="last_name"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -100,7 +106,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="סוג הרכב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock Text="סוג הרכב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <ListBox Grid.Column="0" Name="vehicle">
                         <ListBoxItem>
                             <ListBoxItem Content="רכב פרטי"/>
@@ -129,7 +135,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="מספר טלפון:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="מספר טלפון:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="phone_number"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="3">
@@ -137,7 +143,7 @@
                     <ColumnDefinition Width="283*"/>
                     <ColumnDefinition Width="117*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock  Text="סוג הילוכים:" FontSize="15" FontWeight="Heavy" Grid.Column="3" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="סוג הילוכים:" FontSize="15" FontWeight="Heavy" Grid.Column="3" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                 <TextBox Grid.Column="0" Name="gearbox" />
                 <ListBox Grid.Column="0" Name="kind_of_gearbox">
                     <ListBoxItem>
@@ -159,7 +165,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="בית ספר:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="בית ספר:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="school"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -167,7 +173,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  FontSize="15" FontWeight="Heavy" Text="עיר:" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  FontSize="15" FontWeight="Heavy" Text="עיר:" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0"  Name="city"/>
                 </Grid>
             </Grid>
@@ -181,7 +187,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="מורה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="מורה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="teacher"   Text="TextBox" />
                 </Grid>
                 <Grid Grid.Column="1" >
@@ -189,7 +195,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="רחוב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="רחוב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="street"/>
                 </Grid>
             </Grid>
@@ -204,7 +210,7 @@
                             <ColumnDefinition Width="283*"/>
                             <ColumnDefinition Width="117*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock  Text="מספר שיעורים:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                        <TextBlock  Text="מספר שיעורים:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                         <TextBox Name="num_of_lessons"   Text="TextBox" Grid.Column="0" />
                     </Grid>
                 </Grid>
@@ -213,7 +219,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="מספר בית:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="מספר בית:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground}"/>
                     <TextBox Grid.Column="0" Name="house_number"/>
                 </Grid>
             </Grid>

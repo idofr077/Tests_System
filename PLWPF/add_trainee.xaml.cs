@@ -21,6 +21,16 @@ namespace PLWPF
     /// </summary>
     public partial class add_Trainee : UserControl
     {
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
         public add_Trainee()
         {
             InitializeComponent();
@@ -32,10 +42,10 @@ namespace PLWPF
             try
             {
                 //
-                gender _Gender=BE.gender.male;
-                vehicle _Vehicle=BE.vehicle.private_vehicle;
-                kind_of_gearbox _Gearbox=BE.kind_of_gearbox.manual;
-                if(gender.SelectedIndex==0)
+                gender _Gender = BE.gender.male;
+                vehicle _Vehicle = BE.vehicle.private_vehicle;
+                kind_of_gearbox _Gearbox = BE.kind_of_gearbox.manual;
+                if (gender.SelectedIndex == 0)
                 {
                     _Gender = BE.gender.male;
                 }
@@ -51,7 +61,7 @@ namespace PLWPF
                 {
                     _Vehicle = BE.vehicle.private_vehicle;
                 }
-                else if(vehicle.SelectedIndex==1)
+                else if (vehicle.SelectedIndex == 1)
                 {
                     _Vehicle = BE.vehicle.two_weels_vehicle;
                 }
@@ -63,21 +73,50 @@ namespace PLWPF
                 {
                     _Vehicle = BE.vehicle.heavy_track;
                 }
-                if(kind_of_gearbox.SelectedIndex==0)
+                if (kind_of_gearbox.SelectedIndex == 0)
                 {
                     _Gearbox = BE.kind_of_gearbox.manual;
                 }
-                if (kind_of_gearbox.SelectedIndex ==1)
+                if (kind_of_gearbox.SelectedIndex == 1)
                 {
                     _Gearbox = BE.kind_of_gearbox.auto;
                 }
-                
-                
-                 DateTime _date = new DateTime();
+                if (!IsDigitsOnly(id.Text))
+                {
+                    throw (new Exception("תעודות זהות מורכבות מספרות בלבד"));
+
+                }
+                if (!IsDigitsOnly(phone_number.Text))
+                {
+                    throw (new Exception("מספרי טלפון מורכבים מספרות בלבד"));
+
+                }
+                if (!IsDigitsOnly(num_of_lessons.Text))
+                {
+                    throw (new Exception("במרכיב מספר שיעורים נדרשים להכניס מספר שלם"));
+
+                }
+                if (!IsDigitsOnly(house_number.Text))
+                {
+                    throw (new Exception("במרכיב מספר בית נדרשים להכניס מספר שלם"));
+
+                }
+                DateTime _date = new DateTime();
                 _date = (DateTime)(date_of_birth.SelectedDate);
 
-                bl.add_trainee(int.Parse(id.Text), (string)last_name.Text, (string)first_name.Text,_date , _Gender, long.Parse(phone_number.Text), new BE.Address(street.Text, int.Parse(house_number.Text), city.Text),   _Vehicle, _Gearbox, school.Text, teacher.Text, int.Parse(num_of_lessons.Text));
-                 }
+                bl.add_trainee(int.Parse(id.Text), (string)last_name.Text, (string)first_name.Text, _date, _Gender, long.Parse(phone_number.Text), new BE.Address(street.Text, int.Parse(house_number.Text), city.Text), _Vehicle, _Gearbox, school.Text, teacher.Text, int.Parse(num_of_lessons.Text));
+                id.Clear();
+                last_name.Clear();
+                first_name.Clear();
+                street.Clear();
+                house_number.Clear();
+                city.Clear();
+                phone_number.Clear();
+                school.Clear();
+                teacher.Clear();
+                num_of_lessons.Clear();
+                MessageBox.Show("הפעולה בוצעה בהצלחה");
+            }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);

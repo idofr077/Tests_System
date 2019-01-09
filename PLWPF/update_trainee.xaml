@@ -56,7 +56,7 @@
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Text="שם פרטי:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                    <TextBox Grid.Column="0" Name="first_name"   Text="TextBox" />
+                    <TextBox Grid.Column="0" Name="first_name"   Text="" />
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid Grid.Column="1" >
@@ -93,7 +93,7 @@
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Text="שם משפחה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                    <TextBox Grid.Column="0" Name="last_name"   Text="TextBox" />
+                    <TextBox Grid.Column="0" Name="last_name"   Text="" />
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid.ColumnDefinitions>
@@ -130,7 +130,7 @@
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Text="מספר טלפון:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                    <TextBox Grid.Column="0" Name="phone_number"   Text="TextBox" />
+                    <TextBox Grid.Column="0" Name="phone_number"   Text="" />
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
@@ -160,7 +160,7 @@
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Text="בית ספר:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                    <TextBox Grid.Column="0" Name="school"   Text="TextBox" />
+                    <TextBox Grid.Column="0" Name="school"   Text="" />
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid.ColumnDefinitions>
@@ -182,7 +182,7 @@
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Text="מורה:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                    <TextBox Grid.Column="0" Name="teacher" Text="TextBox" />
+                    <TextBox Grid.Column="0" Name="teacher" Text="" />
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid.ColumnDefinitions>
@@ -205,7 +205,7 @@
                             <ColumnDefinition Width="117*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock  Text="מספר שיעורים:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
-                        <TextBox Name="num_of_lessons"   Text="TextBox" Grid.Column="0" />
+                        <TextBox Name="num_of_lessons"   Text="" Grid.Column="0" />
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1" >

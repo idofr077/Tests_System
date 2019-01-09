@@ -20,6 +20,16 @@ namespace PLWPF
     /// </summary>
     public partial class Remove_Traineer : UserControl
     {
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
         public Remove_Traineer()
         {
             InitializeComponent();
@@ -30,6 +40,11 @@ namespace PLWPF
             try
             {
                 IBL bl = FactoryBl.getBl();
+                if (!IsDigitsOnly(id_remove.Text))
+                {
+                    throw (new Exception("תעודות זהות מורכבות מספרות בלבד"));
+
+                }
                 bl.remove_trainee(int.Parse(id_remove.Text));
             }
             catch(Exception exception)

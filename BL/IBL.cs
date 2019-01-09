@@ -104,8 +104,7 @@ namespace BL
         /// </summary>
         /// <param name="address"></param>
         /// <param name="x"></param>
-        /// <returns></returns>
-        
+        /// <returns></returns>       
         List<Tester> testers_area(Address address,int x);
         /// <summary>
         /// return a list with all the testers in the radar of x
@@ -140,7 +139,6 @@ namespace BL
         /// </summary>
         /// <param name="sort"></param>
         /// <returns></returns>
-
         List<IGrouping<vehicle, Tester>> by_tester_expertice(bool sort);/// <summary>
                                                                         /// list of groups by tester_expertice
                                                                         /// </summary>

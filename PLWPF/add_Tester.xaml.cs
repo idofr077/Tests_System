@@ -31,6 +31,16 @@ namespace PLWPF
 
             return true;
         }
+        bool IsDigitAndDotssOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if ((c < '0' || c > '9')&&c!='.')
+                    return false;
+            }
+
+            return true;
+        }
         public add_Tester()
         {
             InitializeComponent();
@@ -88,7 +98,7 @@ namespace PLWPF
                     throw (new Exception("במרכיב מרחק מקסימלי נדרשים להכניס מספר שלם"));
 
                 }
-                if (!IsDigitsOnly(experience.Text))
+                if (!IsDigitAndDotssOnly(experience.Text))
                 {
                     throw (new Exception("במרכיב נסיון נדרשים להכניס מספר"));
 
@@ -106,11 +116,14 @@ namespace PLWPF
                 bool[,] work_time = new bool[5, 6];
                 DateTime _date = new DateTime();
                 _date = (DateTime)(_date_of_birth.SelectedDate);
+                
                 for (int i = 0; i < 6; i++)
                 {
                     if (i==sunday.SelectedIndex)
                     {
                         work_time[0, i] = true;
+                        sunday.SelectedItems.RemoveAt(0);
+                       
                     }
                     else
                     {
@@ -122,6 +135,7 @@ namespace PLWPF
                     if (i == monday.SelectedIndex)
                     {
                         work_time[1, i] = true;
+                        monday.SelectedItems.RemoveAt(0);
                     }
                     else
                     {
@@ -133,6 +147,9 @@ namespace PLWPF
                     if (i == tuesday.SelectedIndex)
                     {
                         work_time[2, i] = true;
+                        tuesday.SelectedItems.RemoveAt(0);
+                        
+                       
                     }
                     else
                     {
@@ -144,6 +161,7 @@ namespace PLWPF
                     if (i == wednesday.SelectedIndex)
                     {
                         work_time[3, i] = true;
+                        wednesday.SelectedItems.RemoveAt(0);
                     }
                     else
                     {
@@ -152,9 +170,10 @@ namespace PLWPF
                 }
                 for (int i = 0; i < 6; i++)
                 {
-                    if (i == tuesday.SelectedIndex)
+                    if (i == thursday.SelectedIndex)
                     {
                         work_time[4, i] = true;
+                        thursday.SelectedItems.RemoveAt(0);
                     }
                     else
                     {

@@ -45,7 +45,7 @@ namespace PLWPF
                 IBL bl = FactoryBl.getBl();
                 DateTime date_and_hour = new DateTime();
                 date_and_hour = (DateTime)(date.SelectedDate);
-                date_and_hour.AddHours(hour.SelectedIndex + 9);
+                date_and_hour.AddHours(hour.SelectedIndex + 9.0);
                 if (!IsDigitsOnly(id_tester.Text))
                 {
                     throw (new Exception("תעודות זהות מורכבות מספרות בלבד"));

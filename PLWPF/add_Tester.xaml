@@ -287,7 +287,7 @@
                         </ListBox>
                     </Grid>
                     <Grid Grid.Column="0">
-                        <ListBox SelectionMode="Multiple" Name="saturday">
+                        <ListBox SelectionMode="Multiple" Name="thursday">
                             <ListBoxItem>
                                 <ListBoxItem Content="9:00"/>
                             </ListBoxItem>

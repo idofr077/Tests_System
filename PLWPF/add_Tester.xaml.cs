@@ -21,6 +21,17 @@ namespace PLWPF
     /// </summary>
     public partial class add_Tester : UserControl
     {
+        int[] isSelected(int X)
+        { int[] temp = new int[];
+            if (X== 0)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if(sunday.SelectedItems.Contains((i+9).ToString+":00")
+                        temp 
+                }
+            }
+        }
         bool IsDigitsOnly(string str)
         {
             foreach (char c in str)

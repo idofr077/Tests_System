@@ -76,5 +76,14 @@ namespace PLWPF
             Remove_Traineer temp = new Remove_Traineer();
             father.middle.Children.Add(temp);
         }
+
+        private void update_test_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            update_test temp = new update_test();
+            father.middle.Children.Add(temp);
+
+        }
     }
 }

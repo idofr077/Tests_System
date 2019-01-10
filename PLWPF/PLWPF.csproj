@@ -101,6 +101,9 @@
     <Compile Include="slider_down_3.xaml.cs">
       <DependentUpon>slider_down_3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="update_test.xaml.cs">
+      <DependentUpon>update_test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="update_tester.xaml.cs">
       <DependentUpon>update_tester.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="slider_down_3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="update_test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

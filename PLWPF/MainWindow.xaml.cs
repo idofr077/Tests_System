@@ -41,10 +41,7 @@ namespace PLWPF
             InitializeComponent();
             dockPanel.Children.Add(d1);
             middle.Children.Add(basic);
-            //Uri f = new Uri(@"C:\Users\\PC\Music\26.mp3");////
-            //music.Add(f);
-            //music.Add(new Uri(@"C:\Users\\PC\\\Music\\Believer.mp3"));//
-            //music.Add(new Uri(@"C:\Users\\PC\\Music\\Cold water.mp3"));
+            
             index = num();
             mediaElement.Source = new Uri(audioPath[index++]);
             mediaElement.Play();

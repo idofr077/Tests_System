@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="PLWPF.update_test"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="MyBackground4" EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+            <GradientStop Color="Cyan" Offset="0"/>
+            <GradientStop Color="LightBlue" Offset="0.567"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="מספר &#xa; מבחן:" FontSize="15" Grid.Column="3" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <TextBox Name="test_id" Grid.Column="2" Grid.Row="0"/>
+            <TextBlock Text="תז תלמיד:" FontSize="15" Grid.Column="3" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <TextBox Name="trainee_id" Grid.Column="2" Grid.Row="1"/>
+            <TextBlock Text="מרחק:" FontSize="15" Grid.Column="1" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <StackPanel>
+                <RadioButton x:Name="distance_ans" GroupName="distance" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
+                <RadioButton GroupName="distance" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+            </StackPanel>
+            <TextBlock Text="רברס:" FontSize="15" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <StackPanel Grid.Column="0" Grid.Row="1">
+                <RadioButton x:Name="reverse_ans" GroupName="reverse" Content="טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton GroupName="reverse" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+            </StackPanel>
+            <TextBlock Text="מראות:" FontSize="15" Grid.Column="3" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <StackPanel Grid.Column="2" Grid.Row="2">
+                <RadioButton x:Name="mirrors_ans" GroupName="mirrors" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
+                <RadioButton GroupName="mirrors" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+            </StackPanel>
+            <TextBlock Text="איתות:" FontSize="15" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <StackPanel Grid.Column="0" Grid.Row="2">
+                <RadioButton x:Name="signals_ans" GroupName="signals" Content="טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton GroupName="signals" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+            </StackPanel>
+            <TextBlock Text="מעבר &#xa; חציה:" FontSize="15" Grid.Column="3" Grid.Row="3" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <StackPanel Grid.Column="2" Grid.Row="3">
+                <RadioButton x:Name="crosswalk_ans" GroupName="crosswalk" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
+                <RadioButton GroupName="crosswalk" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+            </StackPanel>
+            <TextBlock Text="סופי:" FontSize="15" Grid.Column="1" Grid.Row="3" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <StackPanel Grid.Column="0" Grid.Row="3">
+                <RadioButton x:Name="grade_ans" GroupName="pass_or_not" Content="עבר" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton GroupName="pass_or_not" Content="נכשל" FontSize="20" FlowDirection="RightToLeft"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="הערה:" FontSize="15" Grid.Column="1" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
+            <TextBox Name="mention" Grid.Column="0"/>
+        </Grid>
+        <Image Source="images/up_slider.jpg" Stretch="Fill" Grid.Row="2"/>
+        <Button Content="אשר" Background="Transparent" FontSize="20" FontWeight="Bold" Click="Button_Click_1" Grid.Row="2"/>
+    </Grid>
+</UserControl>

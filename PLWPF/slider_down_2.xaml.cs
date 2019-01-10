@@ -36,7 +36,6 @@ namespace PLWPF
 
         private void update_trainee_Click(object sender, RoutedEventArgs e)
         {
-            
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             father.middle.Children.Add(new update_trainee());
@@ -48,6 +47,13 @@ namespace PLWPF
             MainWindow father = MainWindow.FindParentWindow(this);
             father.middle.Children.Clear();
             father.middle.Children.Add(new all_tests());
+        }
+
+        private void available_testers_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new All_testers_Date());
         }
     }
 }

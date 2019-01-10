@@ -74,6 +74,9 @@
     <Compile Include="all_testers.xaml.cs">
       <DependentUpon>all_testers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="All_testers_Date.xaml.cs">
+      <DependentUpon>All_testers_Date.xaml</DependentUpon>
+    </Compile>
     <Compile Include="all_tests.xaml.cs">
       <DependentUpon>all_tests.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,9 @@
     </Compile>
     <Compile Include="help_exp.xaml.cs">
       <DependentUpon>help_exp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Remove_Tester.xaml.cs">
+      <DependentUpon>Remove_Tester.xaml</DependentUpon>
     </Compile>
     <Compile Include="Remove_Traineer.xaml.cs">
       <DependentUpon>Remove_Traineer.xaml</DependentUpon>
@@ -130,6 +136,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="All_testers_Date.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="all_tests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +172,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Remove_Tester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Remove_Traineer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -17,7 +17,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="remove_tester" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הסר בוחן" Background="white" Grid.Column="0"  />
+        <Button Name="remove_tester" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הסר בוחן" Background="white" Grid.Column="0" Click="remove_tester_Click"  />
         <Button Name="remove_trainee" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הסר תלמיד" Background="white" Grid.Column="1" Click="remove_trainee_Click"/>
         <Button Name="update_test" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="עדכן  מבחן" Background="white" Grid.Column="2"/>
         <Button Name="add_test"    Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="הוסף מבחן" Background="white" Grid.Column="3" Click="add_test_Click"/>

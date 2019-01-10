@@ -77,6 +77,15 @@ namespace PLWPF
             father.middle.Children.Add(temp);
         }
 
+        private void update_test_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            update_test temp = new update_test();
+            father.middle.Children.Add(temp);
+
+        }
+
         private void remove_tester_Click(object sender, RoutedEventArgs e)
         {
             MainWindow father = MainWindow.FindParentWindow(this);

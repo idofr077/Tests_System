@@ -25,8 +25,8 @@ namespace PLWPF
         public all_tests()
         {
             InitializeComponent();
-            List<Test> items = new List<Test>();
-            items.Add(new Test() {id=5, id_tester=1,id_trainee=2, date=DateTime.Parse("january 15, 2019"), address=new Address("bne brit",2,"ashdod"), distance=null,reverse=null, mirrors=null,signals=null, crosswalk = null, grade=null, mention="good"});
+            List<Test> items = (BL.FactoryBl.getBl().all_test()); 
+           // items.Add(new Test() {id=5, id_tester=1,id_trainee=2, date=DateTime.Parse("january 15, 2019"), address=new Address("bne brit",2,"ashdod"), distance=null,reverse=null, mirrors=null,signals=null, crosswalk = null, grade=null, mention="good"});
             lvUsers.ItemsSource = items;
         }
     }

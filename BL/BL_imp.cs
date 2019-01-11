@@ -83,7 +83,7 @@ namespace BL
                 throw new Exception("the official time of  tests is only from 9 am to 3 pm.");
             if (!effector.is_tester_available(_dateAndHour, _id_tester))
                 throw new Exception("the tester is not available in this date and hour.");
-            if (trainee.num_of_lessons <= 20)
+            if (trainee.num_of_lessons < 20)
                 throw new Exception("Trainee must do at least 20 lessons");
             if ((DateTime.Now - trainee.LastTest).Days < 7)
                 throw new Exception("must pass 7 days after the previous test");

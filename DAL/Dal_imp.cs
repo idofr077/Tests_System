@@ -254,7 +254,7 @@ namespace DAL
                 if (tester.Tests_Determined[i] == date_and_hour)
                     return false;
             }
-            if (!((int)date_and_hour.DayOfWeek < 5 && (date_and_hour.Hour < 15) && date_and_hour.Hour > 9))
+            if (!((int)date_and_hour.DayOfWeek < 5 && (date_and_hour.Hour < 15) && date_and_hour.Hour > 8))
                 return false;
             if (tester.work_time[(int)date_and_hour.DayOfWeek, date_and_hour.Hour - 9])
                 return true;

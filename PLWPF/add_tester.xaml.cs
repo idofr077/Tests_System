@@ -21,7 +21,7 @@ namespace PLWPF
     /// </summary>
     public partial class add_Tester : UserControl
     {
- 
+    
         bool IsDigitsOnly(string str)
         {
             foreach (char c in str)

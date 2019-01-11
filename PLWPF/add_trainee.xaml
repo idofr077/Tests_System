@@ -228,7 +228,7 @@
         <Grid Grid.Row="1" >
             <Image Source="images/up_slider.jpg" Stretch="Fill"/>
             <Grid>
-                <Button IsEnabled="{Binding ElementName=city, Path=IsLoaded}" Content="אשר" Background="Transparent" FontSize="20" FontWeight="Bold" Click="Button_Click"/>
+                <Button  Content="אשר" Background="Transparent" FontSize="20" FontWeight="Bold" Click="Button_Click"/>
             </Grid>
         </Grid>
     </Grid>

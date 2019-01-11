@@ -68,7 +68,7 @@ namespace PLWPF
                 street.Clear();
                 house_number.Clear();
                 city.Clear();
-                MessageBox.Show("הפעולה בוצעה בהצלחה");
+                MessageBox.Show("הפעולה בוצעה בהצלחה \n מספר המבחן הוא:" + (Configuration.id_test-1));
                
             }
             catch (Exception exception)

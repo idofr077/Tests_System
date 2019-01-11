@@ -39,8 +39,17 @@ namespace PLWPF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            IBL bl = BL.FactoryBl.getBl();
-            bl.update_test(int.Parse(test_id.Text), int.Parse(trainee_id.Text), distance_ans.IsChecked, reverse_ans.IsChecked, mirrors_ans.IsChecked, signals_ans.IsChecked, crosswalk_ans.IsChecked, grade_ans.IsChecked, mention.Text);
+            try {
+                IBL bl = BL.FactoryBl.getBl();
+                if (!IsDigitsOnly(test_id.Text))
+                    throw (new Exception("מספר מבחן חייב להיות מספרים בלבד"));
+                bl.update_test(int.Parse(test_id.Text), int.Parse(trainee_id.Text), distance_ans.IsChecked, reverse_ans.IsChecked, mirrors_ans.IsChecked, signals_ans.IsChecked, crosswalk_ans.IsChecked, grade_ans.IsChecked, mention.Text);
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -69,5 +69,8 @@ namespace PLWPF
             father.middle.Children.Clear();
             father.middle.Children.Add(new update_tester());
         }
+
+      
+   
     }
 }

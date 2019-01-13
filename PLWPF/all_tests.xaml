@@ -13,7 +13,7 @@
                     <GridViewColumn Header="id" Width="120" DisplayMemberBinding="{Binding id}" />
                     <GridViewColumn Header="tester's id" Width="70" DisplayMemberBinding="{Binding id_tester}" />
                     <GridViewColumn Header="trainee's id" Width="70" DisplayMemberBinding="{Binding id_trainee}" />
-                    <GridViewColumn Header="date and time" Width="100" DisplayMemberBinding="{Binding date}" />
+                    <GridViewColumn Header="date and time" Width="100" DisplayMemberBinding="{Binding date_and_hour}" />
                     <GridViewColumn Header="Address" Width="70" DisplayMemberBinding="{Binding address}" />
                     <GridViewColumn Header="distance" Width="100" DisplayMemberBinding="{Binding distance}" />
                     <GridViewColumn Header="reverse" Width="80" DisplayMemberBinding="{Binding reverse}" />

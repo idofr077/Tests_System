@@ -55,5 +55,19 @@ namespace PLWPF
             father.middle.Children.Clear();
             father.middle.Children.Add(new All_testers_Date());
         }
+
+        private void test_on_date_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new tests_in_date());
+        }
+
+        private void update_tester_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new update_tester());
+        }
     }
 }

@@ -86,6 +86,9 @@
     <Compile Include="basic_page.xaml.cs">
       <DependentUpon>basic_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="by_tests_num.xaml.cs">
+      <DependentUpon>by_tests_num.xaml</DependentUpon>
+    </Compile>
     <Compile Include="contact_exp.xaml.cs">
       <DependentUpon>contact_exp.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,9 @@
     </Compile>
     <Compile Include="slider_down_3.xaml.cs">
       <DependentUpon>slider_down_3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tests_in_date.xaml.cs">
+      <DependentUpon>tests_in_date.xaml</DependentUpon>
     </Compile>
     <Compile Include="update_test.xaml.cs">
       <DependentUpon>update_test.xaml</DependentUpon>
@@ -155,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="by_tests_num.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="contact_exp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="slider_down_3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tests_in_date.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,7 +25,13 @@ namespace PLWPF
         {
             InitializeComponent();
             IBL bl = BL.FactoryBl.getBl();
-            List<Trainee> new_group = bl.by_tests_num(true);
+            List <Trainee> new_group = new List<Trainee>();
+            foreach(var item in bl.by_tests_num(true))
+            {
+                foreach (Trainee t in item)
+                    new_group.Add(t);
+            }
+            lvUsers.ItemsSource = new_group;
         }
     }
 }

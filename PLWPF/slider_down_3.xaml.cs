@@ -24,5 +24,12 @@ namespace PLWPF
         {
             InitializeComponent();
         }
+
+        private void by_tests_num_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new by_tests_num());
+        }
     }
 }

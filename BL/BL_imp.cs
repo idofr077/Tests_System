@@ -110,7 +110,7 @@ namespace BL
             if (flag)
                 throw new Exception("the trainee had already license for this type of vehicle");
 
-            trainee.waiting_for_test = true;
+           
             effector.add_test(_id_tester, _id_trainee, _dateAndHour, _address);
         }
 

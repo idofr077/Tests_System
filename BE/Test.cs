@@ -83,16 +83,17 @@ namespace BE
             get { return _id_trainee; }
             set { _id_trainee = value; }
         }
-        public DateTime date
-        {
-            get { return _date.Date; }
-            set { _date = value; }
-        }
         public DateTime date_and_hour
         {
             get { return _date; }
             set { _date = value; }
         }
+        public DateTime date
+        {
+            get { return _date.Date; }
+            set { _date = value; }
+        }
+    
         public Address address
         {
             get { return _address; }

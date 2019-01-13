@@ -85,7 +85,7 @@ namespace BL
                 throw new Exception("the tester is not available in this date and hour.");
             if (trainee.num_of_lessons < 20)
                 throw new Exception("Trainee must do at least 20 lessons");
-            if ((DateTime.Now - trainee.LastTest).Days < 7)
+            if ((_dateAndHour - trainee.LastTest).Days < 7)
                 throw new Exception("must pass 7 days after the previous test");
 
             if (trainee.waiting_for_test)

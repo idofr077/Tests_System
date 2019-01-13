@@ -23,7 +23,7 @@
                     <GridViewColumn Header="lessons" Width="50" DisplayMemberBinding="{Binding num_of_lessons}" />
                     <GridViewColumn Header="license" Width="50" DisplayMemberBinding="{Binding num_of_licenses}" />
                     <GridViewColumn Header="school" Width="50" DisplayMemberBinding="{Binding school}" />
-                    <GridViewColumn Header="teachher" Width="50" DisplayMemberBinding="{Binding teacher_name}" />
+                    <GridViewColumn Header="teacher" Width="50" DisplayMemberBinding="{Binding teacher_name}" />
                     <GridViewColumn Header="Address" Width="70" DisplayMemberBinding="{Binding address}" />
                 </GridView>
             </ListView.View>

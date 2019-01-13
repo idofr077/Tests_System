@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PLWPF.all_trainee"
+﻿<UserControl x:Class="PLWPF.by_teacher"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:PLWPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
     <Grid>
         <ListView Margin="10" Name="lvUsers">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Header="teacher" Width="50" DisplayMemberBinding="{Binding teacher_name}" />
                     <GridViewColumn Header="id" Width="120" DisplayMemberBinding="{Binding id}" />
                     <GridViewColumn Header="last name" Width="70" DisplayMemberBinding="{Binding last_name}" />
                     <GridViewColumn Header="first name" Width="70" DisplayMemberBinding="{Binding first_name}" />
@@ -24,7 +24,6 @@
                     <GridViewColumn Header="lessons" Width="50" DisplayMemberBinding="{Binding num_of_lessons}" />
                     <GridViewColumn Header="license" Width="50" DisplayMemberBinding="{Binding num_of_licenses}" />
                     <GridViewColumn Header="school" Width="50" DisplayMemberBinding="{Binding school}" />
-                    <GridViewColumn Header="teacher" Width="50" DisplayMemberBinding="{Binding teacher_name}" />
                     <GridViewColumn Header="Address" Width="70" DisplayMemberBinding="{Binding address}" />
                 </GridView>
             </ListView.View>

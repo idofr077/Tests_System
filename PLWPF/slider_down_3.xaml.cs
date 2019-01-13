@@ -31,5 +31,26 @@ namespace PLWPF
             father.middle.Children.Clear();
             father.middle.Children.Add(new by_tests_num());
         }
+
+        private void by_teacher_click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new by_teacher());
+        }
+
+        private void by_school_click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new by_school());
+        }
+
+        private void by_tester_expertise_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new by_tester_expertise());
+        }
     }
 }

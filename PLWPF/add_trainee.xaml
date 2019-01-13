@@ -253,7 +253,7 @@
                                 <DataTrigger Binding="{Binding ElementName=city, Path=Text}" Value="">
                                     <Setter Property="Button.IsEnabled" Value="false"/>
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ElementName=kind_of_gearbox, Path=}" Value="">
+                                <DataTrigger Binding="{Binding ElementName=kind_of_gearbox}" Value="">
                                     <Setter Property="Button.IsEnabled" Value="false"/>
                                 </DataTrigger>
                             </Style.Triggers>

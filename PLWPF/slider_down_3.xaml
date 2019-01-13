@@ -18,9 +18,9 @@
 
         </Grid.ColumnDefinitions>
         <Button Name="by_tests_num"    Foreground="Blue" FontSize="12" FontStyle="Oblique"  Content="חלוקה לפי &#xa; מספר מבחנים" Background="white" Grid.Column="3" Click="by_tests_num_Click"/>
-        <Button Name="by_teacher"  Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="חלוקה לפי &#xa; מורים" Background="white" Grid.Column="2"/>
-        <Button Name="by_school" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="חלוקה לפי &#xa; בית ספר" Background="white" Grid.Column="1"/>
-        <Button Name="by_tester_expertice" Foreground="Blue" FontSize="12" FontStyle="Oblique"  Content="חלוקה לפי &#xa; התמחות &#xa; בוחנים" Background="White" Grid.Column="0"/>
+        <Button Name="by_teacher"  Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="חלוקה לפי &#xa; מורים" Background="white" Grid.Column="2" Click="by_teacher_click"/>
+        <Button Name="by_school" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="חלוקה לפי &#xa; בית ספר" Background="white" Grid.Column="1" Click="by_school_click"/>
+        <Button Name="by_tester_expertice" Foreground="Blue" FontSize="12" FontStyle="Oblique"  Content="חלוקה לפי &#xa; התמחות &#xa; בוחנים" Background="White" Grid.Column="0" Click="by_tester_expertise_Click"/>
       
     </Grid>
 </UserControl>

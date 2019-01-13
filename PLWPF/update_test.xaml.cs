@@ -43,12 +43,41 @@ namespace PLWPF
                 IBL bl = BL.FactoryBl.getBl();
                 if (!IsDigitsOnly(test_id.Text))
                     throw (new Exception("מספר מבחן חייב להיות מספרים בלבד"));
-                bl.update_test(int.Parse(test_id.Text), int.Parse(trainee_id.Text), distance_ans.IsChecked, reverse_ans.IsChecked, mirrors_ans.IsChecked, signals_ans.IsChecked, crosswalk_ans.IsChecked, grade_ans.IsChecked, mention.Text);
-
+                if (!IsDigitsOnly(trainee_id.Text))
+                    throw (new Exception("תעודת זהות של התלמיד חייבת להיות מספרים בלבד"));
+                if (distance_good.IsChecked == false && distance_bad.IsChecked == false)
+                    throw (new Exception("חייב למלא ציון למרחק"));
+                if (reverse_good.IsChecked == false && reverse_bad.IsChecked == false)
+                    throw (new Exception("חייב למלא ציון לרברס"));
+                if (mirrors_good.IsChecked == false && mirrors_bad.IsChecked == false)
+                    throw (new Exception("חייב למלא ציון למראות"));
+                if (signals_good.IsChecked == false && signals_bad.IsChecked == false)
+                    throw (new Exception("חייב למלא ציון לאיתות"));
+                if (crosswalk_good.IsChecked == false && crosswalk_bad.IsChecked == false)
+                    throw (new Exception("חייב למלא ציון למעבר חצייה"));
+                if (grade_good.IsChecked == false && grade_bad.IsChecked == false)
+                    throw (new Exception("חייב למלא ציון לסופי"));
+                bl.update_test(int.Parse(test_id.Text), int.Parse(trainee_id.Text), distance_good.IsChecked, reverse_good.IsChecked, mirrors_good.IsChecked, signals_good.IsChecked, crosswalk_good.IsChecked, grade_good.IsChecked, mention.Text);
+                MessageBox.Show("הפעולה בוצעה בהצלחה");
+                test_id.Clear();
+                trainee_id.Clear();
+                distance_good.IsChecked=false;
+                distance_bad.IsChecked = false;
+                reverse_good.IsChecked = false;
+                reverse_bad.IsChecked = false;
+                mirrors_good.IsChecked = false;
+                mirrors_bad.IsChecked = false;
+                signals_good.IsChecked = false;
+                signals_bad.IsChecked = false;
+                crosswalk_good.IsChecked = false;
+                crosswalk_bad.IsChecked = false;
+                grade_good.IsChecked = false;
+                grade_bad.IsChecked = false;
+                mention.Clear();
             }
-            catch
+            catch (Exception exception)
             {
-
+                MessageBox.Show(exception.Message);
             }
         }
     }

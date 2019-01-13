@@ -191,6 +191,7 @@ namespace PLWPF
                 _phone_number.Clear();
                 experience.Clear();
                 max_way_to_go.Clear();
+                num_of_test_in_week.Clear();
                 MessageBox.Show("הפעולה בוצעה בהצלחה");
             }
             catch (Exception exception)

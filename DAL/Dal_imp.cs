@@ -74,6 +74,7 @@ namespace DAL
             DataSource.Tests.Add(Temp);
             Trainee trainee = DataSource.Trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
             trainee.LastTest = _date;
+            trainee.waiting_for_test = true;
             Tester tester = DataSource.testers.Find(x => x.id.CompareTo(_id_tester) == 0);
             tester.Tests_Determined.Add(_date);
 

@@ -39,33 +39,33 @@
             <TextBox Name="trainee_id" Grid.Column="2" Grid.Row="1"/>
             <TextBlock Text="מרחק:" FontSize="15" Grid.Column="1" Grid.Row="0" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
             <StackPanel>
-                <RadioButton x:Name="distance_ans" GroupName="distance" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
-                <RadioButton GroupName="distance" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="distance_good" GroupName="distance" Content="טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="distance_bad" GroupName="distance" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
             </StackPanel>
             <TextBlock Text="רברס:" FontSize="15" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
             <StackPanel Grid.Column="0" Grid.Row="1">
-                <RadioButton x:Name="reverse_ans" GroupName="reverse" Content="טוב" FontSize="20" FlowDirection="RightToLeft"/>
-                <RadioButton GroupName="reverse" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="reverse_good" GroupName="reverse" Content="טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="reverse_bad" GroupName="reverse" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
             </StackPanel>
             <TextBlock Text="מראות:" FontSize="15" Grid.Column="3" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
             <StackPanel Grid.Column="2" Grid.Row="2">
-                <RadioButton x:Name="mirrors_ans" GroupName="mirrors" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
-                <RadioButton GroupName="mirrors" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="mirrors_good" GroupName="mirrors" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
+                <RadioButton x:Name="mirrors_bad" GroupName="mirrors" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
             </StackPanel>
             <TextBlock Text="איתות:" FontSize="15" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
             <StackPanel Grid.Column="0" Grid.Row="2">
-                <RadioButton x:Name="signals_ans" GroupName="signals" Content="טוב" FontSize="20" FlowDirection="RightToLeft"/>
-                <RadioButton GroupName="signals" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="signals_good" GroupName="signals" Content="טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="signals_bad" GroupName="signals" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
             </StackPanel>
             <TextBlock Text="מעבר &#xa; חציה:" FontSize="15" Grid.Column="3" Grid.Row="3" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
             <StackPanel Grid.Column="2" Grid.Row="3">
-                <RadioButton x:Name="crosswalk_ans" GroupName="crosswalk" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
-                <RadioButton GroupName="crosswalk" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="crosswalk_good" GroupName="crosswalk" Content="טוב" FontSize="20" FlowDirection="RightToLeft" />
+                <RadioButton x:Name="crosswalk_bad" GroupName="crosswalk" Content="לא טוב" FontSize="20" FlowDirection="RightToLeft"/>
             </StackPanel>
             <TextBlock Text="סופי:" FontSize="15" Grid.Column="1" Grid.Row="3" FontWeight="Bold" FlowDirection="RightToLeft" Background="{StaticResource MyBackground4}"/>
             <StackPanel Grid.Column="0" Grid.Row="3">
-                <RadioButton x:Name="grade_ans" GroupName="pass_or_not" Content="עבר" FontSize="20" FlowDirection="RightToLeft"/>
-                <RadioButton GroupName="pass_or_not" Content="נכשל" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="grade_good" GroupName="pass_or_not" Content="עבר" FontSize="20" FlowDirection="RightToLeft"/>
+                <RadioButton x:Name="grade_bad" GroupName="pass_or_not" Content="נכשל" FontSize="20" FlowDirection="RightToLeft"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">

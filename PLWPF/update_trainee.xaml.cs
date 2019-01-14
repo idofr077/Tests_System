@@ -126,5 +126,45 @@ namespace PLWPF
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void id_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            IBL bl = BL.FactoryBl.getBl();
+            Trainee temp = bl.all_trainee().Find(match);
+            first_name.Text = temp.first_name;
+            last_name.Text = temp.last_name;
+            phone_number.Text = temp.phone.ToString();
+            school.Text = temp.school;
+            teacher.Text = temp.teacher_name;
+            num_of_lessons.Text = temp.num_of_lessons.ToString();
+            date_of_birth.SelectedDate = temp.date_of_birth;
+            if (temp.Gender == BE.gender.male)
+                gender.SelectedIndex = 0;
+            else if (temp.Gender == BE.gender.female)
+                gender.SelectedIndex = 1;
+            else gender.SelectedIndex = 2;
+            if (temp.learn_vehicle == BE.vehicle.private_vehicle)
+                vehicle.SelectedIndex = 0;
+            else if (temp.learn_vehicle == BE.vehicle.two_weels_vehicle)
+                vehicle.SelectedIndex = 1;
+            else if (temp.learn_vehicle == BE.vehicle.medium_track)
+                vehicle.SelectedIndex = 2;
+            else vehicle.SelectedIndex = 3;
+            if (temp.gearbox == BE.kind_of_gearbox.auto)
+                kind_of_gearbox.SelectedIndex = 0;
+            else kind_of_gearbox.SelectedIndex = 1;
+            city.Text = temp.address.city;
+            street.Text = temp.address.street;
+            house_number.Text = temp.address.num.ToString();
+        }
+        private bool match(Trainee _trainee)
+        {
+            if (_trainee.id == int.Parse(id.SelectedItem.ToString()))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

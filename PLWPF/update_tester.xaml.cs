@@ -50,6 +50,7 @@ namespace PLWPF
                 idis.Add(BL.FactoryBl.getBl().all_tester()[i].id);
             }
             id.ItemsSource = idis;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -185,7 +186,7 @@ namespace PLWPF
                         work_time[4, i] = false;
                     }
                 }
-                bl.add_tester(int.Parse(id.Text), (string)_last_name.Text, (string)_first_name.Text, _date, _Gender, long.Parse(_phone_number.Text), new BE.Address(_street.Text, int.Parse(_house_number.Text), _city.Text), float.Parse(experience.Text), int.Parse(num_of_test_in_week.Text), _expertise, work_time, int.Parse(max_way_to_go.Text));
+                bl.update_tester(int.Parse(id.Text), (string)_last_name.Text, (string)_first_name.Text, _date, _Gender, long.Parse(_phone_number.Text), new BE.Address(_street.Text, int.Parse(_house_number.Text), _city.Text), float.Parse(experience.Text), int.Parse(num_of_test_in_week.Text), _expertise, work_time, int.Parse(max_way_to_go.Text));
                 _last_name.Clear();
                 _first_name.Clear();
                 _street.Clear();
@@ -202,5 +203,33 @@ namespace PLWPF
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void id_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            IBL bl = BL.FactoryBl.getBl();
+            string  a = id.SelectedItem.ToString();
+            int b = int.Parse(a);
+            Tester temp=bl.all_tester().Find(match);
+            _first_name.Text = temp.first_name;
+            _last_name.Text = temp.last_name;
+            _phone_number.Text =temp.phone.ToString();
+            num_of_test_in_week.Text = temp.max_testPerWeek.ToString();
+            _date_of_birth.SelectedDate = temp.date_of_birth;
+            _gender.SelectedItem = temp.Gender;
+            expertise.SelectedItem = temp.tester_expertice;
+            max_way_to_go.Text = temp.max_way.ToString();
+            _city.Text = temp.address.city;
+            _street.Text = temp.address.street;
+            _house_number.Text = temp.address.num.ToString();
+        }
+        private bool match (Tester _tester)
+        {
+            if (_tester.id==int.Parse(id.SelectedItem.ToString()))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

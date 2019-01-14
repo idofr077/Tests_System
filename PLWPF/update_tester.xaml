@@ -39,7 +39,7 @@
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Text="תז:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground3}"/>
-                    <ComboBox Grid.Column="0" Name="id"/>
+                    <ComboBox Grid.Column="0" Name="id" SelectionChanged="id_SelectionChanged"/>
                 </Grid>
                 <Grid Grid.Column="1" >
                     <Grid.ColumnDefinitions>
@@ -322,7 +322,7 @@
                         <ColumnDefinition Width="283*"/>
                         <ColumnDefinition Width="117*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  Text="רחוב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft"/>
+                    <TextBlock  Text="רחוב:" FontSize="15" FontWeight="Heavy" Grid.Column="1" FlowDirection="RightToLeft" Background="{StaticResource MyBackground3}"/>
                     <TextBox Grid.Column="0" Name="_street" />
                 </Grid>
             </Grid>

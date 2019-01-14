@@ -196,7 +196,7 @@ namespace PLWPF
                 experience.Clear();
                 max_way_to_go.Clear();
                 num_of_test_in_week.Clear();
-                
+                id.SelectedIndex=-1;
                 MessageBox.Show("הפעולה בוצעה בהצלחה");
             }
             catch (Exception exception)

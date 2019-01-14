@@ -208,16 +208,24 @@ namespace PLWPF
         private void id_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             IBL bl = BL.FactoryBl.getBl();
-            string  a = id.SelectedItem.ToString();
-            int b = int.Parse(a);
             Tester temp=bl.all_tester().Find(match);
             _first_name.Text = temp.first_name;
             _last_name.Text = temp.last_name;
             _phone_number.Text =temp.phone.ToString();
             num_of_test_in_week.Text = temp.max_testPerWeek.ToString();
             _date_of_birth.SelectedDate = temp.date_of_birth;
-            _gender.SelectedItem = temp.Gender;
-            expertise.SelectedItem = temp.tester_expertice;
+            if (temp.Gender == gender.male)
+                _gender.SelectedIndex = 0;
+            else if (temp.Gender == gender.female)
+                _gender.SelectedIndex = 1;
+            else _gender.SelectedIndex = 2;
+            if (temp.tester_expertice == vehicle.private_vehicle)
+                expertise.SelectedIndex = 0;
+            else if (temp.tester_expertice == vehicle.two_weels_vehicle)
+                expertise.SelectedIndex = 1;
+            else if (temp.tester_expertice == vehicle.medium_track)
+                expertise.SelectedIndex = 2;
+            else expertise.SelectedIndex = 3;
             max_way_to_go.Text = temp.max_way.ToString();
             _city.Text = temp.address.city;
             _street.Text = temp.address.street;

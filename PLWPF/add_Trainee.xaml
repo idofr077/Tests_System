@@ -235,6 +235,9 @@
                                 <DataTrigger Binding="{Binding ElementName=id, Path=Text}" Value="">
                                     <Setter Property="Button.IsEnabled" Value="false"/>
                                 </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=date_of_birth, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
                                 <DataTrigger Binding="{Binding ElementName=first_name, Path=Text}" Value="">
                                     <Setter Property="Button.IsEnabled" Value="false"/>
                                 </DataTrigger>
@@ -262,7 +265,16 @@
                                 <DataTrigger Binding="{Binding ElementName=school, Path=Text}" Value="">
                                     <Setter Property="Button.IsEnabled" Value="false"/>
                                 </DataTrigger>
-                           
+                                <DataTrigger Binding="{Binding ElementName=kind_of_gearbox, Path=SelectedIndex}" Value="-1">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=vehicle, Path=SelectedIndex}" Value="-1">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=gender, Path=SelectedIndex}" Value="-1">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                             
                             </Style.Triggers>
                         </Style>
                     </Button.Style>

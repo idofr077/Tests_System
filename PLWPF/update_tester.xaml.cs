@@ -196,6 +196,7 @@ namespace PLWPF
                 experience.Clear();
                 max_way_to_go.Clear();
                 num_of_test_in_week.Clear();
+                
                 MessageBox.Show("הפעולה בוצעה בהצלחה");
             }
             catch (Exception exception)
@@ -221,6 +222,32 @@ namespace PLWPF
             _city.Text = temp.address.city;
             _street.Text = temp.address.street;
             _house_number.Text = temp.address.num.ToString();
+            experience.Text = temp.expirence.ToString();
+            for (int i = 0; i < 6; i++)
+            {
+                if (temp.work_time[0, i])
+                    sunday.SelectedIndex = i;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                if (temp.work_time[1, i])
+                    monday.SelectedIndex = i;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                if (temp.work_time[2, i])
+                    tuesday.SelectedIndex = i;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                if (temp.work_time[3, i])
+                    wednesday.SelectedIndex = i;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                if (temp.work_time[4, i])
+                    thursday.SelectedIndex = i;
+            }
         }
         private bool match (Tester _tester)
         {

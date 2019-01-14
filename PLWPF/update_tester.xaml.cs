@@ -226,27 +226,28 @@ namespace PLWPF
             for (int i = 0; i < 6; i++)
             {
                 if (temp.work_time[0, i])
-                    sunday.SelectedIndex = i;
+                    sunday.SelectedItems.Add(sunday.Items[i]);
+
             }
             for (int i = 0; i < 5; i++)
             {
                 if (temp.work_time[1, i])
-                    monday.SelectedIndex = i;
+                    monday.SelectedItems.Add(monday.Items[i]);
             }
             for (int i = 0; i < 5; i++)
             {
                 if (temp.work_time[2, i])
-                    tuesday.SelectedIndex = i;
+                    tuesday.SelectedItems.Add(tuesday.Items[i]);
             }
             for (int i = 0; i < 5; i++)
             {
                 if (temp.work_time[3, i])
-                    wednesday.SelectedIndex = i;
+                    wednesday.SelectedItems.Add(wednesday.Items[i]);
             }
             for (int i = 0; i < 5; i++)
             {
                 if (temp.work_time[4, i])
-                    thursday.SelectedIndex = i;
+                    thursday.SelectedItems.Add(thursday.Items[i]) ;
             }
         }
         private bool match (Tester _tester)

@@ -11,7 +11,7 @@ namespace BE  // a class to set adresses.
         public string street;
         public int num;
         public string city;
-
+        
         public Address(string street, int num, string city) //C_Tor
         {
             this.street = street;

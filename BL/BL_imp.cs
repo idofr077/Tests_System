@@ -49,7 +49,7 @@ namespace BL
             {
                 throw new Exception("Trainee must be  at least 18 years old.");
             }
-            if (trainee.numOfLessons  < Configuration.min_lessons)
+            if (trainee.num_of_lessons  < Configuration.min_lessons)
             {
                 throw new Exception("Trainee must be  do at least 20 lessons before the test.");
             }

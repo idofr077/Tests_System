@@ -41,19 +41,19 @@ namespace BL
             effector.update_tester(_id, _lastname, _firstname, _date_of_birth, _Gender, _phone, _address, _expirence, _max_testPerWeek, _tester_expertise,  _work_time,  _max_way);
         }
 
-        public void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
+        public void add_trainee(Trainee trainee)
         {
             TimeSpan Temp;
-            Temp = DateTime.Now - _date_of_birth;
+            Temp = DateTime.Now - trainee.date_of_birth;
             if (Temp.Days / 365 < 18)
             {
                 throw new Exception("Trainee must be  at least 18 years old.");
             }
-            if (_numOfLessons  < 20)
+            if (trainee.num_of_lessons  < 20)
             {
                 throw new Exception("Trainee must be  do at least 20 lessons before the test.");
             }
-            effector.add_trainee(_id, _last_name, _first_name, _date_of_birth, _Gender, _phone, _address, _learn_vehicle, _gearbox, _school, _teacher_name, _numOfLessons);
+            effector.add_trainee(trainee);
         }
 
         public void remove_trainee(int _id)
@@ -65,13 +65,13 @@ namespace BL
             effector.remove_trainee(_id);
         }
 
-        public void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
+        public void update_trainee(Trainee trainee)
         {
-            if (!effector.id_alredy_exsits(_id))
+            if (!effector.id_alredy_exsits(trainee.id))
             {
                 throw new Exception("the id is not exsits");
             }
-            effector.update_trainee(_id, _last_name, _first_name, _date_of_birth, _Gender, _phone, _address, _learn_vehicle, _gearbox, _school, _teacher_name, _numOfLessons);
+            effector.update_trainee(trainee);
         }
 
         public void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address)

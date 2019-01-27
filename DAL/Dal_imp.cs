@@ -92,17 +92,16 @@ namespace DAL
             DataSource.testers.Add(temp);
         }
 
-        public void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
+        public void add_trainee(Trainee trainee)
         {
 
 
-            if (DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
+            if (DataSource.Trainees.Exists(x => x.id.CompareTo(trainee.id) == 0))
             {
                 throw new Exception("the id is already in use");
             }
 
-            Trainee Temp = new Trainee(_id, _last_name, _first_name, _date_of_birth, _Gender, _phone, _address, _learn_vehicle, _gearbox, _school, _teacher_name, _numOfLessons);
-            DataSource.Trainees.Add(Temp);
+            DataSource.Trainees.Add(trainee);
         }
 
         public List<Test> all_test()
@@ -173,25 +172,25 @@ namespace DAL
             temp.max_way = _max_way;
         }
         //done
-        public void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
+        public void update_trainee(Trainee trainee)
         {
-            if (!DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
+            if (!DataSource.Trainees.Exists(x => x.id.CompareTo(trainee.id) == 0))
             {
                 throw new Exception("the id is not exsits");
             }
-            Trainee Temp = DataSource.Trainees.Find(x => x.id.CompareTo(_id) == 0);
-            Temp.id = _id;
-            Temp.last_name = _last_name;
-            Temp.first_name = _first_name;
-            Temp.date_of_birth = _date_of_birth;
-            Temp.Gender = _Gender;
-            Temp.phone = _phone;
-            Temp.address = _address;
-            Temp.learn_vehicle = _learn_vehicle;
-            Temp.gearbox = _gearbox;
-            Temp.school = _school;
-            Temp.teacher_name = _teacher_name;
-            Temp.num_of_lessons = _numOfLessons;
+            Trainee Temp = DataSource.Trainees.Find(x => x.id.CompareTo(trainee.id) == 0);
+            Temp.id = trainee.id;
+            Temp.last_name = trainee.last_name ;
+            Temp.first_name = trainee.first_name;
+            Temp.date_of_birth = trainee.date_of_birth;
+            Temp.Gender = trainee.Gender;
+            Temp.phone = trainee.phone;
+            Temp.address = trainee.address;
+            Temp.learn_vehicle = trainee.learn_vehicle;
+            Temp.gearbox = trainee.gearbox;
+            Temp.school = trainee.school;
+            Temp.teacher_name = trainee.teacher_name;
+            Temp.num_of_lessons = trainee.num_of_lessons;
         }
 
         //done

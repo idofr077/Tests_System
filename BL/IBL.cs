@@ -47,7 +47,7 @@ namespace BL
         /// <param name="_school"></param>
         /// <param name="_teacher_name"></param>
         /// <param name="_numOfLessons"></param>
-        void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons);/// <summary>
+        void add_trainee(Trainee trainee);/// <summary>
         /// check if the added of the trainee was ok and without errors
         /// </summary>
         /// create a new trainee
@@ -67,7 +67,7 @@ namespace BL
                                      /// <param name="_school"></param>
                                      /// <param name="_teacher_name"></param>
                                      /// <param name="_numOfLessons"></param>
-        void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons);/// <summary>
+        void update_trainee(Trainee trainee);/// <summary>
         /// check if the updated of the trainee was ok and without errors
         /// </summary>
         /// <param name="_id_tester"></param>

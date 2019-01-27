@@ -20,7 +20,7 @@ namespace BE  // a class to set adresses.
         }
         public override string ToString()
         {
-            return street + " " + num + " " + city;
+            return street + " " + num + " st." + city;
         }
     }
 }

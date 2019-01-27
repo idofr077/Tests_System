@@ -37,7 +37,6 @@ namespace PLWPF
             InitializeComponent();
             trainee = new Trainee();
             DataContext = trainee;
-            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -46,45 +45,7 @@ namespace PLWPF
             try
             {
                 //
-                gender _Gender = BE.gender.male;
-                vehicle _Vehicle = BE.vehicle.private_vehicle;
-                kind_of_gearbox _Gearbox = BE.kind_of_gearbox.manual;
-                if (gender.SelectedIndex == 0)
-                {
-                    _Gender = BE.gender.male;
-                }
-                else if (gender.SelectedIndex == 1)
-                {
-                    _Gender = BE.gender.female;
-                }
-                else if (gender.SelectedIndex == 2)
-                {
-                    _Gender = BE.gender.other;
-                }
-                if (vehicle.SelectedIndex == 0)
-                {
-                    _Vehicle = BE.vehicle.private_vehicle;
-                }
-                else if (vehicle.SelectedIndex == 1)
-                {
-                    _Vehicle = BE.vehicle.two_weels_vehicle;
-                }
-                else if (vehicle.SelectedIndex == 2)
-                {
-                    _Vehicle = BE.vehicle.medium_track;
-                }
-                else if (vehicle.SelectedIndex == 3)
-                {
-                    _Vehicle = BE.vehicle.heavy_track;
-                }
-                if (kind_of_gearbox.SelectedIndex == 0)
-                {
-                    _Gearbox = BE.kind_of_gearbox.manual;
-                }
-                if (kind_of_gearbox.SelectedIndex == 1)
-                {
-                    _Gearbox = BE.kind_of_gearbox.auto;
-                }
+          
                 if (!IsDigitsOnly(id.Text))
                 {
                     throw (new Exception("תעודות זהות מורכבות מספרות בלבד"));
@@ -107,7 +68,7 @@ namespace PLWPF
                 }
                 DateTime _date = new DateTime();
                 _date = (DateTime)(date_of_birth.SelectedDate);
-              
+                trainee.address = new Address(street.Text.ToString(), int.Parse(house_number.Text), city.Text);
                 bl.add_trainee(trainee);
                 id.Clear();
                 last_name.Clear();

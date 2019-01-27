@@ -107,8 +107,9 @@ namespace PLWPF
                 }
                 DateTime _date = new DateTime();
                 _date = (DateTime)(date_of_birth.SelectedDate);
-
-                bl.update_trainee(int.Parse(id.Text), (string)last_name.Text, (string)first_name.Text, _date, _Gender, long.Parse(phone_number.Text), new BE.Address(street.Text, int.Parse(house_number.Text), city.Text), _Vehicle, _Gearbox, school.Text, teacher.Text, int.Parse(num_of_lessons.Text));
+                Trainee trainee = new Trainee();
+                trainee = DataContext as Trainee;
+                bl.update_trainee(trainee);
                 
                 last_name.Clear();
                 first_name.Clear();

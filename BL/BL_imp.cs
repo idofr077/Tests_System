@@ -91,7 +91,7 @@ namespace BL
             if (trainee.waiting_for_test)
                 throw new Exception("you already Registered for a test.");
             if (trainee.learn_vehicle != tester.tester_expertice)
-                throw new Exception("you didn't chose a tester with the right expertice.");
+                throw new Exception("you didn't chose a tester with the right expertise.");
             if (tester.Tests_Determined.Exists(X => X == _dateAndHour))
                 throw new Exception("the date and time are not avialible .");
             var test_on_week = from DateTime item in tester.Tests_Determined
@@ -99,8 +99,9 @@ namespace BL
                                where (a < 7)
                                select item;
             if (test_on_week.Count() >= tester.max_testPerWeek)
-                throw new Exception("the tester fill  his tests for week amount");
-
+                throw new Exception("the tester fill  his tests for week amount.");
+            if(distance.Getdistane(_address.ToString(),tester.address.ToString())>tester.max_way)
+                throw new Exception("the tester is not willing to drive so far.");
             bool flag = false;
             for (int i = 0; i < trainee.num_of_licenses; i++)
             {

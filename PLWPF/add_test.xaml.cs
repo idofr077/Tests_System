@@ -12,8 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 using BL;
 using BE;
+using System.ComponentModel;
+
 namespace PLWPF
 {
     /// <summary>
@@ -37,20 +40,20 @@ namespace PLWPF
             InitializeComponent();
         }
 
-  
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 IBL bl = FactoryBl.getBl();
-                DateTime _date = new DateTime();
-                _date = (DateTime)(date.SelectedDate);
-                DateTime date_and_hour = new DateTime(_date.Year, _date.Month,_date.Day,hour.SelectedIndex+9,0,0);
-               
+                BackgroundWorker worker = new BackgroundWorker();
+                worker.DoWork += Worker_DoWork;
+                worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
                 if (!IsDigitsOnly(id_tester.Text))
                 {
                     throw (new Exception("תעודות זהות מורכבות מספרות בלבד"));
-                    
+
                 }
                 if (!IsDigitsOnly(id_trainee.Text))
                 {
@@ -62,19 +65,32 @@ namespace PLWPF
                     throw (new Exception("במרכיב מספר בית נדרשים להכניס מספר שלם"));
 
                 }
-                bl.add_test(int.Parse(id_tester.Text), int.Parse(id_trainee.Text), date_and_hour, new Address(street.Text, int.Parse(house_number.Text), city.Text));
-                id_tester.Clear();
-                id_trainee.Clear();
-                street.Clear();
-                house_number.Clear();
-                city.Clear();
-                MessageBox.Show("הפעולה בוצעה בהצלחה \n מספר המבחן הוא:" + (Configuration.id_test-1));
-               
+
+                worker.RunWorkerAsync();              
+
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            id_tester.Clear();
+            id_trainee.Clear();
+            street.Clear();
+            house_number.Clear();
+            city.Clear();
+            MessageBox.Show("הפעולה בוצעה בהצלחה \n מספר המבחן הוא:" + (Configuration.id_test - 1));
+        }
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            DateTime _date = new DateTime();
+            _date = (DateTime)(date.SelectedDate);
+            DateTime date_and_hour = new DateTime(_date.Year, _date.Month, _date.Day, hour.SelectedIndex + 9, 0, 0);
+            BL.FactoryBl.getBl().add_test(int.Parse(id_tester.Text), int.Parse(id_trainee.Text), date_and_hour, new Address(street.Text, int.Parse(house_number.Text), city.Text));
         }
     }
 }

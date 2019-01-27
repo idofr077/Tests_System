@@ -29,7 +29,7 @@ namespace PLWPF
         contact_exp contact_Exp = new contact_exp();
         about_exp about_Exp = new about_exp();
         help_exp help_Exp = new help_exp();
-        string[] audioPath = Directory.GetFiles(@"Music");
+      //  string[] audioPath = Directory.GetFiles(@"Music");
         Random rnd = new Random();
         int index;
         public static MainWindow FindParentWindow(DependencyObject child)
@@ -47,7 +47,7 @@ namespace PLWPF
             mediaElement.Play();
             mediaElement.MediaEnded += sss;
         }
-        int num()
+       /* int num()
         {
 
                    return rnd.Next(audioPath.Length);
@@ -67,7 +67,7 @@ namespace PLWPF
                 mediaElement.Play();
             }
         }
-
+*/
         private void left_move_slider_Click(object sender, RoutedEventArgs e)
         {
             if (dockPanel.Children.IndexOf(d1) >= 0)

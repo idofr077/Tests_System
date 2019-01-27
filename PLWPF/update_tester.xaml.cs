@@ -186,7 +186,8 @@ namespace PLWPF
                         work_time[4, i] = false;
                     }
                 }
-                bl.update_tester(int.Parse(id.Text), (string)_last_name.Text, (string)_first_name.Text, _date, _Gender, long.Parse(_phone_number.Text), new BE.Address(_street.Text, int.Parse(_house_number.Text), _city.Text), float.Parse(experience.Text), int.Parse(num_of_test_in_week.Text), _expertise, work_time, int.Parse(max_way_to_go.Text));
+                Tester tester = new Tester(int.Parse(id.Text), (string)_last_name.Text, (string)_first_name.Text, _date, _Gender, long.Parse(_phone_number.Text), new BE.Address(_street.Text, int.Parse(_house_number.Text), _city.Text), float.Parse(experience.Text), int.Parse(num_of_test_in_week.Text), _expertise, work_time, int.Parse(max_way_to_go.Text));
+                bl.update_tester(tester);
                 _last_name.Clear();
                 _first_name.Clear();
                 _street.Clear();

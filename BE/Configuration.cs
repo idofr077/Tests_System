@@ -7,7 +7,11 @@ using System.Xml.Linq;
 
 namespace BE
 {
-   public class Configuration //a class of all the consts.
+    /// <summary>
+    /// //a class of all the consts.
+    /// //we need to ask about the date
+    /// </summary>
+    public class Configuration 
     {
        public static int min_lessons=20;
        public static float min_AgeOfTester=40;

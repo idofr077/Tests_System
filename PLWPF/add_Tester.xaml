@@ -202,7 +202,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="4">
-                        <ListBox SelectionMode="Multiple"  Name="sunday">
+                        <ListBox  SelectionMode="Multiple"  Name="sunday">
                             <ListBoxItem>
                                 <ListBoxItem Content="9:00"/>
                             </ListBoxItem>

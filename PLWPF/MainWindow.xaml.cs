@@ -50,8 +50,8 @@ namespace PLWPF
         int num()
         {
 
-            return rnd.Next(audioPath.Length);
-        }
+            //        return rnd.Next(audioPath.Length);
+            //   }
 
         private void sss(object sender, RoutedEventArgs e)
         {
@@ -67,7 +67,7 @@ namespace PLWPF
                 mediaElement.Play();
             }
         }
-        
+
         private void left_move_slider_Click(object sender, RoutedEventArgs e)
         {
             if (dockPanel.Children.IndexOf(d1) >= 0)

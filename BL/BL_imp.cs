@@ -11,15 +11,15 @@ namespace BL
     public class BL_imp : IBL
     {
         Idal effector = DAL.FactoryDal.getDal();
-        public void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
+        public void add_tester(Tester tester)
         {
             TimeSpan Temp;
-            Temp = DateTime.Now - _date_of_birth;
-            if (Temp.Days / 365 <= 40)
+            Temp = DateTime.Now - tester.date_of_birth;
+            if (Temp.Days / 365 <= Configuration.min_AgeOfTester)
             {
                 throw new Exception("Tetser must be  at least 40 years old.");
             }
-            effector.add_tester(_id, _lastname, _firstname, _date_of_birth, _Gender, _phone, _address, _expirence, _max_testPerWeek, _tester_expertise, _work_time, _max_way);
+            effector.add_tester(tester);
 
         }
 
@@ -32,24 +32,24 @@ namespace BL
             effector.remove_tester(_id);
         }
 
-        public void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise, bool[,] _work_time, int _max_way)
+        public void update_tester(Tester tester)
         {
-            if (!effector.id_alredy_exsits(_id))
+            if (!effector.id_alredy_exsits(tester.id))
             {
                 throw new Exception("the id is not exsits");
             }
-            effector.update_tester(_id, _lastname, _firstname, _date_of_birth, _Gender, _phone, _address, _expirence, _max_testPerWeek, _tester_expertise,  _work_time,  _max_way);
+            effector.update_tester(tester);
         }
 
         public void add_trainee(Trainee trainee)
         {
             TimeSpan Temp;
             Temp = DateTime.Now - trainee.date_of_birth;
-            if (Temp.Days / 365 < 18)
+            if (Temp.Days / 365 < Configuration.min_AgeOfTrainee)
             {
                 throw new Exception("Trainee must be  at least 18 years old.");
             }
-            if (trainee.num_of_lessons  < 20)
+            if (trainee.numOfLessons  < Configuration.min_lessons)
             {
                 throw new Exception("Trainee must be  do at least 20 lessons before the test.");
             }
@@ -83,7 +83,7 @@ namespace BL
                 throw new Exception("the official time of  tests is only from 9 am to 3 pm.");
             if (!effector.is_tester_available(_dateAndHour, _id_tester))
                 throw new Exception("the tester is not available in this date and hour.");
-            if (trainee.num_of_lessons < 20)
+            if (trainee.num_of_lessons < Configuration.min_lessons)
                 throw new Exception("Trainee must do at least 20 lessons");
             if ((_dateAndHour - trainee.LastTest).Days < 7)
                 throw new Exception("must pass 7 days after the previous test");

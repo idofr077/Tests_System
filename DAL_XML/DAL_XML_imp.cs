@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using BE;
-using DS;
-
-namespace DAL
+namespace DAL_XML
 {
-    public class Dal_imp : Idal
+    class DAL_XML_imp :Idal_XML
     {
-        //done
         public bool have_licenes_by_id(int _id)
         {
             Trainee trainee = trainee_by_id(_id);
@@ -90,16 +85,17 @@ namespace DAL
             DataSource.testers.Add(tester);
         }
 
-        public void add_trainee(Trainee trainee)
+        public void add_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
         {
 
 
-            if (DataSource.Trainees.Exists(x => x.id.CompareTo(trainee.id) == 0))
+            if (DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
             {
                 throw new Exception("the id is already in use");
             }
 
-            DataSource.Trainees.Add(trainee);
+            Trainee Temp = new Trainee(_id, _last_name, _first_name, _date_of_birth, _Gender, _phone, _address, _learn_vehicle, _gearbox, _school, _teacher_name, _numOfLessons);
+            DataSource.Trainees.Add(Temp);
         }
 
         public List<Test> all_test()
@@ -160,7 +156,7 @@ namespace DAL
             temp.last_name = tester.last_name;
             temp.first_name = tester.first_name;
             temp.date_of_birth = tester.date_of_birth;
-            temp.Gender =tester.Gender;
+            temp.Gender = tester.Gender;
             temp.phone = tester.phone;
             temp.address = tester.address;
             temp.expirence = tester.expirence;
@@ -170,25 +166,25 @@ namespace DAL
             temp.max_way = tester.max_way;
         }
         //done
-        public void update_trainee(Trainee trainee)
+        public void update_trainee(int _id, string _last_name, string _first_name, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, vehicle _learn_vehicle, kind_of_gearbox _gearbox, string _school, string _teacher_name, int _numOfLessons)
         {
-            if (!DataSource.Trainees.Exists(x => x.id.CompareTo(trainee.id) == 0))
+            if (!DataSource.Trainees.Exists(x => x.id.CompareTo(_id) == 0))
             {
                 throw new Exception("the id is not exsits");
             }
-            Trainee Temp = DataSource.Trainees.Find(x => x.id.CompareTo(trainee.id) == 0);
-            Temp.id = trainee.id;
-            Temp.last_name = trainee.last_name ;
-            Temp.first_name = trainee.first_name;
-            Temp.date_of_birth = trainee.date_of_birth;
-            Temp.Gender = trainee.Gender;
-            Temp.phone = trainee.phone;
-            Temp.address = trainee.address;
-            Temp.learn_vehicle = trainee.learn_vehicle;
-            Temp.gearbox = trainee.gearbox;
-            Temp.school = trainee.school;
-            Temp.teacher_name = trainee.teacher_name;
-            Temp.num_of_lessons = trainee.num_of_lessons;
+            Trainee Temp = DataSource.Trainees.Find(x => x.id.CompareTo(_id) == 0);
+            Temp.id = _id;
+            Temp.last_name = _last_name;
+            Temp.first_name = _first_name;
+            Temp.date_of_birth = _date_of_birth;
+            Temp.Gender = _Gender;
+            Temp.phone = _phone;
+            Temp.address = _address;
+            Temp.learn_vehicle = _learn_vehicle;
+            Temp.gearbox = _gearbox;
+            Temp.school = _school;
+            Temp.teacher_name = _teacher_name;
+            Temp.num_of_lessons = _numOfLessons;
         }
 
         //done
@@ -210,7 +206,7 @@ namespace DAL
             temp2.waiting_for_test = false;
             temp2.num_of_test++;
             int count = 0;
-            if (_distance==false)
+            if (_distance == false)
             {
                 count++;
             }
@@ -240,11 +236,11 @@ namespace DAL
                 temp2.num_of_licenses++;
             }
         }
-       public int num_test(Trainee trainee)
+        public int num_test(Trainee trainee)
         {
             return trainee.num_of_test;
         }
-      public  bool is_tester_available(DateTime date_and_hour, int _testser_id)
+        public bool is_tester_available(DateTime date_and_hour, int _testser_id)
         {
             Tester tester = tester_by_id(_testser_id);
             for (int i = 0; i < tester.Tests_Determined.Count; i++)
@@ -259,4 +255,5 @@ namespace DAL
             return true;
         }
     }
+}
 }

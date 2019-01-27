@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<someRoot>
+  <trainees>
+    <trainee>
+      <id>1</id>
+      <last_name>flyshman</last_name>
+      <first_name>peer</first_name>
+      <date_of_birth>1/1/1</date_of_birth>
+      <gender>male</gender>
+      <phone>0584509872</phone>
+      <address>hazit 1 bne darom</address>
+      <learn_vehicle>private_vehicle</learn_vehicle>
+      <gearbox>auto</gearbox>
+      <school>reim</school>
+      <teacher_name>shlomi</teacher_name>
+      <lastTest>1/11/18</lastTest>
+      <license></license>
+      <waiting_for_test>false</waiting_for_test>
+      <num_of_test>0</num_of_test>
+      <num_of_licenses>0</num_of_licenses>
+      <num_of_lessons>0</num_of_lessons>
+      <have_license>false</have_license>
+    </trainee>
+  </trainees>
+</someRoot>

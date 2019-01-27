@@ -134,6 +134,9 @@ namespace BE
             get { return _mention; }
             set { _mention = value; }
         }
+
+        public static int id_Tests { get; set; }
+
         //ToString
         public override string ToString()
         {

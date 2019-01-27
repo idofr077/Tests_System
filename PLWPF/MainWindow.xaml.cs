@@ -41,7 +41,7 @@ namespace PLWPF
             InitializeComponent();
             dockPanel.Children.Add(d1);
             middle.Children.Add(basic);
-            
+               
             index = num();
             mediaElement.Source = new Uri(audioPath[index++],UriKind.Relative);
             mediaElement.Play();
@@ -50,8 +50,8 @@ namespace PLWPF
         int num()
         {
 
-            //        return rnd.Next(audioPath.Length);
-            //   }
+                   return rnd.Next(audioPath.Length);
+        }
 
         private void sss(object sender, RoutedEventArgs e)
         {

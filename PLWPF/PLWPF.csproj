@@ -310,8 +310,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="trainee_file.xml" />
     <Resource Include="images\mute.png" />
     <Resource Include="images\sound.png" />
+    <Resource Include="config.xml" />
     <Content Include="Music\26.mp3" />
     <Content Include="Music\Believer.mp3" />
     <Content Include="Music\Cold water.mp3" />

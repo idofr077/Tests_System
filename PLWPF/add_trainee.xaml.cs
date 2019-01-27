@@ -34,6 +34,7 @@ namespace PLWPF
         public add_Trainee()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

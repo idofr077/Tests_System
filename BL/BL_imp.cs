@@ -44,12 +44,12 @@ namespace BL
         public void add_trainee(Trainee trainee)
         {
             TimeSpan Temp;
-            Temp = DateTime.Now - _date_of_birth;
+            Temp = DateTime.Now - trainee.date_of_birth;
             if (Temp.Days / 365 < Configuration.min_AgeOfTrainee)
             {
                 throw new Exception("Trainee must be  at least 18 years old.");
             }
-            if (_numOfLessons  < Configuration.min_lessons)
+            if (trainee.numOfLessons  < Configuration.min_lessons)
             {
                 throw new Exception("Trainee must be  do at least 20 lessons before the test.");
             }

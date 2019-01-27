@@ -13,7 +13,7 @@
         </LinearGradientBrush>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid Name="main_grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="404*"/>
             <RowDefinition Height="47*"/>

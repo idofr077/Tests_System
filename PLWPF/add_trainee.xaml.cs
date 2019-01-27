@@ -21,6 +21,7 @@ namespace PLWPF
     /// </summary>
     public partial class add_Trainee : UserControl
     {
+        Trainee trainee;
         bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
@@ -34,6 +35,9 @@ namespace PLWPF
         public add_Trainee()
         {
             InitializeComponent();
+            trainee = new Trainee();
+            DataContext = trainee;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -103,8 +107,7 @@ namespace PLWPF
                 }
                 DateTime _date = new DateTime();
                 _date = (DateTime)(date_of_birth.SelectedDate);
-                Trainee trainee=new Trainee();
-                trainee = DataContext as Trainee;
+              
                 bl.add_trainee(trainee);
                 id.Clear();
                 last_name.Clear();
@@ -123,5 +126,7 @@ namespace PLWPF
                 MessageBox.Show(exception.Message);
             }
         }
+
+   
     }
 }

@@ -9,7 +9,7 @@ namespace BL
 {
   public interface IBL
     {
-        void add_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time,int _max_way);/// <summary>
+        void add_tester(Tester tester);/// <summary>
         /// check if the addded of the tester was ok and without errors
         /// </summary>
         /// <param name="_id"></param>
@@ -30,7 +30,7 @@ namespace BL
                                     /// <param name="_tester_expertise"></param>
                                     /// <param name="_work_time"></param>
                                     /// <param name="_max_way"></param>
-        void update_tester(int _id, string _lastname, string _firstname, DateTime _date_of_birth, gender _Gender, long _phone, Address _address, float _expirence, int _max_testPerWeek, vehicle _tester_expertise,bool [,] _work_time, int _max_way);/// <summary>
+        void update_tester(Tester tester);/// <summary>
         /// check if the updated of the tester was ok and without errors
         /// </summary>
         /// 

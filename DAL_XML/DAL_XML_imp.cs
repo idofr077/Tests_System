@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using BE;
-using DS;
-
-namespace DAL
+namespace DAL_XML
 {
-    public class Dal_imp : Idal
+    class DAL_XML_imp :Idal_XML
     {
-        //done
         public bool have_licenes_by_id(int _id)
         {
             Trainee trainee = trainee_by_id(_id);
@@ -161,7 +156,7 @@ namespace DAL
             temp.last_name = tester.last_name;
             temp.first_name = tester.first_name;
             temp.date_of_birth = tester.date_of_birth;
-            temp.Gender =tester.Gender;
+            temp.Gender = tester.Gender;
             temp.phone = tester.phone;
             temp.address = tester.address;
             temp.expirence = tester.expirence;
@@ -211,7 +206,7 @@ namespace DAL
             temp2.waiting_for_test = false;
             temp2.num_of_test++;
             int count = 0;
-            if (_distance==false)
+            if (_distance == false)
             {
                 count++;
             }
@@ -241,11 +236,11 @@ namespace DAL
                 temp2.num_of_licenses++;
             }
         }
-       public int num_test(Trainee trainee)
+        public int num_test(Trainee trainee)
         {
             return trainee.num_of_test;
         }
-      public  bool is_tester_available(DateTime date_and_hour, int _testser_id)
+        public bool is_tester_available(DateTime date_and_hour, int _testser_id)
         {
             Tester tester = tester_by_id(_testser_id);
             for (int i = 0; i < tester.Tests_Determined.Count; i++)
@@ -260,4 +255,5 @@ namespace DAL
             return true;
         }
     }
+}
 }

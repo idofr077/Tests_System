@@ -10,9 +10,9 @@ namespace BL
 {
     class distance
     {
-        public static int Getdistane(string _origin,string _destenation)
+        public static int Getdistane(string _origin, string _destenation)
         {
-            string origin = _origin; 
+            string origin = _origin;
             string destination = _destenation;
             string KEY = @"<oWVs43clzaYGfW2zsXGjEx0spmDLgka8>";
             string url = @"https://www.mapquestapi.com/directions/v2/route" +
@@ -38,9 +38,10 @@ namespace BL
                 //display the returned distance
                 XmlNodeList distance = xmldoc.GetElementsByTagName("distance");
                 double distInMiles = Convert.ToDouble(distance[0].ChildNodes[0].InnerText);
-                return((int)(distInMiles * 1.609344));
-              
-
+                return ((int)(distInMiles * 1.609344));
+            }
+            Random r= new Random();
+            return r.Next(100);
         }
     }
 }

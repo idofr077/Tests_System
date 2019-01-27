@@ -29,8 +29,8 @@ namespace PLWPF
         contact_exp contact_Exp = new contact_exp();
         about_exp about_Exp = new about_exp();
         help_exp help_Exp = new help_exp();
-        string[] audioPath = Directory.GetFiles(@"C:\Users\idofr\Source\Repos\Tests_System\PLWPF\Music");
-        Random rnd = new Random();
+      //  string[] audioPath = Directory.GetFiles(@"C:\Users\idofr\Source\Repos\Tests_System\PLWPF\Music");
+      //  Random rnd = new Random();
         int index;
         public static MainWindow FindParentWindow(DependencyObject child)
         {
@@ -41,33 +41,34 @@ namespace PLWPF
             InitializeComponent();
             dockPanel.Children.Add(d1);
             middle.Children.Add(basic);
-            
-            index = num();
-            mediaElement.Source = new Uri(audioPath[index++]);
-            mediaElement.Play();
-            mediaElement.MediaEnded += sss;
-        }
-        int num()
-        {
 
-            return rnd.Next(audioPath.Length);
+            //  index = num();
+            //    mediaElement.Source = new Uri(audioPath[index++]);
+            //   mediaElement.Play();
+            //    mediaElement.MediaEnded += sss;
+            //    }
+            //   int num()
+            //   {
+
+            //        return rnd.Next(audioPath.Length);
+            //   }
+
+            /*    private void sss(object sender, RoutedEventArgs e)
+                {
+                    if (index < audioPath.Length)
+                    {
+                        mediaElement.Source = new Uri(audioPath[index++]);
+                        mediaElement.Play();
+                    }
+                    else
+                    {
+                        index = 0;
+                        mediaElement.Source = new Uri(audioPath[index++]);
+                        mediaElement.Play();
+                    }
+              */
         }
 
-        private void sss(object sender, RoutedEventArgs e)
-        {
-            if (index < audioPath.Length)
-            {
-                mediaElement.Source = new Uri(audioPath[index++]);
-                mediaElement.Play();
-            }
-            else
-            {
-                index = 0;
-                mediaElement.Source = new Uri(audioPath[index++]);
-                mediaElement.Play();
-            }
-        }
-        
         private void left_move_slider_Click(object sender, RoutedEventArgs e)
         {
             if (dockPanel.Children.IndexOf(d1) >= 0)

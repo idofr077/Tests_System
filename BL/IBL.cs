@@ -105,7 +105,7 @@ namespace BL
         /// <param name="address"></param>
         /// <param name="x"></param>
         /// <returns></returns>       
-        List<Tester> testers_area(Address address,int x);
+        List<Tester> testers_area(Address address);
         /// <summary>
         /// return a list with all the testers in the radar of x
         /// </summary>

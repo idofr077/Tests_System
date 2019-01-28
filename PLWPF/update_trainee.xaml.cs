@@ -20,8 +20,8 @@ namespace PLWPF
     /// Interaction logic for update_trainee.xaml
     /// </summary>
     public partial class update_trainee : UserControl
+
     {
-        Trainee trainee;
         bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
@@ -35,8 +35,6 @@ namespace PLWPF
         public update_trainee()
         {
             InitializeComponent();
-            trainee = new Trainee();
-            DataContext = trainee;
             List<int> idis = new List<int>();
             for (int i = 0; i < BL.FactoryBl.getBl().all_trainee().Count; i++)
             {
@@ -52,8 +50,46 @@ namespace PLWPF
             try
             {
                 //
-               
-               
+                gender _Gender = BE.gender.male;
+                vehicle _Vehicle = BE.vehicle.private_vehicle;
+                kind_of_gearbox _Gearbox = BE.kind_of_gearbox.manual;
+                if (gender.SelectedIndex == 0)
+                {
+                    _Gender = BE.gender.male;
+                }
+                else if (gender.SelectedIndex == 1)
+                {
+                    _Gender = BE.gender.female;
+                }
+                else if (gender.SelectedIndex == 2)
+                {
+                    _Gender = BE.gender.other;
+                }
+                if (vehicle.SelectedIndex == 0)
+                {
+                    _Vehicle = BE.vehicle.private_vehicle;
+                }
+                else if (vehicle.SelectedIndex == 1)
+                {
+                    _Vehicle = BE.vehicle.two_weels_vehicle;
+                }
+                else if (vehicle.SelectedIndex == 2)
+                {
+                    _Vehicle = BE.vehicle.medium_track;
+                }
+                else if (vehicle.SelectedIndex == 3)
+                {
+                    _Vehicle = BE.vehicle.heavy_track;
+                }
+                if (kind_of_gearbox.SelectedIndex == 0)
+                {
+                    _Gearbox = BE.kind_of_gearbox.manual;
+                }
+                if (kind_of_gearbox.SelectedIndex == 1)
+                {
+                    _Gearbox = BE.kind_of_gearbox.auto;
+                }
+
                 if (!IsDigitsOnly(phone_number.Text))
                 {
                     throw (new Exception("מספרי טלפון מורכבים מספרות בלבד"));
@@ -71,9 +107,11 @@ namespace PLWPF
                 }
                 DateTime _date = new DateTime();
                 _date = (DateTime)(date_of_birth.SelectedDate);
-                trainee.address = new Address(street.Text.ToString(), int.Parse(house_number.Text), city.Text);
-                bl.update_trainee(trainee);
                 
+               
+                Trainee t= new Trainee(int.Parse(id.Text), (string)last_name.Text, (string)first_name.Text, _date, _Gender, long.Parse(phone_number.Text), new BE.Address(street.Text, int.Parse(house_number.Text), city.Text), _Vehicle, _Gearbox, school.Text, teacher.Text, int.Parse(num_of_lessons.Text));
+                bl.update_trainee(t);
+
                 last_name.Clear();
                 first_name.Clear();
                 street.Clear();
@@ -93,7 +131,33 @@ namespace PLWPF
 
         private void id_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          
+            IBL bl = BL.FactoryBl.getBl();
+            Trainee temp = bl.all_trainee().Find(match);
+            first_name.Text = temp.first_name;
+            last_name.Text = temp.last_name;
+            phone_number.Text = temp.phone.ToString();
+            school.Text = temp.school;
+            teacher.Text = temp.teacher_name;
+            num_of_lessons.Text = temp.num_of_lessons.ToString();
+            date_of_birth.SelectedDate = temp.date_of_birth;
+            if (temp.Gender == BE.gender.male)
+                gender.SelectedIndex = 0;
+            else if (temp.Gender == BE.gender.female)
+                gender.SelectedIndex = 1;
+            else gender.SelectedIndex = 2;
+            if (temp.learn_vehicle == BE.vehicle.private_vehicle)
+                vehicle.SelectedIndex = 0;
+            else if (temp.learn_vehicle == BE.vehicle.two_weels_vehicle)
+                vehicle.SelectedIndex = 1;
+            else if (temp.learn_vehicle == BE.vehicle.medium_track)
+                vehicle.SelectedIndex = 2;
+            else vehicle.SelectedIndex = 3;
+            if (temp.gearbox == BE.kind_of_gearbox.auto)
+                kind_of_gearbox.SelectedIndex = 1;
+            else kind_of_gearbox.SelectedIndex = 0;
+            city.Text = temp.address.city;
+            street.Text = temp.address.street;
+            house_number.Text = temp.address.num.ToString();
         }
         private bool match(Trainee _trainee)
         {
@@ -103,6 +167,5 @@ namespace PLWPF
             }
             return false;
         }
-
     }
 }

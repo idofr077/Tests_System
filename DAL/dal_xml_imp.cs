@@ -52,8 +52,8 @@ namespace DAL
         public static void SaveToXML<T>(T source,string path)
         {
             FileStream file = new FileStream(path, FileMode.Create);
-            XmlSerializer xmlSerializer = new XmlSerializer(list.GetType());
-            xmlSerializer.Serialize(file, list); file.Close();
+            XmlSerializer xmlSerializer = new XmlSerializer(source.GetType());
+            xmlSerializer.Serialize(file, source); file.Close();
         }
         public static void SaveListTestersToXML(List<Tester> list, string path)
         {

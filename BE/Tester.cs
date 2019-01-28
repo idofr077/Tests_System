@@ -27,6 +27,37 @@ namespace BE
             get { return _max_way; }
             set { _max_way = value; }
         }
+        public string work_time_1
+        {
+            get
+            {
+                if (_work_time == null)
+                    return null;
+                string result = "";
+                if (_work_time != null)
+                {
+                    int sizeA = _work_time.GetLength(0);
+                    int sizeB = _work_time.GetLength(1);
+                    result += "" + sizeA + "," + sizeB;
+
+                    for (int i = 0; i < sizeA; i++)
+
+                        for (int j = 0; j < sizeB; j++)
+                            result += "," + _work_time[i, j];
+                }
+                return result;
+
+            }
+            set { if (value != null && value.Length > 0)
+                { string[] values = value.Split(',');
+                    int sizeA = int.Parse(values[0]);
+                    int sizeB = int.Parse(values[1]);
+                    _work_time = new bool[sizeA, sizeB];
+                    int index = 2;
+                    for (int i = 0; i < sizeA; i++)
+                        for (int j = 0; j < sizeB; j++)
+                            _work_time[i, j] = bool.Parse(values[index++]); } }
+        }
         //ToString
         public override string ToString()
         {

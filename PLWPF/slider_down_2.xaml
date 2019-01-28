@@ -20,7 +20,7 @@
     <Button Name="update_trainee" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="עדכן תלמיד" Background="white" Grid.Column="1" Click="update_trainee_Click"/>
     <Button Name="all_testers" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="כל הבוחנים" Background="white" Grid.Column="2" Click="all_testers_click"/>
     <Button Name="all_tests"    Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="כל המבחנים" Background="white" Grid.Column="3" Click="all_test_click"/>
-    <Button Name="testers_area"  Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="בוחנים באיזור" Background="white" Grid.Column="4"/>
+    <Button Name="testers_area"  Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="בוחנים באיזור" Background="white" Grid.Column="4" Click="testers_area_Click"/>
     <Button Name="available_testers" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="בוחנים זמינים" Background="white" Grid.Column="5" Click="available_testers_Click"/>
     <Button Name="test_on_date" Foreground="Blue" FontSize="14" FontStyle="Oblique"  Content="מבחנים &#xa; בתאריך" Background="White" Grid.Column="6" Click="test_on_date_Click"/>
     

@@ -70,7 +70,11 @@ namespace PLWPF
             father.middle.Children.Add(new update_tester());
         }
 
-      
-   
+        private void testers_area_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow father = MainWindow.FindParentWindow(this);
+            father.middle.Children.Clear();
+            father.middle.Children.Add(new testers_in_area());
+        }
     }
 }

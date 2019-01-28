@@ -15,34 +15,18 @@ namespace DAL
      
         public dal_xml_imp()
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+            //open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
-            open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
+            //open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
             Configuration.id_test = getTestId();
 
         }
-        public void open_trainee_file(string path, XElement root)
-        {
-            if (!File.Exists(path))
-            {
-                root = new XElement("ArrayOfTrainee");
-                root.Save(path);
-            }
-        }
-        public void open_tester_file(string path, XElement root)
-        {
-            if (!File.Exists(path))
-            {
-                root = new XElement("ArrayOfTester");
-                root.Save(path);
-            }
-        }
+        
         public void open_test_file(string path, XElement root)
         {
             if (!File.Exists(path))
             {
-                root = new XElement("ArrayOfTest");
+                root = new XElement("ArrayOfTests");
                 root.Save(path);
             }
         }
@@ -50,11 +34,22 @@ namespace DAL
         {
             if (!File.Exists(path))
             {
-                root = new XElement("ArrayOfConfiguration");
+                root = new XElement("ArrayOfConfigurations");
                 root.Save(path);
             }
         }
-        public static void SaveToXML<T>(T source, string path)
+
+      /*  public string ToXML<T>(T obj)
+        {
+            using (StringWriter stringWriter = new StringWriter(new StringBuilder()))
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+                xmlSerializer.Serialize(stringWriter, obj);
+                return stringWriter.ToString();
+            }
+        }*/
+
+        public static void SaveToXML<T>(T source,string path)
         {
             FileStream file = new FileStream(path, FileMode.Create);
             XmlSerializer xmlSerializer = new XmlSerializer(source.GetType());
@@ -181,8 +176,8 @@ namespace DAL
 
         public void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -220,8 +215,8 @@ namespace DAL
 
         public void add_tester(Tester tester)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -240,18 +235,19 @@ namespace DAL
 
 
             testers.Add(tester);
-            SaveToXML<Tester>(tester, Configuration.FILE_TESTER);
+            SaveToXML<List<Tester>>(testers, Configuration.FILE_TESTER);
         }
 
         public void add_trainee(Trainee trainee)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
-            List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
-            List<Tester> testers = LoadFromXML<List<Tester>>(Configuration.FILE_TESTER);
+            List<Trainee> trainees = File.Exists(Configuration.FILE_TRAINEE) ? LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE) : new List<Trainee>();;
+            List<Tester> testers = File.Exists(Configuration.FILE_TESTER) ? LoadFromXML<List<Tester>>(Configuration.FILE_TESTER) : new List<Tester>();
+            ;
 
             if (trainees.Exists(x => x.id.CompareTo(trainee.id) == 0))
             {
@@ -261,18 +257,15 @@ namespace DAL
             {
                 throw new Exception("the id is already in use");
             }
-
-
-
             trainees.Add(trainee);
-            SaveToXML<Trainee>(trainee, Configuration.FILE_TRAINEE);
-
+            //ToXML<List<Trainee>>(trainees);
+            SaveToXML<List<Trainee>>(trainees, Configuration.FILE_TRAINEE);
         }
 
         public List<Test> all_test()
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -282,8 +275,8 @@ namespace DAL
 
         public List<Tester> all_tester()
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -293,19 +286,19 @@ namespace DAL
 
         public List<Trainee> all_trainee()
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
-            open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
-            open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
+            //    open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
+            //    open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+            //    open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
+            //    open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
-            List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
+            List<Trainee> trainees = File.Exists(Configuration.FILE_TRAINEE) ? LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE) : new List<Trainee>() ;
             return trainees;
         }
 
         public bool have_licenes_by_id(int _id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -316,8 +309,8 @@ namespace DAL
 
         public bool id_alredy_exsits(int _id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -338,8 +331,8 @@ namespace DAL
 
         public bool id_tests_exsits(int _id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -354,8 +347,8 @@ namespace DAL
 
         public bool is_tester_available(DateTime date_and_hour, int _testser_id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -380,34 +373,34 @@ namespace DAL
 
         public void remove_tester(int _id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
             List<Tester> testers = LoadFromXML<List<Tester>>(Configuration.FILE_TESTER);
             Tester tester = testers.Find(x => x.id.CompareTo(_id) == 0);
             testers.Remove(tester);
-            SaveToXML<Tester>(tester, Configuration.FILE_TESTER);
+            SaveToXML<List<Tester>>(testers, Configuration.FILE_TESTER);
         }
 
         public void remove_trainee(int _id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
             List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
             Trainee trainee = trainees.Find(x => x.id.CompareTo(_id) == 0);
             trainees.Remove(trainee);
-            SaveToXML<Trainee>(trainee, Configuration.FILE_TRAINEE);
+            SaveToXML<List<Trainee>>(trainees, Configuration.FILE_TRAINEE);
         }
 
         public Tester tester_by_id(int id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -419,8 +412,8 @@ namespace DAL
 
         public Test test_by_id(int id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -432,8 +425,8 @@ namespace DAL
 
         public Trainee trainee_by_id(int id)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -445,8 +438,8 @@ namespace DAL
 
         public void update_test(int id, int id_trainee, bool? distance, bool? reverse, bool? mirrors, bool? signals, bool? crosswalk, bool? grade, string mention)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
@@ -466,28 +459,28 @@ namespace DAL
 
         public void update_tester(Tester tester)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
             List<Tester> testers = LoadFromXML<List<Tester>>(Configuration.FILE_TESTER);
             testers.RemoveAll(temp => temp.id == tester.id);
             testers.Add(tester);
-            SaveToXML<Tester>(tester, Configuration.FILE_TESTER);
+            SaveToXML<List<Tester>>(testers, Configuration.FILE_TESTER);
         }
 
         public void update_trainee(Trainee trainee)
         {
-            open_tester_file(Configuration.FILE_TESTER, Configuration.testers_root);
-            open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
+
+
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
             List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
             trainees.RemoveAll(temp => temp.id == trainee.id);
             trainees.Add(trainee);
-            SaveToXML<Trainee>(trainee, Configuration.FILE_TRAINEE);
+            SaveToXML<List<Trainee>>(trainees, Configuration.FILE_TRAINEE);
         }
     }
 }

@@ -50,8 +50,8 @@ namespace PLWPF
         /* int num()
           {
 
-                     return rnd.Next(audioPath.Length);
-          }
+                   return rnd.Next(audioPath.Length);
+        }
 
           private void sss(object sender, RoutedEventArgs e)
           {

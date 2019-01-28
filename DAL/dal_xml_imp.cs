@@ -26,7 +26,7 @@ namespace DAL
         {
             if (!File.Exists(path))
             {
-                root = new XElement("trainees");
+                root = new XElement("ArrayOfTrainee");
                 root.Save(path);
             }
         }
@@ -34,7 +34,7 @@ namespace DAL
         {
             if (!File.Exists(path))
             {
-                root = new XElement("testers");
+                root = new XElement("ArrayOfTester");
                 root.Save(path);
             }
         }
@@ -42,7 +42,7 @@ namespace DAL
         {
             if (!File.Exists(path))
             {
-                root = new XElement("tests");
+                root = new XElement("ArrayOfTest");
                 root.Save(path);
             }
         }
@@ -50,7 +50,7 @@ namespace DAL
         {
             if (!File.Exists(path))
             {
-                root = new XElement("configurations");
+                root = new XElement("ArrayOfConfiguration");
                 root.Save(path);
             }
         }
@@ -226,11 +226,18 @@ namespace DAL
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
             List<Tester> testers = LoadFromXML<List<Tester>>(Configuration.FILE_TESTER);
+            List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
+
 
             if (testers.Exists(x => x.id.CompareTo(tester.id) == 0))
             {
                 throw new Exception("the id is already in use");
             }
+            if (trainees.Exists(x => x.id.CompareTo(tester.id) == 0))
+            {
+                throw new Exception("the id is already in use");
+            }
+
 
             testers.Add(tester);
             SaveToXML<Tester>(tester, Configuration.FILE_TESTER);
@@ -244,10 +251,18 @@ namespace DAL
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
             List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
+            List<Tester> testers = LoadFromXML<List<Tester>>(Configuration.FILE_TESTER);
+
             if (trainees.Exists(x => x.id.CompareTo(trainee.id) == 0))
             {
                 throw new Exception("the id is already in use");
             }
+            if (testers.Exists(x => x.id.CompareTo(trainee.id) == 0))
+            {
+                throw new Exception("the id is already in use");
+            }
+
+
 
             trainees.Add(trainee);
             SaveToXML<Trainee>(trainee, Configuration.FILE_TRAINEE);

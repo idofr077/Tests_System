@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace BE
 {
@@ -82,6 +83,7 @@ namespace BE
             get { return _tester_expertise; }
             set { _tester_expertise = value; }
         }
+        [XmlIgnore]
         public bool[,] work_time { get => _work_time; set => _work_time = value; }
         public List<DateTime> Tests_Determined { get => _Tests_Determined; set => _Tests_Determined = value; }
         //C_Tors:

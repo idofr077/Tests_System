@@ -220,8 +220,8 @@ namespace DAL
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
 
-            List<Tester> testers = LoadFromXML<List<Tester>>(Configuration.FILE_TESTER);
-            List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
+            List<Tester> testers = File.Exists(Configuration.FILE_TESTER)?LoadFromXML<List<Tester>>(Configuration.FILE_TESTER):new List<Tester>();
+            List<Trainee> trainees = File.Exists(Configuration.FILE_TRAINEE) ? LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE):new List<Trainee>();
 
 
             if (testers.Exists(x => x.id.CompareTo(tester.id) == 0))
@@ -388,8 +388,8 @@ namespace DAL
         {
 
 
-            open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
-            open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
+            //open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
+           
 
             List<Trainee> trainees = LoadFromXML<List<Trainee>>(Configuration.FILE_TRAINEE);
             Trainee trainee = trainees.Find(x => x.id.CompareTo(_id) == 0);

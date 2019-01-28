@@ -82,15 +82,30 @@ namespace PLWPF
             street.Clear();
             house_number.Clear();
             city.Clear();
+            if(Configuration.id_test>0)
             MessageBox.Show("הפעולה בוצעה בהצלחה \n מספר המבחן הוא:" + (Configuration.id_test - 1));
+          
         }
 
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            DateTime _date = new DateTime();
-            _date = (DateTime)(date.SelectedDate);
-            DateTime date_and_hour = new DateTime(_date.Year, _date.Month, _date.Day, hour.SelectedIndex + 9, 0, 0);
-            BL.FactoryBl.getBl().add_test(int.Parse(id_tester.Text), int.Parse(id_trainee.Text), date_and_hour, new Address(street.Text, int.Parse(house_number.Text), city.Text));
+            
+                Dispatcher.Invoke(action);
+            
+          
+        }
+        private void action()
+        {
+            try
+            {
+                DateTime _date = DateTime.Parse(date.Text);
+                DateTime date_and_hour = new DateTime(_date.Year, _date.Month, _date.Day, hour.SelectedIndex + 9, 0, 0);
+                BL.FactoryBl.getBl().add_test(int.Parse(id_tester.Text), int.Parse(id_trainee.Text), date_and_hour, new Address(street.Text, int.Parse(house_number.Text), city.Text));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }

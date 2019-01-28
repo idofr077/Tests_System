@@ -14,7 +14,7 @@ namespace BL
         {
             string origin = _origin;
             string destination = _destenation;
-            string KEY = @"<oWVs43clzaYGfW2zsXGjEx0spmDLgka8>";
+            string KEY = @"yFgF2JUlmDgo3vOXtJK9gX0vLweMXXU6";
             string url = @"https://www.mapquestapi.com/directions/v2/route" +
              @"?key=" + KEY +
              @"&from=" + origin +
@@ -40,8 +40,17 @@ namespace BL
                 double distInMiles = Convert.ToDouble(distance[0].ChildNodes[0].InnerText);
                 return ((int)(distInMiles * 1.609344));
             }
-            Random r= new Random();
-            return r.Next(100);
+            else if (xmldoc.GetElementsByTagName("statusCode")[0].ChildNodes[0].InnerText == "402")
+            //we have an answer that an error occurred, one of the addresses is not found
+            {
+                throw(new Exception("אחת הכתובות לא נמצאת."));
+            }
+            else  //busy network or other error...
+            {
+                Random r = new Random();
+                return r.Next(100);
+            }
+            return 999999999;
         }
     }
 }

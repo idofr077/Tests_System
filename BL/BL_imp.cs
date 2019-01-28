@@ -76,7 +76,14 @@ namespace BL
 
         public void add_test(int _id_tester, int _id_trainee, DateTime _dateAndHour, Address _address)
         {
-
+            if (!effector.id_alredy_exsits(_id_trainee))
+            {
+                throw new Exception("the id is not exsits");
+            }
+            if (!effector.id_alredy_exsits(_id_tester))
+            {
+                throw new Exception("the id is not exsits");
+            }
             Trainee trainee = effector.trainee_by_id(_id_trainee);
             Tester tester = effector.tester_by_id(_id_tester);
             if (_dateAndHour.Hour < 9 || _dateAndHour.Hour > 15)
@@ -168,13 +175,13 @@ namespace BL
             return effector.all_test();
         }
 
-        public List<Tester> testers_area(Address address, int x)
+        public List<Tester> testers_area(Address address)
         {
-            Random r = new Random();
+           
 
             IEnumerable<Tester> testers = from item in all_tester()
-                                          let y = r.Next(2 * x)
-                                          where y < x
+                                          let y = distance.Getdistane(address.ToString(),item.address.ToString())
+                                          where y < item.max_way
                                           select item;
             return testers.ToList();
         }

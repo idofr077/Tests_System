@@ -119,6 +119,9 @@
     <Compile Include="slider_down_3.xaml.cs">
       <DependentUpon>slider_down_3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="testers_in_area.xaml.cs">
+      <DependentUpon>testers_in_area.xaml</DependentUpon>
+    </Compile>
     <Compile Include="tests_in_date.xaml.cs">
       <DependentUpon>tests_in_date.xaml</DependentUpon>
     </Compile>
@@ -223,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="slider_down_3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="testers_in_area.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

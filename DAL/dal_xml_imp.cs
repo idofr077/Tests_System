@@ -19,7 +19,7 @@ namespace DAL
             open_trainee_file(Configuration.FILE_TRAINEE, Configuration.trainee_root);
             open_configuration_file(Configuration.FILE_CONFIGURATIONS, Configuration.configurations_root);
             open_test_file(Configuration.xmlsample.tests_path, Configuration.xmlsample.tests_root);
-            Configuration.id_test = LoadFromXML<int>(Configuration.FILE_CONFIGURATIONS);
+            Configuration.id_test = getTestId();
 
         }
         public void open_trainee_file(string path, XElement root)
@@ -70,6 +70,35 @@ namespace DAL
             return result;
         }
 
+        public void SaveConfigurationLinq()
+        {
+            Configuration.configurations_root.Element("numberTest").Value = Configuration.id_test.ToString();
+            Configuration.configurations_root.Save(Configuration.FILE_CONFIGURATIONS);
+        }
+
+        private void LoadData_configuration()
+        {
+            try
+            {
+                Configuration.configurations_root = XElement.Load(Configuration.FILE_CONFIGURATIONS);
+            }
+            catch
+            {
+                throw new Exception("File upload problem");
+            }
+        }
+
+
+        public int getTestId()
+        {
+            LoadData_configuration();
+            try
+            {
+                Configuration.id_test = int.Parse(Configuration.configurations_root.Element("numberTest").Value);
+            }
+            catch { Configuration.id_test = 0; }
+            return Configuration.id_test;
+        }
         public void SaveTestListLinq(List<Test> TestList)
         {
             Configuration.xmlsample.tests_root = new XElement("Tests",
@@ -186,8 +215,8 @@ namespace DAL
             tests.Add(test);
             SaveTestListLinq(tests);
             //שורות קוד שמוסיפות מבחן
-            SaveToXML<int>(Test.id_Tests, Configuration.FILE_CONFIGURATIONS);
-        }
+            SaveConfigurationLinq();
+            }
 
         public void add_tester(Tester tester)
         {

@@ -22,7 +22,7 @@ namespace BE
         public const string FILE_TESTER = @"tester_file.xml";
         public static XElement testers_root = new XElement("testers");
         public const string FILE_CONFIGURATIONS = @"configurations_file.xml";
-        public static XElement configurations_root = new XElement("configurations");
+        public static XElement configurations_root = new XElement("int");
         public static class xmlsample
         {
             public static XElement tests_root = new XElement("tests");

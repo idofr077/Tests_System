@@ -82,7 +82,7 @@ namespace PLWPF
             street.Clear();
             house_number.Clear();
             city.Clear();
-            if(Configuration.id_test>0)
+            if(Configuration.id_test-1>0)
             MessageBox.Show("הפעולה בוצעה בהצלחה \n מספר המבחן הוא:" + (Configuration.id_test - 1));
           
         }

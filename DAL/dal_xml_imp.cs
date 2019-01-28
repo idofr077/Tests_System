@@ -77,6 +77,14 @@ namespace DAL
             file.Close();
             return list;
         }
+        public static T LoadFromXML<T>(string path)
+        {
+            FileStream file = new FileStream(path, FileMode.Open);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+            T result = (T)xmlSerializer.Deserialize(file);
+            file.Close();
+            return result;
+        }
 
         public void SaveConfigurationLinq()
         {
@@ -205,10 +213,7 @@ namespace DAL
             {
                 throw new Exception("the id of the tester isnt exsist");
             }
-            if (tests.Exists(x => x.id.CompareTo(Configuration.id_test) == 0))
-            {
-                throw new Exception("the id is already in use");
-            }
+         
             Test test = new Test(Configuration.id_test, _id_tester, _id_trainee, _dateAndHour.Date, _dateAndHour, _address);
             Trainee trainee = trainees.Find(x => x.id.CompareTo(_id_trainee) == 0);
             trainee.LastTest = _dateAndHour.Date;

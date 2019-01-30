@@ -28,16 +28,9 @@
                     <GridViewColumn Header="Address" Width="70" DisplayMemberBinding="{Binding address}" />
                 </GridView>
             </ListView.View>
-            <Grid Height="100" Width="100"/>
-            <Grid Height="100" Width="100"/>
-            <Grid Height="100" Width="100"/>
-            <Grid Height="100" Width="100"/>
-            <Grid Height="100" Width="100"/>
-            <TextBlock Name="destenation" Height="100" TextWrapping="Wrap" Text="TextBlock" Width="100 "/>
-            <Grid />
+
+
         </ListView>
-
-
         <Grid Grid.Row="1" Name="search" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="170*"/>

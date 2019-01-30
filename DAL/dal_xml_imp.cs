@@ -34,7 +34,8 @@ namespace DAL
         {
             if (!File.Exists(path))
             {
-                root = new XElement("ArrayOfConfigurations");
+                root = new XElement("numberTest");
+                root.Value = "0";
                 root.Save(path);
             }
         }
@@ -88,7 +89,7 @@ namespace DAL
 
         public void SaveConfigurationLinq()
         {
-            Configuration.configurations_root.Element("numberTest").Value = Configuration.id_test.ToString();
+            Configuration.configurations_root.Value = Configuration.id_test.ToString();
             Configuration.configurations_root.Save(Configuration.FILE_CONFIGURATIONS);
         }
 
@@ -158,7 +159,14 @@ namespace DAL
                 throw new Exception("File upload problem");
             }
         }
-
+        private bool? stringToBool(string str)
+        {
+            if (str == string.Empty)
+                return null;
+            if (str == "True")
+                return true;
+            return false;
+        }
         public List<Test> GetTestList()
         {
             LoadData();
@@ -176,21 +184,21 @@ namespace DAL
                              address = new Address(p.Element("address").Element("street").Value,
                                 int.Parse(p.Element("address").Element("num").Value),
                              p.Element("address").Element("city").Value),
-                                distance = bool.Parse(p.Element("grades").Element("distance").Value),
-                                reverse= bool.Parse(p.Element("grades").Element("reverse").Value),
-                                mirrors= bool.Parse(p.Element("grades").Element("mirrors").Value),
-                                signals= bool.Parse(p.Element("grades").Element("signals").Value),
-                                crosswalk= bool.Parse(p.Element("grades").Element("crosswalk").Value),
+                                distance = stringToBool(p.Element("grades").Element("distance").Value),
+                                reverse = stringToBool(p.Element("grades").Element("reverse").Value),
+                                mirrors = stringToBool(p.Element("grades").Element("mirrors").Value),
+                                signals = stringToBool(p.Element("grades").Element("signals").Value),
+                                crosswalk = stringToBool(p.Element("grades").Element("crosswalk").Value),
                                 mention= p.Element("grades").Element("mention").Value,
                                
-                                grade= bool.Parse(p.Element("grades").Element("grade").Value),
+                                grade = stringToBool(p.Element("grades").Element("grade").Value),
                                
 
                          }).ToList();
             }
-            catch
+            catch(Exception ex)
             {
-                tests = null;
+                tests = new List<Test>();
             }
             return tests;
         }

@@ -66,7 +66,21 @@
                 <DatePicker Name="date" Grid.Column="1"/>
             </Grid>
             <Grid Grid.Column="2" Name="p">
-                <Button Content="אישור" Background="Blue" Click="Button_Click"/>
+                <Button Content="אישור" Background="Blue" Click="Button_Click">
+                    <Button.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=date, Path=Text}" Value="">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=hour, Path=SelectedIndex}" Value="-1">
+                                    <Setter Property="Button.IsEnabled" Value="false"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+               
             </Grid>
         </Grid>
 

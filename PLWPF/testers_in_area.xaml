@@ -37,7 +37,25 @@
                 <ColumnDefinition Width="339*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1" Name="p">
-                <Button Content="אישור" Background="Blue" Click="Button_Click" />
+                <Button Content="אישור" Background="Blue" Click="Button_Click" >
+                    <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=city, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=number, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=street, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="false"/>
+                            </DataTrigger>
+                            
+                          
+                        </Style.Triggers>
+                    </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
 
             <Grid Name="j" Grid.Column="0" Margin="10,0,0,-70" >

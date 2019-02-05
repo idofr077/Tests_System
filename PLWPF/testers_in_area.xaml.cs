@@ -33,7 +33,10 @@ namespace PLWPF
             backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
             //p.Children.Clear();
             //j.Children.Clear();
-            Address temp = new Address(street.Text, int.Parse(number.Text), city.Text);
+            
+                Address temp = new Address(street.Text, int.Parse(number.Text), city.Text);
+            
+          
             backgroundWorker.RunWorkerAsync(temp);
         }
 

@@ -24,8 +24,17 @@ namespace BL
              @"&enhancedNarrative=false&avoidTimedConditions=false";
             //request from MapQuest service the distance between the 2 addresses
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            WebResponse response = request.GetResponse();
-            Stream dataStream = response.GetResponseStream();
+            WebResponse response;
+            Stream dataStream;
+            try
+            {
+                 response = request.GetResponse();
+                 dataStream = response.GetResponseStream();
+            }
+            catch(Exception)
+            {
+             return 999999999;
+            }
             StreamReader sreader = new StreamReader(dataStream);
             string responsereader = sreader.ReadToEnd();
             response.Close();
